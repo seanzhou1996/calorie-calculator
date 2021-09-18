@@ -25,8 +25,31 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'no-console': 'off',
+
+    'no-unused-expressions': [2, {
+      allowShortCircuit: true,
+      allowTernary: true,
+    }],
+
+    'react/prop-types': 'off',
+
+    'jsx-a11y/label-has-associated-control': [2, {
+      controlComponents: ['InputNumber'],
+      depth: 3,
+    }],
+
+    'react/jsx-props-no-spreading': 'off',
+
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
+
+    // fix base no-shadow bug
+    'no-shadow': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
 
     // no need to include extension when importing `.ts` and `.tsx` files
     'import/extensions': ['error', 'ignorePackages', {
