@@ -47,15 +47,22 @@ const activities: Record<ActivityType, ActivityLevel> = {
 // TODO skip checking when input field is empty
 const Schema = Yup.object().shape({
   [FormField.Age]: Yup.number()
+    .nullable()
     .required('Age is required')
+    .integer('Age must be an integer')
     .min(18, 'This calculator is intended for over 18 year olds')
     .max(120, 'The maximum age input is 120'),
   [FormField.Height]: Yup.number()
+    .nullable()
     .required('Height is required')
     .min(50, 'The minimum height input is 50 cm')
     .max(272, 'The maximum height input is 272 cm'),
-  [FormField.Gender]: Yup.string().required('Please select a gender'),
-  [FormField.ActivityLevel]: Yup.string().required('Please select an activity level'),
+  [FormField.Gender]: Yup.string()
+    .nullable()
+    .required('Please select a gender'),
+  [FormField.ActivityLevel]: Yup.string()
+    .nullable()
+    .required('Please select an activity level'),
 });
 
 function App() {
