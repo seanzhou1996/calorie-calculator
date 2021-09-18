@@ -23,11 +23,11 @@ export const Select = ({
     {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
       <AntSelect
         onChange={(v, option) => {
-          setFieldValue(name, v);
+          setFieldValue(name, v, true);
           $onChange && $onChange(v, option);
         }}
         onBlur={(event) => {
-          setFieldTouched(name, true, false);
+          setFieldTouched(name, true);
           $onBlur && $onBlur(event);
         }}
         value={!value ? undefined : value}

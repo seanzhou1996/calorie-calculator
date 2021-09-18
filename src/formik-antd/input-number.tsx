@@ -20,7 +20,7 @@ export const InputNumber = ({
     fast={fast}
   >
     {
-      ({ field: { value, onBlur }, form: { setFieldValue } }: FieldProps) => (
+      ({ field: { value, onBlur }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
         <AntInputNumber
           name={name}
           value={value}
@@ -29,6 +29,7 @@ export const InputNumber = ({
             $onChange && $onChange(v);
           }}
           onBlur={(event) => {
+            setFieldTouched(name, true);
             onBlur(event);
             $onBlur && $onBlur(event);
           }}
