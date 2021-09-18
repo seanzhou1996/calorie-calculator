@@ -57,6 +57,11 @@ const Schema = Yup.object().shape({
     .required('Height is required')
     .min(50, 'The minimum height input is 50 cm')
     .max(272, 'The maximum height input is 272 cm'),
+  [FormField.Weight]: Yup.number()
+    .nullable()
+    .required()
+    .min(30, 'The minimum weight input is 30 kg')
+    .max(130, 'The maximum weight input is 130 kg'),
   [FormField.Gender]: Yup.string()
     .nullable()
     .required('Please select a gender'),
@@ -70,6 +75,7 @@ function App() {
     age: null,
     gender: null,
     height: null,
+    weight: null,
     activityLevel: null,
   };
 
@@ -137,6 +143,20 @@ function App() {
               </div>
 
               <ErrorMessage component="span" name={FormField.Height} className="error-message" />
+
+              <div className="input-weight">
+                <label className="input-weight__label">
+                  <span>Weight:</span>
+                  <InputNumber
+                    name={FormField.Weight}
+                    className="input-weight__control"
+                    size="large"
+                  />
+                  <span className="input-weight__suffix">kg</span>
+                </label>
+              </div>
+
+              <ErrorMessage component="span" name={FormField.Weight} className="error-message" />
 
               <div className="select-activity-level">
                 <label className="select-activity-level__label">
