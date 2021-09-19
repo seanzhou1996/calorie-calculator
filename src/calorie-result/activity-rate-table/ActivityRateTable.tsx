@@ -25,6 +25,7 @@ const tableColumns: ColumnsType<TableRow> = [
 ];
 const tableData: TableRow[] = allActivityTypes.map((type) => (
   {
+    key: type,
     activityLevel: activityLabels[type],
     rate: activityRates[type],
   }
