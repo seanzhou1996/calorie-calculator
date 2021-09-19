@@ -8,6 +8,22 @@ export enum ActivityType {
   ExtraActive = 'extraActive',
 }
 
+export const activityRates: Record<ActivityType, number> = {
+  [ActivityType.Sendentary]: 1.2,
+  [ActivityType.Light]: 1.375,
+  [ActivityType.Moderate]: 1.55,
+  [ActivityType.Active]: 1.725,
+  [ActivityType.ExtraActive]: 1.9,
+};
+
+export const activityLabels: Record<ActivityType, string> = {
+  [ActivityType.Sendentary]: 'Less than 1 hour',
+  [ActivityType.Light]: '1-2 hours',
+  [ActivityType.Moderate]: '3-5 hours',
+  [ActivityType.Active]: '6-7 hours',
+  [ActivityType.ExtraActive]: 'More than 7 hours',
+};
+
 export interface ActivityLevel {
   rate: number;
   name: string,

@@ -1,12 +1,13 @@
 import React from 'react';
 import {
-  Collapse, Table, TableProps,
+  Collapse,
 } from 'antd';
-import { ColumnsType } from 'antd/es/table';
 import {
-  mealLabels, mealPortions, MealType, PersonInfo,
+  PersonInfo,
 } from '../model';
 import { computeBMR, computeTarget } from '../service';
+import { ActivityRateTable } from './activity-rate-table/ActivityRateTable';
+import { MealTable } from './meal-table/MealTable';
 
 import './Result.less';
 
@@ -15,14 +16,6 @@ const { Panel } = Collapse;
 interface CalorieResultProps {
   personInfo: PersonInfo;
 }
-
-interface TableRow {
-  meal: string;
-  portion: string;
-  calorie: number;
-}
-
-const allMealTypes = Object.values(MealType);
 
 function CalorieResult({
   personInfo: {
@@ -33,38 +26,6 @@ function CalorieResult({
 
   // const tdee = computeTDEE(bmr, activityLevel);
   const target = computeTarget(bmr, activityLevel, goal);
-  const tableColumns: ColumnsType<TableRow> = [
-    {
-      title: 'Meal type',
-      dataIndex: 'meal',
-      key: 'meal',
-    },
-    {
-      title: 'Calorie portion',
-      dataIndex: 'portion',
-      key: 'portion',
-    },
-    {
-      title: 'Calorie amount',
-      dataIndex: 'calorie',
-      key: 'calorie',
-    },
-  ];
-  const dataSource: TableRow[] = allMealTypes.map((type) => ({
-    meal: mealLabels[type],
-    key: type,
-    portion: `${mealPortions[type] * 100}%`,
-    calorie: Math.round(mealPortions[type] * target),
-  }));
-
-  const MealTable = (props: Omit<TableProps<TableRow>, 'columns' | 'dataSource'>) => (
-    <Table
-      columns={tableColumns}
-      dataSource={dataSource}
-      {...props}
-    />
-  );
-
   return (
     <section className="result">
       <header><span>Your target calorie input:</span></header>
@@ -84,13 +45,55 @@ function CalorieResult({
               calorie target throughout the day.
             </p>
             <MealTable
+              calorieTarget={target}
               pagination={false}
               className="meal-table"
             />
             <p>
               The portions are per UK National Health Service recommendations.
-              View them as suggestions rather than rigid target.
+              View them as suggestions rather than rigid targets.
             </p>
+          </div>
+        </Panel>
+        <Panel key={2} header="Learn how is calorie calculated">
+          <div>
+            <p>First, compute basal metabolic rate (BMR).</p>
+            <p>Mifflin-St Jeor Equation is used:</p>
+            <ul>
+              <li>
+                <span>For men:</span>
+                <pre>
+                  {'BMR = 10 * weight\n      + 6.25 * height\n      - 5 * age\n      + 5'}
+                </pre>
+              </li>
+              <li>
+                <span>For women:</span>
+                <pre>
+                  {'BMR = 10 * weight\n      + 6.25 * height\n      - 5 * age\n      - 161'}
+                </pre>
+              </li>
+            </ul>
+            <p>Weight and height are in kg and cm, respectively.</p>
+            <p>
+              Then, obtain total daily energy expenditure (TDEE)
+              by multiplying BMR with an activity rate.
+            </p>
+            <pre className="tdee-equation">TDEE = BMR * activityRate</pre>
+            <p>Activity rate table:</p>
+            <ActivityRateTable
+              pagination={false}
+              className="activity-rate-table"
+            />
+            <p>Lastly, adjust TDEE according to selected goal:</p>
+            <ul>
+              <li>Maintain weight: same as TDEE</li>
+              <li>
+                Gain muscle: add 10%
+              </li>
+              <li>
+                Lose fat: reduce 10%
+              </li>
+            </ul>
           </div>
         </Panel>
       </Collapse>
