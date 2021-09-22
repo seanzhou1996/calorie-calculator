@@ -1,100 +1,72 @@
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+@import '../shared.less';
 
+.personal-info-form {
   width: 100%;
-}
 
-.input-age {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-}
-
-.input-age__label {
-  display: contents;
-}
-
-.input-age__input {
-  flex: 1 0 auto;
-}
-
-.select-gender {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-}
-
-.select-gender__radio-group {
-  flex: 1 0 auto;
-
-  display: flex;
-
-  & > * {
-    width: 50%;
-    text-align: center;
+  .input-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  
+    .label {
+      width: 72px;
+    }
+  
+    .control {
+      position: relative;
+      flex: 1 0 auto;
+  
+      transition: none;
+    }
+  
+    .control,
+    .control:hover,
+    .control:active,
+    .control:focus {
+      box-shadow: none;
+    }
+  
+    .control--gender {
+      display: flex;
+      * > {
+        width: 50%;
+        text-align: center;
+      }
+    }
+  
+    .suffix {
+      width: 24px;
+      margin-left: 8px;
+    }
+  
+    .error-message {  
+      margin-top: 16px;
+      width: 100%;
+    }
   }
-}
+  
+  .input-wrapper--error {
+    .input-with-error();
+  
+    .control,
+    .control:hover,
+    .control:active,
+    .control:focus {
+      .control-with-error();
+  
+      .radio-button {
+        border-color: transparent;
+      }
+    }
+  }  
 
-.input-height {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-}
+  .input-wrapper + .input-wrapper {
+    margin-top: 24px;
+  }
 
-.input-height__label {
-  display: contents;
-}
-
-.input-height__input {
-  flex: 1 0 auto;
-}
-
-.input-weight {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-}
-
-.input-weight__label {
-  display: contents;
-}
-
-.input-weight__control {
-  flex: 1 0 auto;
-}
-
-.select-activity-level {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-}
-
-.select-activity-level__label {
-  display: contents;
-}
-
-.select-activity-level__control {
-  flex: 1 0 auto;
-}
-
-.select-goal {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-}
-
-.select-goal__label {
-  display: contents;
-}
-
-.select-goal__control {
-  flex: 1 0 auto;
+  .submit-button {
+    margin-top: 32px;
+    width: 100%;
+  }
 }

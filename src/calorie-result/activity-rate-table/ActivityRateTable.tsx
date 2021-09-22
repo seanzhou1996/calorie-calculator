@@ -1,7 +1,7 @@
 import { Table, TableProps } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import React from 'react';
-import { activityLabels, activityRates, ActivityType } from '../../model';
+import { activityLabels, activityRates, ActivityLevel } from '../../model';
 
 interface TableRow {
   activityLevel: string;
@@ -10,7 +10,7 @@ interface TableRow {
 
 type MealTableProps = Omit<TableProps<TableRow>, 'columns' | 'dataSource'>;
 
-const allActivityTypes = Object.values(ActivityType);
+const allActivityTypes = Object.values(ActivityLevel);
 const tableColumns: ColumnsType<TableRow> = [
   {
     title: 'Exercise per week',

@@ -1,6 +1,20 @@
 export type Gender = 'male' | 'female';
 
-export enum ActivityType {
+export enum PersonalInfoFormField {
+  Age = 'age',
+  Gender = 'gender',
+  Height = 'height',
+  Weight = 'weight',
+}
+
+export interface PersonalInfoFormModel {
+  [PersonalInfoFormField.Age]: number;
+  [PersonalInfoFormField.Gender]: Gender;
+  [PersonalInfoFormField.Height]: number; // cm
+  [PersonalInfoFormField.Weight]: number; // kg
+}
+
+export enum ActivityLevel {
   Sendentary = 'sendentary',
   Light = 'light',
   Moderate = 'moderate',
@@ -8,58 +22,52 @@ export enum ActivityType {
   ExtraActive = 'extraActive',
 }
 
-export const activityRates: Record<ActivityType, number> = {
-  [ActivityType.Sendentary]: 1.2,
-  [ActivityType.Light]: 1.375,
-  [ActivityType.Moderate]: 1.55,
-  [ActivityType.Active]: 1.725,
-  [ActivityType.ExtraActive]: 1.9,
+export const activityRates: Record<ActivityLevel, number> = {
+  [ActivityLevel.Sendentary]: 1.2,
+  [ActivityLevel.Light]: 1.375,
+  [ActivityLevel.Moderate]: 1.55,
+  [ActivityLevel.Active]: 1.725,
+  [ActivityLevel.ExtraActive]: 1.9,
 };
 
-export const activityLabels: Record<ActivityType, string> = {
-  [ActivityType.Sendentary]: 'Less than 1 hour',
-  [ActivityType.Light]: '1-2 hours',
-  [ActivityType.Moderate]: '3-5 hours',
-  [ActivityType.Active]: '6-7 hours',
-  [ActivityType.ExtraActive]: 'More than 7 hours',
+export const activityLabels: Record<ActivityLevel, string> = {
+  [ActivityLevel.Sendentary]: 'Less than 1 hour',
+  [ActivityLevel.Light]: '1-2 hours',
+  [ActivityLevel.Moderate]: '3-5 hours',
+  [ActivityLevel.Active]: '6-7 hours',
+  [ActivityLevel.ExtraActive]: 'More than 7 hours',
 };
 
-export interface ActivityLevel {
-  rate: number;
-  name: string,
+export enum ActivityFormField {
+  Level = 'activityLevel',
 }
 
-export enum FormField {
-  Age = 'age',
-  Gender = 'gender',
-  Height = 'height',
-  Weight = 'weight',
-  ActivityLevel = 'activityLevel',
-  Goal = 'goal'
+export interface ActivityFormModel {
+  [ActivityFormField.Level]: ActivityLevel;
 }
 
-export interface FormModel {
-  [FormField.Age]: number;
-  [FormField.Gender]: 'male' | 'female';
-  [FormField.Height]: number; // cm
-  [FormField.Weight]: number; // kg
-  [FormField.ActivityLevel]: ActivityType;
-  [FormField.Goal]: Goal;
-}
-
-export type PersonInfo = FormModel;
-
-export enum Goal {
+export enum GoalType {
   Balance = 'balance',
   Bulk = 'bulk',
   Cut = 'cut'
 }
 
-export const goalLabels: Record<Goal, string> = {
-  [Goal.Balance]: 'Maintain weight',
-  [Goal.Bulk]: 'Gain muscle',
-  [Goal.Cut]: 'Lose fat',
+export const goalLabels: Record<GoalType, string> = {
+  [GoalType.Balance]: 'Maintain weight',
+  [GoalType.Bulk]: 'Gain muscle',
+  [GoalType.Cut]: 'Lose fat',
 };
+
+export enum GoalFormField {
+  Goal = 'goal',
+}
+
+export interface GoalFormModel {
+  [GoalFormField.Goal]: GoalType;
+}
+
+export interface PersonInfo extends PersonalInfoFormModel, ActivityFormModel, GoalFormModel {
+}
 
 export enum MealType {
   Breakfast = 'breakfast',

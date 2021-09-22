@@ -1,17 +1,17 @@
-import { ActivityType, Gender, Goal } from './model';
+import { ActivityLevel, Gender, GoalType } from './model';
 
-const activityRates: Record<ActivityType, number> = {
-  [ActivityType.Sendentary]: 1.2,
-  [ActivityType.Light]: 1.375,
-  [ActivityType.Moderate]: 1.55,
-  [ActivityType.Active]: 1.725,
-  [ActivityType.ExtraActive]: 1.9,
+const activityRates: Record<ActivityLevel, number> = {
+  [ActivityLevel.Sendentary]: 1.2,
+  [ActivityLevel.Light]: 1.375,
+  [ActivityLevel.Moderate]: 1.55,
+  [ActivityLevel.Active]: 1.725,
+  [ActivityLevel.ExtraActive]: 1.9,
 };
 
-const goalRates: Record<Goal, number> = {
-  [Goal.Balance]: 1,
-  [Goal.Bulk]: 1.1,
-  [Goal.Cut]: 0.9,
+const goalRates: Record<GoalType, number> = {
+  [GoalType.Balance]: 1,
+  [GoalType.Bulk]: 1.1,
+  [GoalType.Cut]: 0.9,
 };
 
 export const computeBMR = (
@@ -28,11 +28,11 @@ export const computeBMR = (
 
 export const computeTDEE = (
   bmr: number,
-  activityLevel: ActivityType,
+  activityLevel: ActivityLevel,
 ) => bmr * activityRates[activityLevel];
 
 export const computeTarget = (
   bmr: number,
-  actvityLevel: ActivityType,
-  goalType: Goal,
+  actvityLevel: ActivityLevel,
+  goalType: GoalType,
 ) => bmr * activityRates[actvityLevel] * goalRates[goalType];
