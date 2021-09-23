@@ -1,4 +1,7 @@
-import { ActivityLevel, Gender, GoalType } from './model';
+/* eslint-disable @typescript-eslint/no-shadow */
+import {
+  ActivityLevel, Gender, GoalType, PersonalInfoFormModel, Validity,
+} from './model';
 
 const activityRates: Record<ActivityLevel, number> = {
   [ActivityLevel.Sendentary]: 1.2,
@@ -36,3 +39,53 @@ export const computeTarget = (
   actvityLevel: ActivityLevel,
   goalType: GoalType,
 ) => bmr * activityRates[actvityLevel] * goalRates[goalType];
+
+enum StorageKey {
+  Validity = 'validity',
+  PersonalInfo = 'personalInfo',
+  ActivityLevel = 'activityLevel',
+  Goal = 'goal',
+}
+
+export function storeValidity(value: Validity): void {
+  localStorage.setItem(StorageKey.Validity, JSON.stringify(value));
+}
+
+export function storePersonalInfo(value: PersonalInfoFormModel): void {
+  localStorage.setItem(StorageKey.PersonalInfo, JSON.stringify(value));
+}
+
+export function storeActivityLevel(value: ActivityLevel): void {
+  localStorage.setItem(StorageKey.ActivityLevel, value);
+}
+
+export function storeGoal(value: GoalType): void {
+  localStorage.setItem(StorageKey.Goal, value);
+}
+
+export function getValidityFromStore(): Validity {
+  const item = localStorage.getItem(StorageKey.Validity);
+  return !item ? null : JSON.parse(item);
+}
+
+export function getPersonalInfoFromStore(): PersonalInfoFormModel {
+  const item = localStorage.getItem(StorageKey.PersonalInfo);
+  return !item ? ({
+    age: null,
+    gender: null,
+    height: null,
+    weight: null,
+  }) : JSON.parse(item);
+}
+
+export function getActivityLevelFromStore(): ActivityLevel {
+  const item = localStorage.getItem(StorageKey.ActivityLevel);
+
+  return !item ? null : item as ActivityLevel;
+}
+
+export function getGoalFromStore(): GoalType {
+  const item = localStorage.getItem(StorageKey.Goal);
+
+  return !item ? null : item as GoalType;
+}

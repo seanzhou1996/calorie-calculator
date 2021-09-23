@@ -5,6 +5,7 @@ import {
 } from 'formik';
 import * as Yup from 'yup';
 import classnames from 'classnames';
+import { useHistory } from 'react-router-dom';
 import { Select } from '../formik-antd';
 import {
   ActivityFormModel as FormModel,
@@ -14,6 +15,11 @@ import {
 } from '../model';
 
 import './ActivityForm.less';
+import { getActivityLevelFromStore } from '../service';
+
+interface FormProps {
+  onSubmitForm: (data: FormModel) => void;
+}
 
 const { Option } = Select;
 
@@ -25,9 +31,10 @@ const schema = Yup.object().shape({
     .required('Select an option'),
 });
 
-export default function ActivityForm() {
+export default function ActivityForm({ onSubmitForm }: FormProps) {
+  const history = useHistory();
   const initialValue: FormModel = {
-    activityLevel: null,
+    activityLevel: getActivityLevelFromStore(),
   };
   const activityOptions = allActivityLevels.map((type) => (
     <Option
@@ -39,8 +46,9 @@ export default function ActivityForm() {
   ));
 
   const handleSubmit: FormikConfig<FormModel>['onSubmit'] = (values, { setSubmitting }) => {
-    console.log(values);
+    onSubmitForm(values);
     setSubmitting(false);
+    history.push('/goal');
   };
 
   return (

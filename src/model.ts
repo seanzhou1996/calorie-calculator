@@ -1,3 +1,9 @@
+export interface Validity {
+  personalInfo: boolean;
+  activity: boolean;
+  goal: boolean;
+}
+
 export type Gender = 'male' | 'female';
 
 export enum PersonalInfoFormField {

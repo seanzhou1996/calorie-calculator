@@ -7,13 +7,15 @@ import {
 } from 'formik';
 import * as Yup from 'yup';
 import classnames from 'classnames';
+import { useHistory } from 'react-router-dom';
 import { InputNumber, Radio } from '../formik-antd';
-import './Form.less';
-
 import {
   PersonalInfoFormField as FormField,
   PersonalInfoFormModel as FormModel,
 } from '../model';
+
+import './Form.less';
+import { getPersonalInfoFromStore } from '../service';
 
 const ageSchema = Yup.number()
   .nullable()
@@ -42,21 +44,19 @@ const Schema = Yup.object().shape({
   [FormField.Gender]: genderSchema,
 });
 
-interface CalorieFormProps {
+interface PersonalFormProps {
   onSubmitForm: (data: FormModel) => void;
 }
 
-function CalorieForm({ onSubmitForm }: CalorieFormProps) {
-  const initialValues: FormModel = {
-    age: null,
-    gender: null,
-    height: null,
-    weight: null,
-  };
+function PersonalInfoForm({ onSubmitForm }: PersonalFormProps) {
+  const initialValues: FormModel = getPersonalInfoFromStore();
+
+  const history = useHistory();
 
   const handleSubmit: FormikConfig<FormModel>['onSubmit'] = (values, { setSubmitting }) => {
     onSubmitForm(values);
     setSubmitting(false);
+    history.push('/activity');
   };
 
   return (
@@ -85,6 +85,8 @@ function CalorieForm({ onSubmitForm }: CalorieFormProps) {
                 </label>
                 <InputNumber
                   name={FormField.Age}
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   size="large"
                   id="input_age"
                   className="control"
@@ -99,20 +101,20 @@ function CalorieForm({ onSubmitForm }: CalorieFormProps) {
                   size="large"
                   className="control control--gender"
                 >
-                  <Radio.Button
+                  <Radio
                     name={FormField.Gender}
                     value="male"
                     className="radio-button"
                   >
                     Male
-                  </Radio.Button>
-                  <Radio.Button
+                  </Radio>
+                  <Radio
                     name={FormField.Gender}
                     value="female"
                     className="radio-button"
                   >
                     Female
-                  </Radio.Button>
+                  </Radio>
                 </Radio.Group>
                 <ErrorMessage component="span" name={FormField.Gender} className="error-message" />
               </div>
@@ -126,6 +128,8 @@ function CalorieForm({ onSubmitForm }: CalorieFormProps) {
                 </label>
                 <InputNumber
                   name={FormField.Height}
+                  inputMode="decimal"
+                  pattern="[0-9]+([\.][0-9]+)?"
                   id="input_height"
                   className="control control--height"
                   size="large"
@@ -145,6 +149,8 @@ function CalorieForm({ onSubmitForm }: CalorieFormProps) {
                 </label>
                 <InputNumber
                   name={FormField.Weight}
+                  inputMode="decimal"
+                  pattern="[0-9]+([\.][0-9]+)?"
                   id="input_weight"
                   className="control"
                   size="large"
@@ -172,4 +178,4 @@ function CalorieForm({ onSubmitForm }: CalorieFormProps) {
   );
 }
 
-export default CalorieForm;
+export default PersonalInfoForm;

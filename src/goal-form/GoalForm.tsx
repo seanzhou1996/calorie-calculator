@@ -5,6 +5,7 @@ import {
 } from 'formik';
 import * as Yup from 'yup';
 import classnames from 'classnames';
+import { useHistory } from 'react-router-dom';
 import { Select } from '../formik-antd';
 import {
   GoalFormModel as FormModel,
@@ -14,6 +15,11 @@ import {
 } from '../model';
 
 import './GoalForm.less';
+import { getGoalFromStore } from '../service';
+
+interface FormProps {
+  onSubmitForm: (data: FormModel) => void;
+}
 
 const allGoals = Object.values(GoalType);
 const { Option } = Select;
@@ -24,9 +30,10 @@ const schema = Yup.object().shape({
     .required('Select a goal'),
 });
 
-export default function GoalForm() {
+export default function GoalForm({ onSubmitForm }: FormProps) {
+  const history = useHistory();
   const initialValue: FormModel = {
-    goal: null,
+    goal: getGoalFromStore(),
   };
 
   const goalOptions = allGoals.map((goal) => (
@@ -39,8 +46,9 @@ export default function GoalForm() {
   ));
 
   const handleSubmit: FormikConfig<FormModel>['onSubmit'] = (values, { setSubmitting }) => {
-    console.log(values);
+    onSubmitForm(values);
     setSubmitting(false);
+    history.push('/result');
   };
 
   return (
