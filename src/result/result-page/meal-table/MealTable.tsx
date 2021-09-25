@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, TableProps } from 'antd';
 import { ColumnsType } from 'antd/es/table';
-import { mealLabels, mealPortions, MealType } from 'shared/model';
+import { mealLabels, mealPortions, MealType } from 'shared/models';
 
 interface TableRow {
   meal: string;

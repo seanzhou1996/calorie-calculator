@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 import * as Yup from 'yup';
-import { ActivityLevel, FullFormModel, Gender, GoalType } from './model';
+import { ActivityLevel, FullFormModel, Gender, GoalType } from './models';
 
 const activityRates: Record<ActivityLevel, number> = {
   [ActivityLevel.Sendentary]: 1.2,
@@ -53,11 +53,11 @@ const emptyFormModel: FullFormModel = {
   goal: null,
 };
 
-export function storeFormModel(value: FullFormModel): void {
+export function storeFormData(value: FullFormModel): void {
   localStorage.setItem(StorageKey.FormModel, JSON.stringify(value));
 }
 
-export function getFormModelFromStore(): FullFormModel {
+export function getFormDataFromStore(): FullFormModel {
   const item = localStorage.getItem(StorageKey.FormModel);
   return !item ? emptyFormModel : JSON.parse(item);
 }

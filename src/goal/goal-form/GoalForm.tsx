@@ -9,23 +9,23 @@ import {
   GoalFormField as FormField,
   goalLabels,
   GoalType,
-  GoalSchema,
-} from 'shared/model';
+  GoalFormSchema,
+} from 'shared/models';
 
-import { getFormModelFromStore } from 'shared/service';
-import FullFormModelContext from 'shared/fullFormModelContext';
+import { getFormDataFromStore } from 'shared/utils';
+import AllFormDataContext from 'shared/allFormDataContext';
 
 const allGoals = Object.values(GoalType);
 
-const getGoalFormModelFromStore: () => FormModel = () => {
-  const formModel = getFormModelFromStore();
+const getGoalFormDataFromStore: () => FormModel = () => {
+  const formModel = getFormDataFromStore();
   return { goal: formModel.goal };
 };
 
 export default function GoalForm() {
-  const { formModel, setFormModel } = useContext(FullFormModelContext);
+  const { formModel, setFormModel } = useContext(AllFormDataContext);
   const history = useHistory();
-  const initialValue: FormModel = getGoalFormModelFromStore();
+  const initialValue: FormModel = getGoalFormDataFromStore();
 
   const goalOptions = allGoals.map((goal) => (
     <Radio name={FormField.Goal} key={goal} value={goal}>
@@ -43,7 +43,7 @@ export default function GoalForm() {
   return (
     <Formik
       initialValues={initialValue}
-      validationSchema={GoalSchema}
+      validationSchema={GoalFormSchema}
       onSubmit={handleSubmit}
       validateOnBlur
       validateOnChange

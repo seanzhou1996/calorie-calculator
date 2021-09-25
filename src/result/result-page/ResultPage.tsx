@@ -1,7 +1,7 @@
 import React from 'react';
 import { Collapse } from 'antd';
-import { PersonInfo } from 'shared/model';
-import { computeBMR, computeTarget } from 'shared/service';
+import { PersonInfo } from 'shared/models';
+import { computeBMR, computeTarget } from 'shared/utils';
 import { ActivityRateTable } from './activity-rate-table/ActivityRateTable';
 import { MealTable } from './meal-table/MealTable';
 

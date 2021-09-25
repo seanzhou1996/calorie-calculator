@@ -1,14 +1,14 @@
 import React, { useContext } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 import ResultPage from './result-page/ResultPage';
-import FullFormModelContext from 'shared/fullFormModelContext';
-import { FullFormSchema } from 'shared/model';
+import AllFormDataContext from 'shared/allFormDataContext';
+import { FullFormSchema } from 'shared/models';
 import PageTemplate from 'shared/PageTemplate';
-import { isFormValid } from 'shared/service';
+import { isFormValid } from 'shared/utils';
 
 function Result() {
   const location = useLocation();
-  const { formModel } = useContext(FullFormModelContext);
+  const { formModel } = useContext(AllFormDataContext);
 
   const valid = isFormValid(formModel, FullFormSchema);
 

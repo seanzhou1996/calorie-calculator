@@ -1,11 +1,5 @@
 import * as Yup from 'yup';
 
-export interface Validity {
-  personalInfo: boolean;
-  activity: boolean;
-  goal: boolean;
-}
-
 export type Gender = 'male' | 'female';
 
 export enum PersonalInfoFormField {
@@ -130,7 +124,7 @@ export const ActivityFormSchema = Yup.object().shape({
   [ActivityFormField.Level]: activityLevelSchema,
 });
 
-export const GoalSchema = Yup.object().shape({
+export const GoalFormSchema = Yup.object().shape({
   [GoalFormField.Goal]: goalSchema,
 });
 

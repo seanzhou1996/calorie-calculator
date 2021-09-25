@@ -8,13 +8,13 @@ import {
   PersonalInfoFormField as FormField,
   PersonalInfoFormModel as FormModel,
   PersonalInfoFormSchema,
-} from 'shared/model';
+} from 'shared/models';
 
-import { getFormModelFromStore } from 'shared/service';
-import FullFormModelContext from 'shared/fullFormModelContext';
+import { getFormDataFromStore } from 'shared/utils';
+import AllFormDataContext from 'shared/allFormDataContext';
 
 const getPersonalInfoFromStore: () => FormModel = () => {
-  const { age, gender, height, weight } = getFormModelFromStore();
+  const { age, gender, height, weight } = getFormDataFromStore();
   return {
     age,
     gender,
@@ -24,7 +24,7 @@ const getPersonalInfoFromStore: () => FormModel = () => {
 };
 
 const PersonalInfoForm = () => {
-  const { formModel, setFormModel } = useContext(FullFormModelContext);
+  const { formModel, setFormModel } = useContext(AllFormDataContext);
   const initialValues: FormModel = getPersonalInfoFromStore();
 
   const history = useHistory();

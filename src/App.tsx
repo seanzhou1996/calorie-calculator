@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import FullFormModelContext from 'shared/fullFormModelContext';
+import AllFormDataContext from 'shared/allFormDataContext';
 import Home from './home/Home';
 import Activity from './activity/Activity';
 import Goal from './goal/Goal';
-import './App.less';
-import { FullFormModel } from 'shared/model';
-import { storeFormModel, getFormModelFromStore } from 'shared/service';
+import { FullFormModel } from 'shared/models';
+import { storeFormData, getFormDataFromStore } from 'shared/utils';
 import Result from './result/Result';
 
+import './App.less';
+
 function App() {
-  const [formModel, setFormModel] = useState<FullFormModel>(getFormModelFromStore());
+  const [formModel, setFormModel] = useState<FullFormModel>(getFormDataFromStore());
 
   useEffect(() => {
-    storeFormModel(formModel);
+    storeFormData(formModel);
   }, [formModel]);
 
   return (
-    <FullFormModelContext.Provider
+    <AllFormDataContext.Provider
       value={{
         formModel,
         setFormModel,
@@ -42,7 +43,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-    </FullFormModelContext.Provider>
+    </AllFormDataContext.Provider>
   );
 }
 

@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 import PageTemplate from 'shared/PageTemplate';
 import GoalForm from './goal-form/GoalForm';
-import FullFormModelContext from 'shared/fullFormModelContext';
-import { isFormValid } from 'shared/service';
-import { ActivityFormSchema } from 'shared/model';
+import AllFormDataContext from 'shared/allFormDataContext';
+import { isFormValid } from 'shared/utils';
+import { ActivityFormSchema } from 'shared/models';
 
 function Goal() {
-  const { formModel } = useContext(FullFormModelContext);
+  const { formModel } = useContext(AllFormDataContext);
   const location = useLocation();
   const isPrevFormValid = isFormValid(formModel, ActivityFormSchema);
 

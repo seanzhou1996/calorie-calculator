@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 import PageTemplate from 'shared/PageTemplate';
 import ActivityForm from './activity-form/ActivityForm';
-import FullFormModelContext from 'shared/fullFormModelContext';
-import { isFormValid } from 'shared/service';
-import { PersonalInfoFormSchema } from 'shared/model';
+import AllFormDataContext from 'shared/allFormDataContext';
+import { isFormValid } from 'shared/utils';
+import { PersonalInfoFormSchema } from 'shared/models';
 
 function Activity() {
-  const { formModel } = useContext(FullFormModelContext);
+  const { formModel } = useContext(AllFormDataContext);
   const location = useLocation();
 
   const isPrevFormValid = isFormValid(formModel, PersonalInfoFormSchema);

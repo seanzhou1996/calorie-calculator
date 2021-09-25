@@ -1,16 +1,16 @@
 import React from 'react';
-import { FullFormModel } from './model';
+import { FullFormModel } from './models';
 
-interface FullFormModelContextType {
+interface AllFormDataContextType {
   formModel: FullFormModel;
   setFormModel: (value: FullFormModel) => void;
 }
 
-const FullFormModelContext = React.createContext<FullFormModelContextType>({
+const AllFormDataContext = React.createContext<AllFormDataContextType>({
   formModel: null,
 
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setFormModel: () => {},
 });
 
-export default FullFormModelContext;
+export default AllFormDataContext;
