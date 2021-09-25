@@ -40,13 +40,7 @@ export const MealTable = ({ calorieTarget, ...restProps }: MealTableProps) => {
     calorie: Math.round(mealPortions[type] * calorieTarget),
   }));
 
-  return (
-    <Table
-      columns={tableColumns}
-      dataSource={dataSource}
-      {...restProps}
-    />
-  );
+  return <Table columns={tableColumns} dataSource={dataSource} {...restProps} />;
 };
 
 export default MealTable;

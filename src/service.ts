@@ -1,11 +1,6 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 import * as Yup from 'yup';
-import {
-  ActivityLevel,
-  FullFormModel,
-  Gender,
-  GoalType,
-} from './model';
+import { ActivityLevel, FullFormModel, Gender, GoalType } from './model';
 
 const activityRates: Record<ActivityLevel, number> = {
   [ActivityLevel.Sendentary]: 1.2,
@@ -21,11 +16,11 @@ const goalRates: Record<GoalType, number> = {
   [GoalType.Cut]: 0.9,
 };
 
-export const computeBMR = (
-  age: number,
-  gender: Gender,
-  height: number,
-  weight: number,
+export const computeBMR: (age: number, gender: Gender, height: number, weight: number) => number = (
+  age,
+  gender,
+  height,
+  weight
 ) => {
   if (!age || !gender || !height) {
     return 0;
@@ -33,16 +28,17 @@ export const computeBMR = (
   return 10 * weight + 6.25 * height - 5 * age + (gender === 'male' ? 5 : -161);
 };
 
-export const computeTDEE = (
-  bmr: number,
-  activityLevel: ActivityLevel,
+export const computeTDEE: (bmr: number, activityLevel: ActivityLevel) => number = (
+  bmr,
+  activityLevel
 ) => bmr * activityRates[activityLevel];
 
-export const computeTarget = (
+export const computeTarget: (
   bmr: number,
   actvityLevel: ActivityLevel,
-  goalType: GoalType,
-) => bmr * activityRates[actvityLevel] * goalRates[goalType];
+  goalType: GoalType
+) => number = (bmr, actvityLevel, goalType) =>
+  bmr * activityRates[actvityLevel] * goalRates[goalType];
 
 enum StorageKey {
   FormModel = 'formModel',

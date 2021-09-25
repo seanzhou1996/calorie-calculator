@@ -7,12 +7,10 @@ interface Props {
 function PageTemplate({ children }: Props) {
   return (
     <div className="page">
-      { children }
+      {children}
 
       <footer>
-        <span>
-          © Sean Zhou
-        </span>
+        <span>© Sean Zhou</span>
       </footer>
     </div>
   );

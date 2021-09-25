@@ -10,9 +10,7 @@ function Home() {
           <h1>Calorie calculator</h1>
         </header>
         <div>
-          <p>
-            Find out how many calories you need daily to
-          </p>
+          <p>Find out how many calories you need daily to</p>
           <ul>
             <li>maintain weight</li>
             <li>gain muscle</li>
@@ -20,7 +18,7 @@ function Home() {
           </ul>
           <p>To start, fill in the fields below.</p>
         </div>
-        <PersonalInfoForm onSubmitForm={() => {}} />
+        <PersonalInfoForm />
       </div>
     </PageTemplate>
   );

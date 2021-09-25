@@ -23,20 +23,14 @@ const tableColumns: ColumnsType<TableRow> = [
     key: 'rate',
   },
 ];
-const tableData: TableRow[] = allActivityTypes.map((type) => (
-  {
-    key: type,
-    activityLevel: activityLabels[type],
-    rate: activityRates[type],
-  }
-));
+const tableData: TableRow[] = allActivityTypes.map((type) => ({
+  key: type,
+  activityLevel: activityLabels[type],
+  rate: activityRates[type],
+}));
 
 export const ActivityRateTable = (props: MealTableProps) => (
-  <Table
-    columns={tableColumns}
-    dataSource={tableData}
-    {...props}
-  />
+  <Table columns={tableColumns} dataSource={tableData} {...props} />
 );
 
 export default ActivityRateTable;

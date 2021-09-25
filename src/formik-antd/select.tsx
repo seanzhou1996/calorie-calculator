@@ -4,6 +4,7 @@ import { FieldProps } from 'formik';
 import { FormikFieldProps } from './field-props';
 import { Field } from './field';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type SelectProps<T = any> = FormikFieldProps & $SelectProps<T>;
 
 export const Select = ({
@@ -15,11 +16,7 @@ export const Select = ({
   onBlur: $onBlur,
   ...restProps
 }: SelectProps) => (
-  <Field
-    name={name}
-    validate={validate}
-    fast={fast}
-  >
+  <Field name={name} validate={validate} fast={fast}>
     {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
       <AntSelect
         onChange={(v, option) => {

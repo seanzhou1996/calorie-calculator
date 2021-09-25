@@ -14,29 +14,23 @@ export const InputNumber = ({
   onBlur: $onBlur,
   ...restProps
 }: InputNumberProps) => (
-  <Field
-    name={name}
-    validate={validate}
-    fast={fast}
-  >
-    {
-      ({ field: { value, onBlur }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
-        <AntInputNumber
-          name={name}
-          value={value}
-          onChange={(v) => {
-            setFieldValue(name, v);
-            $onChange && $onChange(v);
-          }}
-          onBlur={(event) => {
-            setFieldTouched(name, true);
-            onBlur(event);
-            $onBlur && $onBlur(event);
-          }}
-          {...restProps}
-        />
-      )
-    }
+  <Field name={name} validate={validate} fast={fast}>
+    {({ field: { value, onBlur }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
+      <AntInputNumber
+        name={name}
+        value={value}
+        onChange={(v) => {
+          setFieldValue(name, v);
+          $onChange && $onChange(v);
+        }}
+        onBlur={(event) => {
+          setFieldTouched(name, true);
+          onBlur(event);
+          $onBlur && $onBlur(event);
+        }}
+        {...restProps}
+      />
+    )}
   </Field>
 );
 

@@ -1,21 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import FullFormModelContext from './fullFormModelContext';
 import Home from './home/Home';
 import Activity from './activity/Activity';
 import Goal from './goal/Goal';
 import './App.less';
-import {
-  FullFormModel,
-} from './model';
-import {
-  storeFormModel,
-  getFormModelFromStore,
-} from './service';
+import { FullFormModel } from './model';
+import { storeFormModel, getFormModelFromStore } from './service';
 import Result from './result/Result';
 
 function App() {
@@ -26,10 +17,11 @@ function App() {
   }, [formModel]);
 
   return (
-    <FullFormModelContext.Provider value={{
-      formModel,
-      setFormModel,
-    }}
+    <FullFormModelContext.Provider
+      value={{
+        formModel,
+        setFormModel,
+      }}
     >
       <Router>
         <Switch>

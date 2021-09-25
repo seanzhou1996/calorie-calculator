@@ -11,21 +11,19 @@ function Goal() {
   const location = useLocation();
   const isPrevFormValid = isFormValid(formModel, ActivityFormSchema);
 
-  return (
-    isPrevFormValid ? (
-      <PageTemplate>
-        <div className="width-container">
-          <GoalForm onSubmitForm={() => {}} />
-        </div>
-      </PageTemplate>
-    ) : (
-      <Redirect
-        to={{
-          pathname: '/activity',
-          state: { from: location },
-        }}
-      />
-    )
+  return isPrevFormValid ? (
+    <PageTemplate>
+      <div className="width-container">
+        <GoalForm />
+      </div>
+    </PageTemplate>
+  ) : (
+    <Redirect
+      to={{
+        pathname: '/activity',
+        state: { from: location },
+      }}
+    />
   );
 }
 

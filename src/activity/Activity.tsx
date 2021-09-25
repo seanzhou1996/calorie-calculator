@@ -12,23 +12,19 @@ function Activity() {
 
   const isPrevFormValid = isFormValid(formModel, PersonalInfoFormSchema);
 
-  return (
-    isPrevFormValid
-      ? (
-        <PageTemplate>
-          <div className="width-container">
-            <ActivityForm onSubmitForm={() => {}} />
-          </div>
-        </PageTemplate>
-      )
-      : (
-        <Redirect
-          to={{
-            pathname: '/',
-            state: { from: location },
-          }}
-        />
-      )
+  return isPrevFormValid ? (
+    <PageTemplate>
+      <div className="width-container">
+        <ActivityForm />
+      </div>
+    </PageTemplate>
+  ) : (
+    <Redirect
+      to={{
+        pathname: '/',
+        state: { from: location },
+      }}
+    />
   );
 }
 

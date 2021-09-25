@@ -1,5 +1,9 @@
 import React from 'react';
-import { Radio as AntRadio, RadioProps as $RadioProps, RadioGroupProps as $RadioGroupProps } from 'antd';
+import {
+  Radio as AntRadio,
+  RadioProps as $RadioProps,
+  RadioGroupProps as $RadioGroupProps,
+} from 'antd';
 import { FieldProps } from 'formik';
 import { FormikFieldProps } from '../field-props';
 import { Field } from '../field';
@@ -15,11 +19,7 @@ export const Radio = ({
   onChange: $onChange,
   ...restProps
 }: RadioProps) => (
-  <Field
-    name={name}
-    validate={validate}
-    fast={fast}
-  >
+  <Field name={name} validate={validate} fast={fast}>
     {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
       <AntRadio
         name={name}
@@ -35,18 +35,14 @@ export const Radio = ({
   </Field>
 );
 
-Radio.Group = ({
+const RadioGroup = ({
   name,
   validate,
   fast,
   onChange: $onChange,
   ...restProps
 }: RadioGroupProps) => (
-  <Field
-    name={name}
-    validate={validate}
-    fast={fast}
-  >
+  <Field name={name} validate={validate} fast={fast}>
     {({ field: { value }, form: { setFieldValue, setFieldTouched } }: FieldProps) => (
       <AntRadio.Group
         value={value}
@@ -61,6 +57,7 @@ Radio.Group = ({
   </Field>
 );
 
+Radio.Group = RadioGroup;
 Radio.Button = AntRadio.Button;
 
 export default Radio;

@@ -74,8 +74,7 @@ export interface GoalFormModel {
   [GoalFormField.Goal]: GoalType;
 }
 
-export interface FullFormModel extends PersonalInfoFormModel, ActivityFormModel, GoalFormModel {
-}
+export interface FullFormModel extends PersonalInfoFormModel, ActivityFormModel, GoalFormModel {}
 
 export type PersonInfo = FullFormModel;
 
@@ -83,7 +82,7 @@ export enum MealType {
   Breakfast = 'breakfast',
   Lunch = 'lunch',
   Dinner = 'dinner',
-  DrinksAndSnacks = 'drinksAndSnacks'
+  DrinksAndSnacks = 'drinksAndSnacks',
 }
 
 export const mealPortions: Record<MealType, number> = {
@@ -116,15 +115,9 @@ const weightSchema = Yup.number()
   .required('Weight is required')
   .min(30, 'The minimum weight input is 30 kg')
   .max(130, 'The maximum weight input is 130 kg');
-const genderSchema = Yup.string()
-  .nullable()
-  .required('Select a gender');
-const activityLevelSchema = Yup.string()
-  .nullable()
-  .required('Select an option');
-const goalSchema = Yup.string()
-  .nullable()
-  .required('Select a goal');
+const genderSchema = Yup.string().nullable().required('Select a gender');
+const activityLevelSchema = Yup.string().nullable().required('Select an option');
+const goalSchema = Yup.string().nullable().required('Select a goal');
 
 export const PersonalInfoFormSchema = Yup.object().shape({
   [PersonalInfoFormField.Age]: ageSchema,

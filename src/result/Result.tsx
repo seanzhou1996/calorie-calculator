@@ -12,21 +12,19 @@ function Result() {
 
   const valid = isFormValid(formModel, FullFormSchema);
 
-  return (
-    valid ? (
-      <PageTemplate>
-        <div className="width-container">
-          <CalorieResult personInfo={formModel} />
-        </div>
-      </PageTemplate>
-    ) : (
-      <Redirect
-        to={{
-          pathname: '/goal',
-          state: { from: location },
-        }}
-      />
-    )
+  return valid ? (
+    <PageTemplate>
+      <div className="width-container">
+        <CalorieResult personInfo={formModel} />
+      </div>
+    </PageTemplate>
+  ) : (
+    <Redirect
+      to={{
+        pathname: '/goal',
+        state: { from: location },
+      }}
+    />
   );
 }
 
