@@ -28,7 +28,9 @@ function CalorieResult({
   const target = computeTarget(bmr, activityLevel, goal);
   return (
     <section className="result">
-      <header><span>Your target calorie input:</span></header>
+      <header>
+        <h1 className="title">Your target calorie input:</h1>
+      </header>
       <div className="number-wrapper">
         <span className="number">{ Math.round(target) }</span>
         <span className="label">calories / day</span>

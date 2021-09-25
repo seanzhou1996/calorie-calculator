@@ -65,7 +65,9 @@ export default function ActivityForm({ onSubmitForm }: FormProps) {
           name="activity-level"
           className="activity-form"
         >
-          {/* <h1>How much exercise do you do per week?</h1> */}
+          <header>
+            <h1>How much exercise do you do per week?</h1>
+          </header>
 
           <div className="hint">
             <Collapse

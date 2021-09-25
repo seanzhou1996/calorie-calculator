@@ -67,7 +67,9 @@ export default function GoalForm({ onSubmitForm }: FormProps) {
             name="goal"
             className="goal-form"
           >
-            {/* <h1>What is your fitness goal?</h1> */}
+            <header>
+              <h1>What is your fitness goal?</h1>
+            </header>
 
             <div className="hint">
               <p>

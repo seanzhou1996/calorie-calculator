@@ -13,7 +13,7 @@ function Goal() {
 
   return (
     isPrevFormValid ? (
-      <PageTemplate title="What is your fitness goal?">
+      <PageTemplate>
         <div className="width-container">
           <GoalForm onSubmitForm={() => {}} />
         </div>

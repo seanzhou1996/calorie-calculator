@@ -14,7 +14,7 @@ function Result() {
 
   return (
     valid ? (
-      <PageTemplate title="">
+      <PageTemplate>
         <div className="width-container">
           <CalorieResult personInfo={formModel} />
         </div>

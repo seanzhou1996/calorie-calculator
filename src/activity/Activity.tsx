@@ -15,7 +15,7 @@ function Activity() {
   return (
     isPrevFormValid
       ? (
-        <PageTemplate title="How much exercise do you do per week?">
+        <PageTemplate>
           <div className="width-container">
             <ActivityForm onSubmitForm={() => {}} />
           </div>

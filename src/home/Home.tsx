@@ -4,8 +4,11 @@ import PersonalInfoForm from '../personal-info-form/Form';
 
 function Home() {
   return (
-    <PageTemplate title="Calorie calculator">
+    <PageTemplate>
       <div className="width-container">
+        <header>
+          <h1>Calorie calculator</h1>
+        </header>
         <div>
           <p>
             Find out how many calories you need daily to
