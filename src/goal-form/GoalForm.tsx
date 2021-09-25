@@ -1,51 +1,53 @@
-import { Button } from 'antd';
-import React from 'react';
+import { Button, Space } from 'antd';
+import React, { useContext } from 'react';
 import {
   Formik, Form, FormikConfig, ErrorMessage,
 } from 'formik';
-import * as Yup from 'yup';
 import classnames from 'classnames';
 import { useHistory } from 'react-router-dom';
-import { Select } from '../formik-antd';
+import { Radio } from '../formik-antd';
 import {
   GoalFormModel as FormModel,
   GoalFormField as FormField,
   goalLabels,
   GoalType,
+  GoalSchema,
 } from '../model';
 
-import './GoalForm.less';
-import { getGoalFromStore } from '../service';
+import {
+  getFormModelFromStore,
+} from '../service';
+import FullFormModelContext from '../fullFormModelContext';
 
 interface FormProps {
   onSubmitForm: (data: FormModel) => void;
 }
 
 const allGoals = Object.values(GoalType);
-const { Option } = Select;
 
-const schema = Yup.object().shape({
-  [FormField.Goal]: Yup.string()
-    .nullable()
-    .required('Select a goal'),
-});
+const getGoalFormModelFromStore: () => FormModel = () => {
+  const formModel = getFormModelFromStore();
+  return { goal: formModel.goal };
+};
 
 export default function GoalForm({ onSubmitForm }: FormProps) {
+  const { formModel, setFormModel } = useContext(FullFormModelContext);
   const history = useHistory();
-  const initialValue: FormModel = {
-    goal: getGoalFromStore(),
-  };
+  const initialValue: FormModel = getGoalFormModelFromStore();
 
   const goalOptions = allGoals.map((goal) => (
-    <Option
+    <Radio
+      name={FormField.Goal}
       key={goal}
       value={goal}
     >
       { goalLabels[goal].toLowerCase() }
-    </Option>
+    </Radio>
   ));
 
   const handleSubmit: FormikConfig<FormModel>['onSubmit'] = (values, { setSubmitting }) => {
+    const updatedFormModel = { ...formModel, ...values };
+    setFormModel(updatedFormModel);
     onSubmitForm(values);
     setSubmitting(false);
     history.push('/result');
@@ -54,7 +56,7 @@ export default function GoalForm({ onSubmitForm }: FormProps) {
   return (
     <Formik
       initialValues={initialValue}
-      validationSchema={schema}
+      validationSchema={GoalSchema}
       onSubmit={handleSubmit}
       validateOnBlur
       validateOnChange
@@ -65,7 +67,7 @@ export default function GoalForm({ onSubmitForm }: FormProps) {
             name="goal"
             className="goal-form"
           >
-            <h1>What is your fitness goal?</h1>
+            {/* <h1>What is your fitness goal?</h1> */}
 
             <div className="hint">
               <p>
@@ -74,24 +76,25 @@ export default function GoalForm({ onSubmitForm }: FormProps) {
               </p>
             </div>
 
-            <div className={classnames('input-wrapper', errors.goal && touched.goal && 'input-wrapper--error')}>
-              <span className="element">I want to:</span>
-              <Select
-                name={FormField.Goal}
-                dropdownMatchSelectWidth={false}
-                size="large"
-                className="element control"
-                placeholder="select a goal"
-                bordered={false}
-              >
-                {goalOptions}
-              </Select>
-
+            <div className={classnames('input-wrapper', 'element', errors.goal && touched.goal && 'input-wrapper--error')}>
+              <p className="element">I want to:</p>
               <ErrorMessage
                 component="span"
                 name={FormField.Goal}
                 className="error-message"
               />
+              <Radio.Group
+                name={FormField.Goal}
+                size="large"
+                className="element control"
+              >
+                <Space
+                  direction="vertical"
+                  size={12}
+                >
+                  {goalOptions}
+                </Space>
+              </Radio.Group>
             </div>
 
             <Button

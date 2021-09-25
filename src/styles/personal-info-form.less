@@ -1,5 +1,3 @@
-@import '../shared.less';
-
 .personal-info-form {
   width: 100%;
 
@@ -27,12 +25,8 @@
       box-shadow: none;
     }
   
-    .control--gender {
+    .gender-control {
       display: flex;
-      * > {
-        width: 50%;
-        text-align: center;
-      }
     }
   
     .suffix {
@@ -48,13 +42,15 @@
   
   .input-wrapper--error {
     .input-with-error();
-  
+
     .control,
     .control:hover,
     .control:active,
     .control:focus {
-      .control-with-error();
-  
+      &:not(.gender-control) {
+        .control-with-error();
+      }
+
       .radio-button {
         border-color: transparent;
       }

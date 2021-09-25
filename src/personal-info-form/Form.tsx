@@ -1,61 +1,51 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   Button,
 } from 'antd';
 import {
   Formik, Form, FormikConfig, ErrorMessage,
 } from 'formik';
-import * as Yup from 'yup';
 import classnames from 'classnames';
 import { useHistory } from 'react-router-dom';
 import { InputNumber, Radio } from '../formik-antd';
 import {
   PersonalInfoFormField as FormField,
   PersonalInfoFormModel as FormModel,
+  PersonalInfoFormSchema,
 } from '../model';
 
-import './Form.less';
-import { getPersonalInfoFromStore } from '../service';
-
-const ageSchema = Yup.number()
-  .nullable()
-  .required('Age is required')
-  .integer('Age must be an integer')
-  .min(18, 'This calculator is intended for over 18 year olds')
-  .max(120, 'The maximum age input is 120');
-const heightSchema = Yup.number()
-  .nullable()
-  .required('Height is required')
-  .min(100, 'The minimum height input is 100 cm')
-  .max(272, 'The maximum height input is 272 cm');
-const weightSchema = Yup.number()
-  .nullable()
-  .required('Weight is required')
-  .min(30, 'The minimum weight input is 30 kg')
-  .max(130, 'The maximum weight input is 130 kg');
-const genderSchema = Yup.string()
-  .nullable()
-  .required('Select a gender');
-
-const Schema = Yup.object().shape({
-  [FormField.Age]: ageSchema,
-  [FormField.Height]: heightSchema,
-  [FormField.Weight]: weightSchema,
-  [FormField.Gender]: genderSchema,
-});
+import { getFormModelFromStore } from '../service';
+import FullFormModelContext from '../fullFormModelContext';
 
 interface PersonalFormProps {
-  onSubmitForm: (data: FormModel) => void;
+  onSubmitForm?: (data: FormModel) => void;
 }
 
-function PersonalInfoForm({ onSubmitForm }: PersonalFormProps) {
+const defaultProps: PersonalFormProps = {
+  onSubmitForm: () => {},
+};
+
+const getPersonalInfoFromStore: () => FormModel = () => {
+  const {
+    age, gender, height, weight,
+  } = getFormModelFromStore();
+  return {
+    age, gender, height, weight,
+  };
+};
+
+const PersonalInfoForm = ({ onSubmitForm }: PersonalFormProps) => {
+  const { formModel, setFormModel } = useContext(FullFormModelContext);
   const initialValues: FormModel = getPersonalInfoFromStore();
 
   const history = useHistory();
 
   const handleSubmit: FormikConfig<FormModel>['onSubmit'] = (values, { setSubmitting }) => {
-    onSubmitForm(values);
+    const updatedFormModel = { ...formModel, ...values };
+    setFormModel(updatedFormModel);
+    // storeFormModel(updatedFormModel);
     setSubmitting(false);
+    onSubmitForm(values);
     history.push('/activity');
   };
 
@@ -64,7 +54,7 @@ function PersonalInfoForm({ onSubmitForm }: PersonalFormProps) {
       <Formik<FormModel>
         initialValues={initialValues}
         onSubmit={handleSubmit}
-        validationSchema={Schema}
+        validationSchema={PersonalInfoFormSchema}
         validateOnBlur
         validateOnChange
       >
@@ -99,7 +89,7 @@ function PersonalInfoForm({ onSubmitForm }: PersonalFormProps) {
                 <Radio.Group
                   name={FormField.Gender}
                   size="large"
-                  className="control control--gender"
+                  className="control gender-control"
                 >
                   <Radio
                     name={FormField.Gender}
@@ -176,6 +166,8 @@ function PersonalInfoForm({ onSubmitForm }: PersonalFormProps) {
       </Formik>
     </div>
   );
-}
+};
+
+PersonalInfoForm.defaultProps = defaultProps;
 
 export default PersonalInfoForm;

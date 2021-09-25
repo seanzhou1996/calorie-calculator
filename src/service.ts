@@ -1,6 +1,10 @@
 /* eslint-disable @typescript-eslint/no-shadow */
+import * as Yup from 'yup';
 import {
-  ActivityLevel, Gender, GoalType, PersonalInfoFormModel, Validity,
+  ActivityLevel,
+  FullFormModel,
+  Gender,
+  GoalType,
 } from './model';
 
 const activityRates: Record<ActivityLevel, number> = {
@@ -41,51 +45,27 @@ export const computeTarget = (
 ) => bmr * activityRates[actvityLevel] * goalRates[goalType];
 
 enum StorageKey {
-  Validity = 'validity',
-  PersonalInfo = 'personalInfo',
-  ActivityLevel = 'activityLevel',
-  Goal = 'goal',
+  FormModel = 'formModel',
 }
 
-export function storeValidity(value: Validity): void {
-  localStorage.setItem(StorageKey.Validity, JSON.stringify(value));
+const emptyFormModel: FullFormModel = {
+  age: null,
+  gender: null,
+  height: null,
+  weight: null,
+  activityLevel: null,
+  goal: null,
+};
+
+export function storeFormModel(value: FullFormModel): void {
+  localStorage.setItem(StorageKey.FormModel, JSON.stringify(value));
 }
 
-export function storePersonalInfo(value: PersonalInfoFormModel): void {
-  localStorage.setItem(StorageKey.PersonalInfo, JSON.stringify(value));
+export function getFormModelFromStore(): FullFormModel {
+  const item = localStorage.getItem(StorageKey.FormModel);
+  return !item ? emptyFormModel : JSON.parse(item);
 }
 
-export function storeActivityLevel(value: ActivityLevel): void {
-  localStorage.setItem(StorageKey.ActivityLevel, value);
-}
-
-export function storeGoal(value: GoalType): void {
-  localStorage.setItem(StorageKey.Goal, value);
-}
-
-export function getValidityFromStore(): Validity {
-  const item = localStorage.getItem(StorageKey.Validity);
-  return !item ? null : JSON.parse(item);
-}
-
-export function getPersonalInfoFromStore(): PersonalInfoFormModel {
-  const item = localStorage.getItem(StorageKey.PersonalInfo);
-  return !item ? ({
-    age: null,
-    gender: null,
-    height: null,
-    weight: null,
-  }) : JSON.parse(item);
-}
-
-export function getActivityLevelFromStore(): ActivityLevel {
-  const item = localStorage.getItem(StorageKey.ActivityLevel);
-
-  return !item ? null : item as ActivityLevel;
-}
-
-export function getGoalFromStore(): GoalType {
-  const item = localStorage.getItem(StorageKey.Goal);
-
-  return !item ? null : item as GoalType;
+export function isFormValid(values: FullFormModel, schema: Yup.AnySchema): boolean {
+  return schema.isValidSync(values);
 }

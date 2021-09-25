@@ -1,3 +1,5 @@
+import * as Yup from 'yup';
+
 export interface Validity {
   personalInfo: boolean;
   activity: boolean;
@@ -38,9 +40,9 @@ export const activityRates: Record<ActivityLevel, number> = {
 
 export const activityLabels: Record<ActivityLevel, string> = {
   [ActivityLevel.Sendentary]: 'Less than 1 hour',
-  [ActivityLevel.Light]: '1-2 hours',
-  [ActivityLevel.Moderate]: '3-5 hours',
-  [ActivityLevel.Active]: '6-7 hours',
+  [ActivityLevel.Light]: '1 to 2 hours',
+  [ActivityLevel.Moderate]: '3 to 5 hours',
+  [ActivityLevel.Active]: '6 to 7 hours',
   [ActivityLevel.ExtraActive]: 'More than 7 hours',
 };
 
@@ -53,13 +55,13 @@ export interface ActivityFormModel {
 }
 
 export enum GoalType {
-  Balance = 'balance',
   Bulk = 'bulk',
-  Cut = 'cut'
+  Cut = 'cut',
+  Balance = 'balance',
 }
 
 export const goalLabels: Record<GoalType, string> = {
-  [GoalType.Balance]: 'Maintain weight',
+  [GoalType.Balance]: 'Maintain current weight',
   [GoalType.Bulk]: 'Gain muscle',
   [GoalType.Cut]: 'Lose fat',
 };
@@ -72,8 +74,10 @@ export interface GoalFormModel {
   [GoalFormField.Goal]: GoalType;
 }
 
-export interface PersonInfo extends PersonalInfoFormModel, ActivityFormModel, GoalFormModel {
+export interface FullFormModel extends PersonalInfoFormModel, ActivityFormModel, GoalFormModel {
 }
+
+export type PersonInfo = FullFormModel;
 
 export enum MealType {
   Breakfast = 'breakfast',
@@ -95,3 +99,53 @@ export const mealLabels: Record<MealType, string> = {
   [MealType.Dinner]: 'Dinner',
   [MealType.DrinksAndSnacks]: 'Drinks and snacks',
 };
+
+const ageSchema = Yup.number()
+  .nullable()
+  .required('Age is required')
+  .integer('Age must be an integer')
+  .min(18, 'This calculator is intended for over 18 year olds')
+  .max(120, 'The maximum age input is 120');
+const heightSchema = Yup.number()
+  .nullable()
+  .required('Height is required')
+  .min(100, 'The minimum height input is 100 cm')
+  .max(272, 'The maximum height input is 272 cm');
+const weightSchema = Yup.number()
+  .nullable()
+  .required('Weight is required')
+  .min(30, 'The minimum weight input is 30 kg')
+  .max(130, 'The maximum weight input is 130 kg');
+const genderSchema = Yup.string()
+  .nullable()
+  .required('Select a gender');
+const activityLevelSchema = Yup.string()
+  .nullable()
+  .required('Select an option');
+const goalSchema = Yup.string()
+  .nullable()
+  .required('Select a goal');
+
+export const PersonalInfoFormSchema = Yup.object().shape({
+  [PersonalInfoFormField.Age]: ageSchema,
+  [PersonalInfoFormField.Height]: heightSchema,
+  [PersonalInfoFormField.Weight]: weightSchema,
+  [PersonalInfoFormField.Gender]: genderSchema,
+});
+
+export const ActivityFormSchema = Yup.object().shape({
+  [ActivityFormField.Level]: activityLevelSchema,
+});
+
+export const GoalSchema = Yup.object().shape({
+  [GoalFormField.Goal]: goalSchema,
+});
+
+export const FullFormSchema = Yup.object().shape({
+  [PersonalInfoFormField.Age]: ageSchema,
+  [PersonalInfoFormField.Height]: heightSchema,
+  [PersonalInfoFormField.Weight]: weightSchema,
+  [PersonalInfoFormField.Gender]: genderSchema,
+  [ActivityFormField.Level]: activityLevelSchema,
+  [GoalFormField.Goal]: goalSchema,
+});

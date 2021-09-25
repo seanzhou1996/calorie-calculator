@@ -1,0 +1,56 @@
+@import '~antd/dist/antd.less';
+
+h1 {
+  margin-bottom: 1em;
+  line-height: 1.25;
+}
+
+.@{radio-prefix-cls} {
+  &-checked {
+    &::after {
+      border: none;
+      animation: none;
+      animation-fill-mode: none;
+    }
+
+    .@{radio-inner-prefix-cls} {
+      &::after {
+        @radio-dot-color: @cc-black;
+        background-color: @radio-dot-color;
+        transform: none;
+        transition: none;
+      }
+    }
+  }
+
+  &-inner {
+    &::after {
+      @radio-dot-color: @cc-black;
+      background-color: @radio-dot-color;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+.@{radio-prefix-cls}-wrapper {
+  position: relative;
+  font-size: 16px;
+
+  .ant-radio {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  > span:last-of-type {
+    display: inline-block;
+    margin-left: @radio-size;
+    line-height: @radio-size;
+  }
+}
+
+span.@{radio-prefix-cls} + * {
+  padding-right: 16px;
+  padding-left: 10px;
+}
