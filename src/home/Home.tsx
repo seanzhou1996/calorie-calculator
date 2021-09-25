@@ -1,6 +1,6 @@
 import React from 'react';
-import PageTemplate from '../PageTemplate';
-import PersonalInfoForm from '../personal-info-form/Form';
+import PageTemplate from 'shared/PageTemplate';
+import PersonalInfoForm from './personal-info-form/PersonalInfoForm';
 
 function Home() {
   return (

@@ -3,17 +3,17 @@ import React, { useContext } from 'react';
 import { Formik, Form, FormikConfig, ErrorMessage } from 'formik';
 import classnames from 'classnames';
 import { useHistory } from 'react-router-dom';
-import { Radio } from '../formik-antd';
+import { Radio } from 'shared/formik-antd';
 import {
   GoalFormModel as FormModel,
   GoalFormField as FormField,
   goalLabels,
   GoalType,
   GoalSchema,
-} from '../model';
+} from 'shared/model';
 
-import { getFormModelFromStore } from '../service';
-import FullFormModelContext from '../fullFormModelContext';
+import { getFormModelFromStore } from 'shared/service';
+import FullFormModelContext from 'shared/fullFormModelContext';
 
 const allGoals = Object.values(GoalType);
 

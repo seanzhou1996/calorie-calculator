@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
-import PageTemplate from '../PageTemplate';
-import GoalForm from '../goal-form/GoalForm';
-import FullFormModelContext from '../fullFormModelContext';
-import { isFormValid } from '../service';
-import { ActivityFormSchema } from '../model';
+import PageTemplate from 'shared/PageTemplate';
+import GoalForm from './goal-form/GoalForm';
+import FullFormModelContext from 'shared/fullFormModelContext';
+import { isFormValid } from 'shared/service';
+import { ActivityFormSchema } from 'shared/model';
 
 function Goal() {
   const { formModel } = useContext(FullFormModelContext);

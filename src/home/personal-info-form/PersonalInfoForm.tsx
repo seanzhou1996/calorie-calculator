@@ -3,15 +3,15 @@ import { Button } from 'antd';
 import { Formik, Form, FormikConfig, ErrorMessage } from 'formik';
 import classnames from 'classnames';
 import { useHistory } from 'react-router-dom';
-import { InputNumber, Radio } from '../formik-antd';
+import { InputNumber, Radio } from 'shared/formik-antd';
 import {
   PersonalInfoFormField as FormField,
   PersonalInfoFormModel as FormModel,
   PersonalInfoFormSchema,
-} from '../model';
+} from 'shared/model';
 
-import { getFormModelFromStore } from '../service';
-import FullFormModelContext from '../fullFormModelContext';
+import { getFormModelFromStore } from 'shared/service';
+import FullFormModelContext from 'shared/fullFormModelContext';
 
 const getPersonalInfoFromStore: () => FormModel = () => {
   const { age, gender, height, weight } = getFormModelFromStore();

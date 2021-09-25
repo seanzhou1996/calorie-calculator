@@ -1,11 +1,9 @@
 import React from 'react';
 import { Collapse } from 'antd';
-import { PersonInfo } from '../model';
-import { computeBMR, computeTarget } from '../service';
+import { PersonInfo } from 'shared/model';
+import { computeBMR, computeTarget } from 'shared/service';
 import { ActivityRateTable } from './activity-rate-table/ActivityRateTable';
 import { MealTable } from './meal-table/MealTable';
-
-import './Result.less';
 
 const { Panel } = Collapse;
 
@@ -13,7 +11,7 @@ interface CalorieResultProps {
   personInfo: PersonInfo;
 }
 
-function CalorieResult({
+function ResultPage({
   personInfo: { age, gender, height, weight, activityLevel, goal },
 }: CalorieResultProps) {
   const bmr = computeBMR(age, gender, height, weight);
@@ -80,4 +78,4 @@ function CalorieResult({
   );
 }
 
-export default CalorieResult;
+export default ResultPage;

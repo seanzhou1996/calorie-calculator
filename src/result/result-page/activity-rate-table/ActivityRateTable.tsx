@@ -1,7 +1,7 @@
 import { Table, TableProps } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import React from 'react';
-import { activityLabels, activityRates, ActivityLevel } from '../../model';
+import { activityLabels, activityRates, ActivityLevel } from 'shared/model';
 
 interface TableRow {
   activityLevel: string;

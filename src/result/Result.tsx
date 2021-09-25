@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
-import CalorieResult from '../calorie-result/Result';
-import FullFormModelContext from '../fullFormModelContext';
-import { FullFormSchema } from '../model';
-import PageTemplate from '../PageTemplate';
-import { isFormValid } from '../service';
+import ResultPage from './result-page/ResultPage';
+import FullFormModelContext from 'shared/fullFormModelContext';
+import { FullFormSchema } from 'shared/model';
+import PageTemplate from 'shared/PageTemplate';
+import { isFormValid } from 'shared/service';
 
 function Result() {
   const location = useLocation();
@@ -15,7 +15,7 @@ function Result() {
   return valid ? (
     <PageTemplate>
       <div className="width-container">
-        <CalorieResult personInfo={formModel} />
+        <ResultPage personInfo={formModel} />
       </div>
     </PageTemplate>
   ) : (

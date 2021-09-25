@@ -5,8 +5,8 @@ import {
   RadioGroupProps as $RadioGroupProps,
 } from 'antd';
 import { FieldProps } from 'formik';
-import { FormikFieldProps } from '../field-props';
-import { Field } from '../field';
+import { FormikFieldProps } from './field-props';
+import { Field } from './field';
 
 export type RadioProps = FormikFieldProps & $RadioProps;
 export type RadioGroupProps = FormikFieldProps & $RadioGroupProps;

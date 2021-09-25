@@ -4,16 +4,16 @@ import { CaretRightFilled } from '@ant-design/icons';
 import { Formik, Form, FormikConfig, ErrorMessage } from 'formik';
 import classnames from 'classnames';
 import { useHistory } from 'react-router-dom';
-import { Radio } from '../formik-antd';
+import { Radio } from 'shared/formik-antd';
 import {
   ActivityFormModel as FormModel,
   ActivityFormField as FormField,
   activityLabels,
   ActivityLevel,
   ActivityFormSchema,
-} from '../model';
-import { getFormModelFromStore } from '../service';
-import FullFormModelContext from '../fullFormModelContext';
+} from 'shared/model';
+import { getFormModelFromStore } from 'shared/service';
+import FullFormModelContext from 'shared/fullFormModelContext';
 
 const { Panel } = Collapse;
 
