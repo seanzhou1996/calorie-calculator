@@ -1,27 +1,26 @@
-import { Button } from 'antd';
 import React from 'react';
+import { Button, Space, Collapse } from 'antd';
+import { CaretRightFilled } from '@ant-design/icons';
 import {
   Formik, Form, FormikConfig, ErrorMessage,
 } from 'formik';
 import * as Yup from 'yup';
 import classnames from 'classnames';
 import { useHistory } from 'react-router-dom';
-import { Select } from '../formik-antd';
+import { Radio } from '../formik-antd';
 import {
   ActivityFormModel as FormModel,
   ActivityFormField as FormField,
   activityLabels,
   ActivityLevel,
 } from '../model';
-
-import './ActivityForm.less';
 import { getActivityLevelFromStore } from '../service';
+
+const { Panel } = Collapse;
 
 interface FormProps {
   onSubmitForm: (data: FormModel) => void;
 }
-
-const { Option } = Select;
 
 const allActivityLevels = Object.values(ActivityLevel);
 
@@ -37,12 +36,13 @@ export default function ActivityForm({ onSubmitForm }: FormProps) {
     activityLevel: getActivityLevelFromStore(),
   };
   const activityOptions = allActivityLevels.map((type) => (
-    <Option
+    <Radio
+      name={FormField.Level}
       key={type}
       value={type}
     >
-      { activityLabels[type].toLowerCase() }
-    </Option>
+      { activityLabels[type] }
+    </Radio>
   ));
 
   const handleSubmit: FormikConfig<FormModel>['onSubmit'] = (values, { setSubmitting }) => {
@@ -65,39 +65,62 @@ export default function ActivityForm({ onSubmitForm }: FormProps) {
             name="activity-level"
             className="activity-form"
           >
-            <h1>How much exercise do you do?</h1>
+            <h1>How much exercise do you do per week?</h1>
 
             <div className="hint">
-              <p>Consider sports with some intensity, such as:</p>
-              <ul>
-                <li>jogging</li>
-                <li>rock climbing</li>
-                <li>table tennis</li>
-              </ul>
-              <p>
-                For low-intensity sports, deduct some hours as needed
-                to get more accurate results.
-              </p>
+              <Collapse
+                ghost
+                className="hint__expander"
+                expandIcon={({ isActive }) => (
+                  <CaretRightFilled
+                    rotate={isActive ? 90 : 0}
+                    className="hint__expand-icon"
+                  />
+                )}
+              >
+                <Panel
+                  key={1}
+                  header={<span className="hint__header">What counts?</span>}
+                  className="hint__panel"
+                >
+                  <div className="hint__content">
+                    <p>
+                      All activities that make you breathe faster and
+                      feel warmer. For example:
+                    </p>
+                    <ul>
+                      <li>jogging</li>
+                      <li>swimming</li>
+                      <li>tennis</li>
+                      <li>dancing</li>
+                    </ul>
+                    <p>
+                      If your work involves manual labor, count it so you can get
+                      more accurate results.
+                    </p>
+                  </div>
+                </Panel>
+              </Collapse>
             </div>
 
             <div className={classnames('input-wrapper', (errors.activityLevel && touched.activityLevel) ? 'input-wrapper--error' : null)}>
-              <span className="element">I exercise for</span>
-              <Select
-                name={FormField.Level}
-                placeholder="select an option"
-                dropdownMatchSelectWidth={false}
-                size="large"
-                bordered={false}
-                className="element control"
-              >
-                {activityOptions}
-              </Select>
-              <span className="element">per week.</span>
               <ErrorMessage
                 component="span"
                 name={FormField.Level}
                 className="error-message"
               />
+              <Radio.Group
+                name={FormField.Level}
+                size="large"
+                className="control"
+              >
+                <Space
+                  direction="vertical"
+                  size={12}
+                >
+                  {activityOptions}
+                </Space>
+              </Radio.Group>
             </div>
 
             <Button

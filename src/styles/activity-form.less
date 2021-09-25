@@ -1,0 +1,70 @@
+.activity-form,
+.goal-form {
+  width: 100%;
+
+  .input-wrapper {
+    margin-bottom: 32px;
+
+    .error-message {
+      display: block;
+      margin-bottom: 16px;
+    }
+  }
+  
+  .input-wrapper--error {
+    .input-with-error();
+
+    .control,
+    .control:hover,
+    .control:active,
+    .control:focus {
+      .control-with-error();
+    }
+  }
+  
+  .submit-button {
+    width: 100%;
+  }
+}
+
+.hint {
+  margin-bottom: 32px;
+  color: @text-color-secondary;
+}
+
+.hint__expander {
+  margin-left: -16px;
+  margin-right: -16px;
+}
+
+.hint__header {
+  line-height: 1;
+  font-size: calc(1rem + 2px);
+  color: @cc-blue;
+  text-decoration: underline;
+}
+
+.hint__content {
+  font-size: 16px;
+  color: @text-color-secondary;
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.@{collapse-prefix-cls} {
+  & > &-item {
+    > .@{collapse-prefix-cls}-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .@{collapse-prefix-cls}-arrow {
+        margin-right: 8px;
+        font-size: calc(1rem + 2px);
+        color: @cc-blue;
+      }
+    }
+  }
+}
