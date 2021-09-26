@@ -11,15 +11,14 @@ import {
   activityLabels,
   ActivityLevel,
   ActivityFormSchema,
+  FullFormModel,
 } from 'shared/models';
-import { getFormDataFromStore } from 'shared/utils';
 import AllFormDataContext from 'shared/allFormDataContext';
 
 const { Panel } = Collapse;
 
-const getActivityFormDataFromStore: () => FormModel = () => {
-  const formModel = getFormDataFromStore();
-  return { activityLevel: formModel.activityLevel };
+const getActivityFormData: (values: FullFormModel) => FormModel = (values) => {
+  return { activityLevel: values.activityLevel };
 };
 
 const allActivityLevels = Object.values(ActivityLevel);
@@ -27,7 +26,7 @@ const allActivityLevels = Object.values(ActivityLevel);
 export default function ActivityForm() {
   const { formModel, setFormModel } = useContext(AllFormDataContext);
   const history = useHistory();
-  const initialValue: FormModel = getActivityFormDataFromStore();
+  const initialValue: FormModel = getActivityFormData(formModel);
   const activityOptions = allActivityLevels.map((type) => (
     <Radio name={FormField.Level} key={type} value={type}>
       {activityLabels[type]}

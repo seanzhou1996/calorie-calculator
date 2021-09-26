@@ -40,28 +40,6 @@ export const computeTarget: (
 ) => number = (bmr, actvityLevel, goalType) =>
   bmr * activityRates[actvityLevel] * goalRates[goalType];
 
-enum StorageKey {
-  FormModel = 'formModel',
-}
-
-const emptyFormModel: FullFormModel = {
-  age: null,
-  gender: null,
-  height: null,
-  weight: null,
-  activityLevel: null,
-  goal: null,
-};
-
-export function storeFormData(value: FullFormModel): void {
-  localStorage.setItem(StorageKey.FormModel, JSON.stringify(value));
-}
-
-export function getFormDataFromStore(): FullFormModel {
-  const item = localStorage.getItem(StorageKey.FormModel);
-  return !item ? emptyFormModel : JSON.parse(item);
-}
-
 export function isFormValid(values: FullFormModel, schema: Yup.AnySchema): boolean {
   return schema.isValidSync(values);
 }

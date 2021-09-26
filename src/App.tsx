@@ -4,17 +4,19 @@ import AllFormDataContext from 'shared/allFormDataContext';
 import Home from './home/Home';
 import Activity from './activity/Activity';
 import Goal from './goal/Goal';
-import { FullFormModel } from 'shared/models';
-import { storeFormData, getFormDataFromStore } from 'shared/utils';
+import { emptyFormModel, FullFormModel } from 'shared/models';
+import { setFormData, getSubmission } from 'shared/store';
 import Result from './result/Result';
+import LastSubmissionBanner from 'shared/LastSubmissionBanner';
 
 import './App.less';
 
 function App() {
-  const [formModel, setFormModel] = useState<FullFormModel>(getFormDataFromStore());
+  const lastSubmission = getSubmission();
+  const [formModel, setFormModel] = useState<FullFormModel>(lastSubmission?.data || emptyFormModel);
 
   useEffect(() => {
-    storeFormData(formModel);
+    setFormData(formModel);
   }, [formModel]);
 
   return (
@@ -24,6 +26,7 @@ function App() {
         setFormModel,
       }}
     >
+      <LastSubmissionBanner lastSubmission={lastSubmission} />
       <Router>
         <Switch>
           <Route path="/" exact>

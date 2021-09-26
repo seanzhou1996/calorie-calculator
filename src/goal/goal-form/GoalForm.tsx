@@ -10,22 +10,22 @@ import {
   goalLabels,
   GoalType,
   GoalFormSchema,
+  FullFormModel,
 } from 'shared/models';
 
-import { getFormDataFromStore } from 'shared/utils';
+import { setSubmission } from 'shared/store';
 import AllFormDataContext from 'shared/allFormDataContext';
 
 const allGoals = Object.values(GoalType);
 
-const getGoalFormDataFromStore: () => FormModel = () => {
-  const formModel = getFormDataFromStore();
-  return { goal: formModel.goal };
+const getGoalFormData: (values: FullFormModel) => FormModel = (values) => {
+  return { goal: values.goal };
 };
 
 export default function GoalForm() {
   const { formModel, setFormModel } = useContext(AllFormDataContext);
   const history = useHistory();
-  const initialValue: FormModel = getGoalFormDataFromStore();
+  const initialValue: FormModel = getGoalFormData(formModel);
 
   const goalOptions = allGoals.map((goal) => (
     <Radio name={FormField.Goal} key={goal} value={goal}>
@@ -36,6 +36,7 @@ export default function GoalForm() {
   const handleSubmit: FormikConfig<FormModel>['onSubmit'] = (values, { setSubmitting }) => {
     const updatedFormModel = { ...formModel, ...values };
     setFormModel(updatedFormModel);
+    setSubmission(updatedFormModel, Date.now());
     setSubmitting(false);
     history.push('/result');
   };

@@ -70,6 +70,15 @@ export interface GoalFormModel {
 
 export interface FullFormModel extends PersonalInfoFormModel, ActivityFormModel, GoalFormModel {}
 
+export const emptyFormModel: FullFormModel = {
+  age: null,
+  gender: null,
+  height: null,
+  weight: null,
+  activityLevel: null,
+  goal: null,
+};
+
 export type PersonInfo = FullFormModel;
 
 export enum MealType {
@@ -136,3 +145,14 @@ export const FullFormSchema = Yup.object().shape({
   [ActivityFormField.Level]: activityLevelSchema,
   [GoalFormField.Goal]: goalSchema,
 });
+
+export enum StorageKey {
+  FormData = 'formData',
+  Submission = 'submission',
+  SubmissionBannerAckTime = 'SubmissionBannerAckTime',
+}
+
+export interface Submission {
+  data: FullFormModel;
+  submissionTime: number;
+}

@@ -5,16 +5,15 @@ import classnames from 'classnames';
 import { useHistory } from 'react-router-dom';
 import { InputNumber, Radio } from 'shared/formik-antd';
 import {
+  FullFormModel,
   PersonalInfoFormField as FormField,
   PersonalInfoFormModel as FormModel,
   PersonalInfoFormSchema,
 } from 'shared/models';
-
-import { getFormDataFromStore } from 'shared/utils';
 import AllFormDataContext from 'shared/allFormDataContext';
 
-const getPersonalInfoFromStore: () => FormModel = () => {
-  const { age, gender, height, weight } = getFormDataFromStore();
+const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
+  const { age, gender, height, weight } = value;
   return {
     age,
     gender,
@@ -25,7 +24,7 @@ const getPersonalInfoFromStore: () => FormModel = () => {
 
 const PersonalInfoForm = () => {
   const { formModel, setFormModel } = useContext(AllFormDataContext);
-  const initialValues: FormModel = getPersonalInfoFromStore();
+  const initialValues: FormModel = getPersonalInfo(formModel);
 
   const history = useHistory();
 
