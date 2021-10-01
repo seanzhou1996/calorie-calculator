@@ -1,25 +1,30 @@
-.page-title {
-  margin-bottom: 24px;
-  font-size: calc(1rem + 4px);
-  font-weight: bold;
-}
-
-.number-wrapper {
+.result-panel {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 48px;
+  padding: 32px 24px;
+  line-height: 1.25;
+  background-color: @primary-color;
+  color: white;
+
+  .title {
+    margin-bottom: 1em;
+    line-height: 1.25;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+  }
 
   .number {
-    display: inline-block;
-    margin-bottom: 8px;
     font-size: 48px;
-    line-height: 1;
+    font-weight: bold;
   }
 
   .label {
-    font-size: calc(1rem + 2px);
-    line-height: 1;
+    font-size: calc(1rem + 4px);
+    font-weight: 500;
   }
 }
 
@@ -28,7 +33,7 @@
 
   header {
     margin-bottom: 1em;
-    font-size: calc(1rem);
+    font-size: calc(1rem + 4px);
     font-weight: bold;
     line-height: 1;
   }
@@ -56,6 +61,7 @@
 
   .food__name {
     font-size: calc(1rem);
+    font-weight: bold;
   }
 
   .food__icon {
@@ -64,6 +70,7 @@
 
   .food__sup-info {
     font-size: calc(1rem - 2px);
+    font-weight: normal;
   }
 
   .food__calorie {

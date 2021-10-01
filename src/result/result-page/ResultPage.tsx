@@ -81,26 +81,27 @@ function ResultPage({ personInfo }: CalorieResultProps) {
 
   return (
     <div>
-      <header>
-        <h1 className="page-title">Your calorie intake target</h1>
-      </header>
-
-      <div className="number-wrapper">
+      <div className="result-panel">
+        <h1 className="title">Your calorie intake target</h1>
         <span className="number">{Math.round(target)}</span>
         <span className="label">calories / day</span>
       </div>
 
       <section className="page-section">
         {/* <p>The UK National Health Service suggests spreading daily energy input as follows:</p>
-        <ul>
-          <li>breakfast: 20%</li>
-          <li>lunch: 30%</li>
-          <li>dinner: 30%</li>
-          <li>drinks and snacks: 20%</li>
-        </ul> */}
+          <ul>
+            <li>breakfast: 20%</li>
+            <li>lunch: 30%</li>
+            <li>dinner: 30%</li>
+            <li>drinks and snacks: 20%</li>
+          </ul> */}
         <header>Planning your diet</header>
         <p>Here is a guide to how you can spread your intake target throughout the day:</p>
         <MealTable calorieTarget={target} pagination={false} className="meal-table" />
+        <p>
+          Snack is anything you eat or drink between major meals. It could be an apple, an energy
+          bar, or a cup of milk.
+        </p>
         <p>You can adjust these allocations as long as they add up to your daily target.</p>
       </section>
 
@@ -119,7 +120,7 @@ function ResultPage({ personInfo }: CalorieResultProps) {
                 <span>{name}</span>
                 <div className="food__sup-info">{supInfo}</div>
               </div>
-              <div className="food__calorie">{calorie} calories</div>
+              <div className="food__calorie">{calorie} calories per serving</div>
             </div>
           ))}
         </div>
@@ -127,16 +128,6 @@ function ResultPage({ personInfo }: CalorieResultProps) {
           <Link to="/" className="action__link">
             <ArrowRightCircle className="action__icon" />
             <span>Check calories in other food</span>
-          </Link>
-        </div>
-      </section>
-
-      <section className="page-section">
-        <header>Next actions</header>
-        <div className="action">
-          <Link to="/" className="action__link">
-            <ArrowRightCircle className="action__icon" />
-            <span>Learn how is calorie calculated</span>
           </Link>
         </div>
       </section>
