@@ -68,7 +68,9 @@ export default function ActivityForm() {
                 className="hint__panel"
               >
                 <div className="hint__content">
-                  <p>All activities that make you breathe faster and feel warmer. For example:</p>
+                  <p>
+                    Count all activities that make you breathe faster and feel warmer. For example:
+                  </p>
                   <ul>
                     <li>jogging</li>
                     <li>swimming</li>
