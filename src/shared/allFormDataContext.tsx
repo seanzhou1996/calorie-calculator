@@ -8,9 +8,9 @@ interface AllFormDataContextType {
 
 const AllFormDataContext = React.createContext<AllFormDataContextType>({
   formModel: null,
-
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setFormModel: () => {},
+  setFormModel: () => {
+    throw Error('not initialized');
+  },
 });
 
 export default AllFormDataContext;

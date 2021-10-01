@@ -1,11 +1,12 @@
 import React from 'react';
 import { Table, TableProps } from 'antd';
-import { ColumnsType } from 'antd/es/table';
 import { mealLabels, mealPortions, MealType } from 'shared/models';
+
+const { Column } = Table;
 
 interface TableRow {
   meal: string;
-  portion: string;
+  percent: string;
   calorie: number;
 }
 
@@ -14,33 +15,22 @@ interface MealTableProps extends Omit<TableProps<TableRow>, 'columns' | 'dataSou
 }
 
 const allMealTypes = Object.values(MealType);
-const tableColumns: ColumnsType<TableRow> = [
-  {
-    title: 'Meal type',
-    dataIndex: 'meal',
-    key: 'meal',
-  },
-  {
-    title: 'Calorie portion',
-    dataIndex: 'portion',
-    key: 'portion',
-  },
-  {
-    title: 'Calorie amount',
-    dataIndex: 'calorie',
-    key: 'calorie',
-  },
-];
 
 export const MealTable = ({ calorieTarget, ...restProps }: MealTableProps) => {
   const dataSource: TableRow[] = allMealTypes.map((type) => ({
     meal: mealLabels[type],
     key: type,
-    portion: `${mealPortions[type] * 100}%`,
+    percent: `${mealPortions[type] * 100}%`,
     calorie: Math.round(mealPortions[type] * calorieTarget),
   }));
 
-  return <Table columns={tableColumns} dataSource={dataSource} {...restProps} />;
+  return (
+    <Table size="large" dataSource={dataSource} {...restProps}>
+      <Column title="Meal" dataIndex="meal" key="meal" />
+      <Column title="% of daily target" dataIndex="percent" key="percent" className="align-right" />
+      <Column title="Calorie" dataIndex="calorie" key="calorie" className="align-right" />
+    </Table>
+  );
 };
 
 export default MealTable;

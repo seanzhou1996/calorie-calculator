@@ -1,14 +1,14 @@
-.result {
-  .title {
-    font-size: 1rem;
-  }
+.page-title {
+  margin-bottom: 24px;
+  font-size: calc(1rem + 4px);
+  font-weight: bold;
 }
 
 .number-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 
   .number {
     display: inline-block;
@@ -18,13 +18,98 @@
   }
 
   .label {
-    font-size: 18px;
+    font-size: calc(1rem + 2px);
     line-height: 1;
   }
 }
 
+.page-section {
+  margin-bottom: 48px;
+
+  header {
+    margin-bottom: 1em;
+    font-size: calc(1rem);
+    font-weight: bold;
+    line-height: 1;
+  }
+}
+
+.food-list {
+  margin-bottom: 24px;
+
+  .food {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  .food__header {
+    margin-bottom: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .food__quantity {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  .food__name {
+    font-size: calc(1rem);
+  }
+
+  .food__icon {
+    margin-right: 6px;
+  }
+
+  .food__sup-info {
+    font-size: calc(1rem - 2px);
+  }
+
+  .food__calorie {
+    color: @text-color-secondary;
+  }
+}
+
+.action {
+  display: flex;
+  font-weight: 500;
+
+  &:not(:last-of-type) {
+    margin-bottom: 12px;
+  }
+}
+
+.action__link {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.action__icon {
+  margin-right: 6px;
+  width: 24px;
+  height: auto;
+  fill: @primary-color;
+}
+
+.start-again-button {
+  .text-button();
+
+  margin-bottom: 1rem;
+  line-height: 1;
+  text-decoration: underline;
+}
+
+.personal-info-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .meal-table {
-  width: 100%;
+  margin-bottom: 1rem;
 }
 
 .panel {

@@ -2,6 +2,11 @@ import * as Yup from 'yup';
 
 export type Gender = 'male' | 'female';
 
+export const genderLabels: Record<Gender, string> = {
+  male: 'Male',
+  female: 'Female',
+};
+
 export enum PersonalInfoFormField {
   Age = 'age',
   Gender = 'gender',
@@ -99,7 +104,7 @@ export const mealLabels: Record<MealType, string> = {
   [MealType.Breakfast]: 'Breakfast',
   [MealType.Lunch]: 'Lunch',
   [MealType.Dinner]: 'Dinner',
-  [MealType.DrinksAndSnacks]: 'Drinks and snacks',
+  [MealType.DrinksAndSnacks]: 'Snacks',
 };
 
 const ageSchema = Yup.number()
@@ -155,4 +160,19 @@ export enum StorageKey {
 export interface Submission {
   data: FullFormModel;
   submissionTime: number;
+}
+
+export interface SummaryListAction {
+  name: string;
+  callback: () => void;
+}
+
+export interface SummaryListRow {
+  key: string;
+  value: React.ReactNode;
+  action: SummaryListAction;
+}
+
+export interface SummaryListProps {
+  data: SummaryListRow[];
 }
