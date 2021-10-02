@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button } from 'antd';
+import { useTranslation } from 'react-i18next';
+import { I18nKeys } from 'result/i18n-keys';
+import { getSubmissionBannerAckTime, setSubmissionBannerAckTime } from 'shared/store';
 import { Submission } from './models';
-import {
-  clearFormData,
-  clearSubmission,
-  getSubmissionBannerAckTime,
-  setSubmissionBannerAckTime,
-} from 'shared/store';
+import { SaveSubmissionFlagContext } from './saveSubmissionFlagContext';
 
 interface BannerProps {
   lastSubmission: Submission;
@@ -16,45 +14,61 @@ function shouldShowBanner(lastSubmission: Submission, lastBannerAckTime: number)
   if (!lastSubmission) {
     return false;
   }
-  if (!lastBannerAckTime) {
-    return true;
-  }
-  return lastSubmission.submissionTime > lastBannerAckTime;
-}
-
-function formatDate(date: number | Date): string {
-  return new Intl.DateTimeFormat().format(date);
+  return !lastBannerAckTime;
 }
 
 function LastSubmissionBanner({ lastSubmission }: BannerProps) {
+  const { t } = useTranslation();
   const bannerAckTime = getSubmissionBannerAckTime();
+  const { saveSubmissionFlag, setSaveSubmissionFlag } = useContext(SaveSubmissionFlagContext);
   const [showBanner, setShowBanner] = useState(shouldShowBanner(lastSubmission, bannerAckTime));
-  const handleClickOk = () => {
-    setShowBanner(false);
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  const handleClickYes = () => {
     setSubmissionBannerAckTime(Date.now());
+    setShowConfirmation(true);
   };
-  const handleClickReset = () => {
-    clearSubmission();
-    clearFormData();
-    window.location.href = '/';
+  const handleClickNo = () => {
+    setSaveSubmissionFlag(false);
+    setSubmissionBannerAckTime(Date.now());
+    setShowConfirmation(true);
   };
-  return !showBanner ? null : (
+  const hideBanner = () => setShowBanner(false);
+
+  if (!showBanner) {
+    return null;
+  }
+  return (
     <div className="last-submission-banner">
       <div className="width-container">
-        <div className="content">
-          <header>Data from last submission is restored</header>
-
-          <p>You submitted the form on {formatDate(lastSubmission.submissionTime)}.</p>
-
-          <div className="action-group">
-            <Button size="large" className="button" onClick={handleClickOk}>
-              Got it
-            </Button>
-            <Button size="large" className="button" onClick={handleClickReset}>
-              No, start fresh
-            </Button>
-          </div>
-        </div>
+        {showConfirmation ? (
+          <>
+            <p>
+              {t(
+                saveSubmissionFlag
+                  ? I18nKeys.KeepSubmissionConfirmation
+                  : I18nKeys.DoNotKeepSubmissionConfirmation
+              )}
+            </p>
+            <div className="action-group">
+              <Button size="large" htmlType="button" className="button" onClick={hideBanner}>
+                {t(I18nKeys.HideThisMessage)}
+              </Button>
+            </div>
+          </>
+        ) : (
+          <>
+            <header>{t(I18nKeys.LastSubmissionLoaded)}</header>
+            <p>{t(I18nKeys.BannerFirstParagraph)}</p>
+            <div className="action-group">
+              <Button size="large" htmlType="button" className="button" onClick={handleClickYes}>
+                {t(I18nKeys.BannerKeepSubmission)}
+              </Button>
+              <Button size="large" htmlType="button" className="button" onClick={handleClickNo}>
+                {t(I18nKeys.BannerDoNotKeepSubmission)}
+              </Button>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
