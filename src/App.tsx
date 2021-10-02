@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'shared/i18n';
 import { AllFormDataContextProvider } from 'shared/allFormDataContext';
+import PageTemplate from 'shared/PageTemplate';
 import Home from './home/Home';
 import Activity from './activity/Activity';
 import Goal from './goal/Goal';
@@ -23,23 +24,25 @@ function App() {
         <AllFormDataContextProvider saveSubmissionFlag={saveSubmissionFlag}>
           <LastSubmissionBanner lastSubmission={lastSubmission} />
           <Router>
-            <Switch>
-              <Route path="/" exact>
-                <Home />
-              </Route>
+            <PageTemplate>
+              <Switch>
+                <Route path="/" exact>
+                  <Home />
+                </Route>
 
-              <Route path="/activity">
-                <Activity />
-              </Route>
+                <Route path="/activity">
+                  <Activity />
+                </Route>
 
-              <Route path="/goal">
-                <Goal />
-              </Route>
+                <Route path="/goal">
+                  <Goal />
+                </Route>
 
-              <Route path="/result">
-                <Result />
-              </Route>
-            </Switch>
+                <Route path="/result">
+                  <Result />
+                </Route>
+              </Switch>
+            </PageTemplate>
           </Router>
         </AllFormDataContextProvider>
       </SaveSubmissionFlagContextProvider>

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { Redirect, useHistory, useLocation } from 'react-router-dom';
-import PageTemplate from 'shared/PageTemplate';
 import ActivityForm from './activity-form/ActivityForm';
 import { AllFormDataContext } from 'shared/allFormDataContext';
 import { isFormValid } from 'shared/utils';
@@ -15,21 +14,19 @@ function Activity() {
   const isPrevFormValid = isFormValid(formModel, PersonalInfoFormSchema);
 
   return isPrevFormValid ? (
-    <PageTemplate>
-      <div className="width-container">
-        <button
-          onClick={() => {
-            history.push('/');
-          }}
-          className="go-back-button"
-        >
-          <LeftOutlined className="icon" />
-          <span>Home</span>
-        </button>
+    <div className="width-container">
+      <button
+        onClick={() => {
+          history.push('/');
+        }}
+        className="go-back-button"
+      >
+        <LeftOutlined className="icon" />
+        <span>Home</span>
+      </button>
 
-        <ActivityForm />
-      </div>
-    </PageTemplate>
+      <ActivityForm />
+    </div>
   ) : (
     <Redirect
       to={{

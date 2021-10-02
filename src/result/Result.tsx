@@ -3,7 +3,6 @@ import { Redirect, useLocation } from 'react-router-dom';
 import ResultPage from './result-page/ResultPage';
 import { AllFormDataContext } from 'shared/allFormDataContext';
 import { FullFormSchema } from 'shared/models';
-import PageTemplate from 'shared/PageTemplate';
 import { isFormValid } from 'shared/utils';
 
 function Result() {
@@ -13,11 +12,9 @@ function Result() {
   const valid = isFormValid(formModel, FullFormSchema);
 
   return valid ? (
-    <PageTemplate>
-      <div className="width-container">
-        <ResultPage personInfo={formModel} />
-      </div>
-    </PageTemplate>
+    <div className="width-container">
+      <ResultPage personInfo={formModel} />
+    </div>
   ) : (
     <Redirect
       to={{
