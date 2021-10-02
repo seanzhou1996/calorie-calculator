@@ -6,11 +6,14 @@ import { useHistory } from 'react-router-dom';
 import { InputNumber, Radio } from 'shared/formik-antd';
 import {
   FullFormModel,
+  genderI18nKeys,
   PersonalInfoFormField as FormField,
   PersonalInfoFormModel as FormModel,
   PersonalInfoFormSchema,
 } from 'shared/models';
-import AllFormDataContext from 'shared/allFormDataContext';
+import { AllFormDataContext } from 'shared/allFormDataContext';
+import { useTranslation } from 'react-i18next';
+import { I18nKeys } from 'result/i18n-keys';
 
 const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
   const { age, gender, height, weight } = value;
@@ -23,6 +26,7 @@ const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
 };
 
 const PersonalInfoForm = () => {
+  const { t } = useTranslation();
   const { formModel, setFormModel } = useContext(AllFormDataContext);
   const initialValues: FormModel = getPersonalInfo(formModel);
 
@@ -53,7 +57,7 @@ const PersonalInfoForm = () => {
               )}
             >
               <label htmlFor="input_age" className="label">
-                Age
+                {t(I18nKeys.Age)}
               </label>
               <InputNumber
                 name={FormField.Age}
@@ -72,13 +76,13 @@ const PersonalInfoForm = () => {
                 errors.gender && touched.gender ? 'input-wrapper--error' : null
               )}
             >
-              <span className="label">Gender</span>
+              <span className="label">{t(I18nKeys.Gender)}</span>
               <Radio.Group name={FormField.Gender} size="large" className="control gender-control">
                 <Radio name={FormField.Gender} value="male" className="radio-button">
-                  Male
+                  {t(genderI18nKeys['male'])}
                 </Radio>
                 <Radio name={FormField.Gender} value="female" className="radio-button">
-                  Female
+                  {t(genderI18nKeys['female'])}
                 </Radio>
               </Radio.Group>
               <ErrorMessage component="span" name={FormField.Gender} className="error-message" />
@@ -91,7 +95,7 @@ const PersonalInfoForm = () => {
               )}
             >
               <label htmlFor="input_height" className="label">
-                Height
+                {t(I18nKeys.Height)}
               </label>
               <InputNumber
                 name={FormField.Height}
@@ -102,7 +106,7 @@ const PersonalInfoForm = () => {
                 size="large"
               />
               <div className="suffix">
-                <span>cm</span>
+                <span>{t(I18nKeys.Cm)}</span>
               </div>
               <ErrorMessage component="span" name={FormField.Height} className="error-message" />
             </div>
@@ -114,7 +118,7 @@ const PersonalInfoForm = () => {
               )}
             >
               <label htmlFor="input_weight" className="label">
-                Weight
+                {t(I18nKeys.Weight)}
               </label>
               <InputNumber
                 name={FormField.Weight}
@@ -125,7 +129,7 @@ const PersonalInfoForm = () => {
                 size="large"
               />
               <div className="suffix">
-                <span>kg</span>
+                <span>{t(I18nKeys.Kg)}</span>
               </div>
               <ErrorMessage component="span" name={FormField.Weight} className="error-message" />
             </div>
@@ -137,7 +141,7 @@ const PersonalInfoForm = () => {
               disabled={isSubmitting}
               className="submit-button"
             >
-              Continue
+              {t(I18nKeys.Continue)}
             </Button>
           </Form>
         )}

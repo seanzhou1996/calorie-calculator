@@ -1,22 +1,25 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { I18nKeys } from 'result/i18n-keys';
 import PageTemplate from 'shared/PageTemplate';
 import PersonalInfoForm from './personal-info-form/PersonalInfoForm';
 
 function Home() {
+  const { t } = useTranslation();
   return (
     <PageTemplate>
       <div className="width-container">
         <header>
-          <h1>Calorie calculator</h1>
+          <h1>{t(I18nKeys.CalorieCalculator)}</h1>
         </header>
         <div>
-          <p>Find out how many calories you need daily to</p>
+          <p>{t(I18nKeys.HomeFirstParagraph)}</p>
           <ul>
-            <li>maintain weight</li>
-            <li>gain muscle</li>
-            <li>lose fat</li>
+            <li>{t(I18nKeys.GainMuscle)}</li>
+            <li>{t(I18nKeys.LoseFat)}</li>
+            <li>{t(I18nKeys.MaintainWeight)}</li>
           </ul>
-          <p>To start, fill in the fields below.</p>
+          <p>{t(I18nKeys.HomeSecondParagraph)}</p>
         </div>
         <PersonalInfoForm />
       </div>

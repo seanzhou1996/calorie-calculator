@@ -1,10 +1,19 @@
+import { I18nKeys } from 'result/i18n-keys';
 import * as Yup from 'yup';
+
+export enum Language {
+  En = 'en',
+  Zh = 'zh',
+  ZhYue = 'zh-yue',
+}
+
+export const allLanguages = Object.values(Language);
 
 export type Gender = 'male' | 'female';
 
-export const genderLabels: Record<Gender, string> = {
-  male: 'Male',
-  female: 'Female',
+export const genderI18nKeys: Record<Gender, I18nKeys> = {
+  male: I18nKeys.Male,
+  female: I18nKeys.Female,
 };
 
 export enum PersonalInfoFormField {
@@ -155,6 +164,8 @@ export enum StorageKey {
   FormData = 'formData',
   Submission = 'submission',
   SubmissionBannerAckTime = 'SubmissionBannerAckTime',
+  Lang = 'lang',
+  StoreSubmissionFlag = 'storeSubmissionFlag',
 }
 
 export interface Submission {

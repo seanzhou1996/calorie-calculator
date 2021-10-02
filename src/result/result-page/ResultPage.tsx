@@ -2,7 +2,7 @@ import React from 'react';
 import { Collapse } from 'antd';
 import {
   activityLabels,
-  genderLabels,
+  genderI18nKeys,
   goalLabels,
   PersonInfo,
   SummaryListRow,
@@ -14,6 +14,7 @@ import { useHistory } from 'react-router';
 import SummaryList from 'shared/SummaryList';
 import { Link } from 'react-router-dom';
 import { ReactComponent as ArrowRightCircle } from 'assets/icon-arrow-right-circle.svg';
+import { useTranslation } from 'react-i18next';
 
 const { Panel } = Collapse;
 
@@ -39,6 +40,7 @@ interface CalorieResultProps {
 }
 
 function ResultPage({ personInfo }: CalorieResultProps) {
+  const { t } = useTranslation();
   const history = useHistory();
   const { age, gender, height, weight, activityLevel, goal } = personInfo;
   const bmr = computeBMR(age, gender, height, weight);
@@ -51,7 +53,7 @@ function ResultPage({ personInfo }: CalorieResultProps) {
       value: (
         <ul className="personal-info-list">
           <li>Age: {age}</li>
-          <li>Gender: {genderLabels[gender]}</li>
+          <li>Gender: {t(genderI18nKeys[gender])}</li>
           <li>Height: {height} cm</li>
           <li>Weight: {weight} kg</li>
         </ul>

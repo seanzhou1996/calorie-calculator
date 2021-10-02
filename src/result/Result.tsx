@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
 import ResultPage from './result-page/ResultPage';
-import AllFormDataContext from 'shared/allFormDataContext';
+import { AllFormDataContext } from 'shared/allFormDataContext';
 import { FullFormSchema } from 'shared/models';
 import PageTemplate from 'shared/PageTemplate';
 import { isFormValid } from 'shared/utils';
