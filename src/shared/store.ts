@@ -1,5 +1,14 @@
 import { FullFormModel, Submission, StorageKey } from './models';
 
+export function setStoreSubmissionFlag(saveSubmission: boolean): void {
+  localStorage.setItem(StorageKey.StoreSubmissionFlag, JSON.stringify(saveSubmission));
+}
+
+export function getStoreSubmissionFlag(): boolean {
+  const item = localStorage.getItem(StorageKey.StoreSubmissionFlag);
+  return !item ? true : JSON.parse(item);
+}
+
 export function setSubmission(data: FullFormModel, submissionTime: number): void {
   const submission: Submission = { data, submissionTime };
   localStorage.setItem(StorageKey.Submission, JSON.stringify(submission));
