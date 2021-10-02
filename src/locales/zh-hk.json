@@ -1,10 +1,10 @@
 {
   "Settings": "設定",
   "SaveSubmissionResults": "保留最近一次提交",
-  "SaveResultsParagraph": "你的提交將儲存於此設備。",
+  "SaveResultsParagraph": "我們將保留你的提交。",
   "DoNotSaveResultsParagraph": "你的提交將不獲保留。",
   "LastSubmissionLoaded": "已讀取上次提交的資料",
-  "BannerFirstParagraph": "你最近一次提交的資料可儲存於此設備。我們不會分享你的資料。",
+  "BannerFirstParagraph": "我們可以將你最近一次的提交儲存於此設備。我們不會分享你的資料。",
   "BannerKeepSubmission": "繼續儲存提交",
   "BannerDoNotKeepSubmission": "不要再儲存提交",
   "KeepSubmissionConfirmation": "你已選擇繼續儲存提交。你可隨時前往「設定」作出更改。",

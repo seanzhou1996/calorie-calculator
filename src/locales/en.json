@@ -1,10 +1,10 @@
 {
   "Settings": "Settings",
   "SaveSubmissionResults": "Keep most recent submission",
-  "SaveResultsParagraph": "Your submission will be kept on this device.",
-  "DoNotSaveResultsParagraph": "Your submission will not be kept.",
+  "SaveResultsParagraph": "We will keep your submissions.",
+  "DoNotSaveResultsParagraph": "Your submissions will not be kept.",
   "LastSubmissionLoaded": "Data from last submission is loaded",
-  "BannerFirstParagraph": "Your most recent submission can kept on this device. We won't share your data.",
+  "BannerFirstParagraph": "We can keep your most recent submission on this device. We won't share your data.",
   "BannerKeepSubmission": "Continue to keep submissions",
   "BannerDoNotKeepSubmission": "Don't keep future submissions",
   "KeepSubmissionConfirmation": "You've chosen to continue to keep submissions. You can make change in Settings at any time.",
