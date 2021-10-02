@@ -13,7 +13,7 @@ import {
   ActivityFormSchema,
   FullFormModel,
 } from 'shared/models';
-import AllFormDataContext from 'shared/allFormDataContext';
+import { AllFormDataContext } from 'shared/allFormDataContext';
 
 const { Panel } = Collapse;
 

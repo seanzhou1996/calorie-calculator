@@ -14,7 +14,8 @@ import {
 } from 'shared/models';
 
 import { setSubmission } from 'shared/store';
-import AllFormDataContext from 'shared/allFormDataContext';
+import { AllFormDataContext } from 'shared/allFormDataContext';
+import { SaveSubmissionFlagContext } from 'shared/saveSubmissionFlagContext';
 
 const allGoals = Object.values(GoalType);
 
@@ -24,6 +25,7 @@ const getGoalFormData: (values: FullFormModel) => FormModel = (values) => {
 
 export default function GoalForm() {
   const { formModel, setFormModel } = useContext(AllFormDataContext);
+  const { saveSubmissionFlag } = useContext(SaveSubmissionFlagContext);
   const history = useHistory();
   const initialValue: FormModel = getGoalFormData(formModel);
 
@@ -36,7 +38,7 @@ export default function GoalForm() {
   const handleSubmit: FormikConfig<FormModel>['onSubmit'] = (values, { setSubmitting }) => {
     const updatedFormModel = { ...formModel, ...values };
     setFormModel(updatedFormModel);
-    setSubmission(updatedFormModel, Date.now());
+    !saveSubmissionFlag ? null : setSubmission(updatedFormModel, Date.now());
     setSubmitting(false);
     history.push('/result');
   };

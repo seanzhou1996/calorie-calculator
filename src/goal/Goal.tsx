@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Redirect, useHistory, useLocation } from 'react-router-dom';
 import PageTemplate from 'shared/PageTemplate';
 import GoalForm from './goal-form/GoalForm';
-import AllFormDataContext from 'shared/allFormDataContext';
+import { AllFormDataContext } from 'shared/allFormDataContext';
 import { isFormValid } from 'shared/utils';
 import { ActivityFormSchema } from 'shared/models';
 import { LeftOutlined } from '@ant-design/icons';
