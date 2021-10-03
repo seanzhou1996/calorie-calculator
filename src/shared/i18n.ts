@@ -3,6 +3,7 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import en from 'locales/en.json';
 import zh from 'locales/zh-hk.json';
+import zhYue from 'locales/zh-yue.json';
 import { Language, allLanguages, StorageKey } from './models';
 
 enum Format {
@@ -10,9 +11,9 @@ enum Format {
 }
 
 const resources: Record<Language, ResourceLanguage> = {
-  en: { translation: en },
-  zh: { translation: zh },
-  'zh-yue': { translation: {} },
+  [Language.En]: { translation: en },
+  [Language.ZhHK]: { translation: zh },
+  [Language.ZhYue]: { translation: zhYue },
 };
 
 i18n
@@ -21,7 +22,6 @@ i18n
   .init({
     resources,
     supportedLngs: allLanguages,
-    nonExplicitSupportedLngs: true,
     detection: {
       order: ['localStorage', 'navigator'],
       lookupLocalStorage: StorageKey.Lang,

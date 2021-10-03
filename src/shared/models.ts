@@ -3,8 +3,8 @@ import * as Yup from 'yup';
 
 export enum Language {
   En = 'en',
-  Zh = 'zh',
-  ZhYue = 'zh-yue',
+  ZhHK = 'zh-HK',
+  ZhYue = 'zh-yue-HK',
 }
 
 export const allLanguages = Object.values(Language);
