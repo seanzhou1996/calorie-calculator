@@ -37,13 +37,11 @@ function ResultPage({ personInfo }: CalorieResultProps) {
     {
       name: t(I18nKeys.BigMac),
       icon: '🍔',
-      supInfo: t(I18nKeys.WithFriesAndCoke),
       calorie: 1080,
     },
     {
       name: t(I18nKeys.ChickenRice),
       icon: '🍚',
-      supInfo: t(I18nKeys.WithSkinAndSauce),
       calorie: 607,
     },
   ];
@@ -116,7 +114,7 @@ function ResultPage({ personInfo }: CalorieResultProps) {
         <header>{t(I18nKeys.CompareTitle)}</header>
         <p>{t(I18nKeys.YourTargetIsEquivalentTo)}</p>
         <div className="food-list">
-          {food.map(({ name, icon, supInfo, calorie }, index) => (
+          {food.map(({ name, icon, calorie }, index) => (
             <div key={index} className="food">
               <div className="food__header">
                 <span className="food__quantity">{targetToFood(target, calorie)} </span>
@@ -125,7 +123,6 @@ function ResultPage({ personInfo }: CalorieResultProps) {
               <div className="food__name">
                 <span className="food__icon">{icon}</span>
                 <span>{name}</span>
-                <div className="food__sup-info">{supInfo}</div>
               </div>
               <div className="food__calorie">
                 {t(I18nKeys.CaloriesPerServing_amount, { amount: calorie })}

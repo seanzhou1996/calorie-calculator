@@ -1,3 +1,13 @@
+:root {
+  --bold: 500;
+  text-align: justify;
+
+  &:lang(en) {
+    --bold: bold;
+    text-align: unset;
+  }
+}
+
 .error-message {
   font-weight: var(--bold);
   color: @error-color;
@@ -64,18 +74,18 @@
 
 .summary-list {
   .summary-list__row {
-    margin-bottom: 12px;
+    margin-bottom: 1rem;
     border-bottom: 1px solid @cc-grey-3;
   }
 
   .summary-list__key {
-    margin-bottom: 2px;
+    margin-bottom: 4px;
     font-weight: var(--bold);
   }
 
   .summary-list__value {
+    margin-bottom: 1em;
     font-size: 1rem;
-    margin-bottom: 16px;
   }
 
   .summary-list__action {
@@ -85,7 +95,6 @@
   .summary-list__button {
     .text-button();
 
-    line-height: 1;
     text-decoration: underline;
   }
 }
