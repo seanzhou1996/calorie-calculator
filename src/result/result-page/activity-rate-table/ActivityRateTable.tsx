@@ -1,7 +1,7 @@
 import { Table, TableProps } from 'antd';
 import { ColumnsType } from 'antd/es/table';
 import React from 'react';
-import { activityLabels, activityRates, ActivityLevel } from 'shared/models';
+import { activityLabelI18nKeys, activityRates, ActivityLevel } from 'shared/models';
 
 interface TableRow {
   activityLevel: string;
@@ -25,7 +25,7 @@ const tableColumns: ColumnsType<TableRow> = [
 ];
 const tableData: TableRow[] = allActivityTypes.map((type) => ({
   key: type,
-  activityLevel: activityLabels[type],
+  activityLevel: activityLabelI18nKeys[type],
   rate: activityRates[type],
 }));
 

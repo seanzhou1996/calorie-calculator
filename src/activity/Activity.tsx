@@ -5,8 +5,11 @@ import { AllFormDataContext } from 'shared/allFormDataContext';
 import { isFormValid } from 'shared/utils';
 import { PersonalInfoFormSchema } from 'shared/models';
 import { LeftOutlined } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
+import { I18nKeys } from 'result/i18n-keys';
 
 function Activity() {
+  const { t } = useTranslation();
   const history = useHistory();
   const { formModel } = useContext(AllFormDataContext);
   const location = useLocation();
@@ -22,7 +25,7 @@ function Activity() {
         className="go-back-button"
       >
         <LeftOutlined className="icon" />
-        <span>Home</span>
+        <span>{t(I18nKeys.Home)}</span>
       </button>
 
       <ActivityForm />

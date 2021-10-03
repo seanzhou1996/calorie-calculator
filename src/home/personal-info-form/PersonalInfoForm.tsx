@@ -67,7 +67,13 @@ const PersonalInfoForm = () => {
                 id="input_age"
                 className="control"
               />
-              <ErrorMessage component="span" name={FormField.Age} className="error-message" />
+              <ErrorMessage name={FormField.Age}>
+                {(key) => (
+                  <span className="error-message">
+                    {t(key, { field: t(I18nKeys.Age), max: 120, min: 18 })}
+                  </span>
+                )}
+              </ErrorMessage>
             </div>
 
             <div
@@ -85,7 +91,11 @@ const PersonalInfoForm = () => {
                   {t(genderI18nKeys['female'])}
                 </Radio>
               </Radio.Group>
-              <ErrorMessage component="span" name={FormField.Gender} className="error-message" />
+              <ErrorMessage name={FormField.Gender}>
+                {(key) => (
+                  <span className="error-message">{t(key, { field: t(I18nKeys.Gender) })}</span>
+                )}
+              </ErrorMessage>
             </div>
 
             <div
@@ -106,9 +116,15 @@ const PersonalInfoForm = () => {
                 size="large"
               />
               <div className="suffix">
-                <span>{t(I18nKeys.Cm)}</span>
+                <span>cm</span>
               </div>
-              <ErrorMessage component="span" name={FormField.Height} className="error-message" />
+              <ErrorMessage name={FormField.Height}>
+                {(key) => (
+                  <span className="error-message">
+                    {t(key, { field: t(I18nKeys.Height), max: '272 cm', min: '100 cm' })}
+                  </span>
+                )}
+              </ErrorMessage>
             </div>
 
             <div
@@ -129,9 +145,15 @@ const PersonalInfoForm = () => {
                 size="large"
               />
               <div className="suffix">
-                <span>{t(I18nKeys.Kg)}</span>
+                <span>kg</span>
               </div>
-              <ErrorMessage component="span" name={FormField.Weight} className="error-message" />
+              <ErrorMessage name={FormField.Weight}>
+                {(key) => (
+                  <span className="error-message">
+                    {t(key, { field: t(I18nKeys.Weight), max: '130 kg', min: '30 kg' })}
+                  </span>
+                )}
+              </ErrorMessage>
             </div>
 
             <Button

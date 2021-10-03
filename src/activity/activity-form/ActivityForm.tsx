@@ -8,12 +8,14 @@ import { Radio } from 'shared/formik-antd';
 import {
   ActivityFormModel as FormModel,
   ActivityFormField as FormField,
-  activityLabels,
+  activityLabelI18nKeys,
   ActivityLevel,
   ActivityFormSchema,
   FullFormModel,
 } from 'shared/models';
 import { AllFormDataContext } from 'shared/allFormDataContext';
+import { I18nKeys } from 'result/i18n-keys';
+import { useTranslation } from 'react-i18next';
 
 const { Panel } = Collapse;
 
@@ -21,15 +23,23 @@ const getActivityFormData: (values: FullFormModel) => FormModel = (values) => {
   return { activityLevel: values.activityLevel };
 };
 
+const exampleActivityI18nKeys: I18nKeys[] = [
+  I18nKeys.Jogging,
+  I18nKeys.Swimming,
+  I18nKeys.Tennis,
+  I18nKeys.Dancing,
+];
+
 const allActivityLevels = Object.values(ActivityLevel);
 
 export default function ActivityForm() {
+  const { t } = useTranslation();
   const { formModel, setFormModel } = useContext(AllFormDataContext);
   const history = useHistory();
   const initialValue: FormModel = getActivityFormData(formModel);
   const activityOptions = allActivityLevels.map((type) => (
     <Radio name={FormField.Level} key={type} value={type}>
-      {activityLabels[type]}
+      {t(activityLabelI18nKeys[type])}
     </Radio>
   ));
 
@@ -51,7 +61,7 @@ export default function ActivityForm() {
       {({ errors, touched, isSubmitting }) => (
         <Form name="activity-level" className="activity-form">
           <header>
-            <h1>How much exercise do you do per week?</h1>
+            <h1>{t(I18nKeys.ActivityPageTitle)}</h1>
           </header>
 
           <div className="hint">
@@ -64,23 +74,17 @@ export default function ActivityForm() {
             >
               <Panel
                 key={1}
-                header={<span className="hint__header">What counts?</span>}
+                header={<span className="hint__header">{t(I18nKeys.WhatCounts)}</span>}
                 className="hint__panel"
               >
                 <div className="hint__content">
-                  <p>
-                    Count all activities that make you breathe faster and feel warmer. For example:
-                  </p>
+                  <p>{t(I18nKeys.CountFirstParagraph)}</p>
                   <ul>
-                    <li>jogging</li>
-                    <li>swimming</li>
-                    <li>tennis</li>
-                    <li>dancing</li>
+                    {exampleActivityI18nKeys.map((key) => (
+                      <li key={key}>{t(I18nKeys[key]).toLowerCase()}</li>
+                    ))}
                   </ul>
-                  <p>
-                    If your work involves manual labor, count it so you can get more accurate
-                    results.
-                  </p>
+                  <p>{t(I18nKeys.CountSecondParagraph)}</p>
                 </div>
               </Panel>
             </Collapse>
@@ -107,7 +111,7 @@ export default function ActivityForm() {
             disabled={isSubmitting}
             className="submit-button"
           >
-            Continue
+            {t(I18nKeys.Continue)}
           </Button>
         </Form>
       )}

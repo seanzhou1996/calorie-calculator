@@ -1,9 +1,9 @@
 import React from 'react';
 import { Collapse } from 'antd';
 import {
-  activityLabels,
+  activityLabelI18nKeys,
   genderI18nKeys,
-  goalLabels,
+  goalLabelI18nKeys,
   PersonInfo,
   SummaryListRow,
 } from 'shared/models';
@@ -15,23 +15,9 @@ import SummaryList from 'shared/SummaryList';
 import { Link } from 'react-router-dom';
 import { ReactComponent as ArrowRightCircle } from 'assets/icon-arrow-right-circle.svg';
 import { useTranslation } from 'react-i18next';
+import { I18nKeys } from 'result/i18n-keys';
 
 const { Panel } = Collapse;
-
-const food = [
-  {
-    name: "McDonald's Big Mac combo",
-    icon: '🍔',
-    supInfo: 'With medium fries and medium coke',
-    calorie: 1080,
-  },
-  {
-    name: 'Hainanese chicken rice',
-    icon: '🍚',
-    supInfo: 'With skin and sauce',
-    calorie: 607,
-  },
-];
 
 const targetToFood = (target: number, calorie: number) => (target / calorie).toFixed(1);
 
@@ -47,35 +33,57 @@ function ResultPage({ personInfo }: CalorieResultProps) {
 
   // const tdee = computeTDEE(bmr, activityLevel);
   const target = computeTarget(bmr, activityLevel, goal);
+  const food = [
+    {
+      name: t(I18nKeys.BigMac),
+      icon: '🍔',
+      supInfo: t(I18nKeys.WithFriesAndCoke),
+      calorie: 1080,
+    },
+    {
+      name: t(I18nKeys.ChickenRice),
+      icon: '🍚',
+      supInfo: t(I18nKeys.WithSkinAndSauce),
+      calorie: 607,
+    },
+  ];
   const summaryListData: SummaryListRow[] = [
     {
-      key: '1. Personal details',
+      key: `1. ${t(I18nKeys.PersonalDetails)}`,
       value: (
         <ul className="personal-info-list">
-          <li>Age: {age}</li>
-          <li>Gender: {t(genderI18nKeys[gender])}</li>
-          <li>Height: {height} cm</li>
-          <li>Weight: {weight} kg</li>
+          <li>
+            {t(I18nKeys.Age)}: {age}
+          </li>
+          <li>
+            {t(I18nKeys.Gender)}: {t(genderI18nKeys[gender])}
+          </li>
+          <li>
+            {t(I18nKeys.Height)}: {height} cm
+          </li>
+          <li>
+            {t(I18nKeys.Weight)}: {weight} kg
+          </li>
         </ul>
       ),
       action: {
-        name: 'Change',
+        name: t(I18nKeys.Change),
         callback: () => history.push('/'),
       },
     },
     {
-      key: '2. How much exercise do you do per week?',
-      value: activityLabels[activityLevel],
+      key: `2. ${t(I18nKeys.ActivityPageTitle)}`,
+      value: t(activityLabelI18nKeys[activityLevel]),
       action: {
-        name: 'Change',
+        name: t(I18nKeys.Change),
         callback: () => history.push('/activity'),
       },
     },
     {
-      key: '3. What is your fitness goal?',
-      value: `To ${goalLabels[goal].toLowerCase()}`,
+      key: `3. ${t(I18nKeys.GoalPageTitle)}`,
+      value: t(I18nKeys.ToAchieveGoal_goal, { goal: t(goalLabelI18nKeys[goal]) }),
       action: {
-        name: 'Change',
+        name: t(I18nKeys.Change),
         callback: () => history.push('/goal'),
       },
     },
@@ -84,9 +92,9 @@ function ResultPage({ personInfo }: CalorieResultProps) {
   return (
     <div>
       <div className="result-panel">
-        <h1 className="title">Your calorie intake target</h1>
+        <h1 className="title">{t(I18nKeys.ResultsTitle)}</h1>
         <span className="number">{Math.round(target)}</span>
-        <span className="label">calories / day</span>
+        <span className="label">{t(I18nKeys.CaloriesPerDay)}</span>
       </div>
 
       <section className="page-section">
@@ -97,52 +105,51 @@ function ResultPage({ personInfo }: CalorieResultProps) {
             <li>dinner: 30%</li>
             <li>drinks and snacks: 20%</li>
           </ul> */}
-        <header>Planning your diet</header>
-        <p>Here is a guide to how you can spread your intake target throughout the day:</p>
+        <header>{t(I18nKeys.DietTitle)}</header>
+        <p>{t(I18nKeys.DietFirstParagraph)}</p>
         <MealTable calorieTarget={target} pagination={false} className="meal-table" />
-        <p>
-          Snack is anything you eat or drink between major meals. It could be an apple, an energy
-          bar, or a cup of milk.
-        </p>
-        <p>You can adjust these allocations as long as they add up to your daily target.</p>
+        <p>{t(I18nKeys.DietSecondParagraph)}</p>
+        <p>{t(I18nKeys.DietThirdParagraph)}</p>
       </section>
 
       <section className="page-section">
-        <header>Comparing your target to food</header>
-        <p>Your intake target is equivalent to</p>
+        <header>{t(I18nKeys.CompareTitle)}</header>
+        <p>{t(I18nKeys.YourTargetIsEquivalentTo)}</p>
         <div className="food-list">
           {food.map(({ name, icon, supInfo, calorie }, index) => (
             <div key={index} className="food">
               <div className="food__header">
                 <span className="food__quantity">{targetToFood(target, calorie)} </span>
-                <span>servings</span>
+                <span>{t(I18nKeys.Servings).toLowerCase()}</span>
               </div>
               <div className="food__name">
                 <span className="food__icon">{icon}</span>
                 <span>{name}</span>
                 <div className="food__sup-info">{supInfo}</div>
               </div>
-              <div className="food__calorie">{calorie} calories per serving</div>
+              <div className="food__calorie">
+                {t(I18nKeys.CaloriesPerServing_amount, { amount: calorie })}
+              </div>
             </div>
           ))}
         </div>
         <div className="action">
           <Link to="/" className="action__link">
             <ArrowRightCircle className="action__icon" />
-            <span>Check calories in other food</span>
+            <span>{t(I18nKeys.CheckCaloriesInOtherFood)}</span>
           </Link>
         </div>
       </section>
 
       <section className="page-section">
-        <header>Your answers</header>
+        <header>{t(I18nKeys.AnswersTitle)}</header>
         <button
           onClick={() => {
             history.push('/');
           }}
           className="start-again-button"
         >
-          <span>Start again</span>
+          <span>{t(I18nKeys.StartAgain)}</span>
         </button>
         <SummaryList data={summaryListData} />
       </section>

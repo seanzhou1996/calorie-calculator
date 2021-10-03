@@ -7,7 +7,7 @@ import { Radio } from 'shared/formik-antd';
 import {
   GoalFormModel as FormModel,
   GoalFormField as FormField,
-  goalLabels,
+  goalLabelI18nKeys,
   GoalType,
   GoalFormSchema,
   FullFormModel,
@@ -16,6 +16,8 @@ import {
 import { setSubmission } from 'shared/store';
 import { AllFormDataContext } from 'shared/allFormDataContext';
 import { SaveSubmissionFlagContext } from 'shared/saveSubmissionFlagContext';
+import { useTranslation } from 'react-i18next';
+import { I18nKeys } from 'result/i18n-keys';
 
 const allGoals = Object.values(GoalType);
 
@@ -24,6 +26,7 @@ const getGoalFormData: (values: FullFormModel) => FormModel = (values) => {
 };
 
 export default function GoalForm() {
+  const { t } = useTranslation();
   const { formModel, setFormModel } = useContext(AllFormDataContext);
   const { saveSubmissionFlag } = useContext(SaveSubmissionFlagContext);
   const history = useHistory();
@@ -31,7 +34,7 @@ export default function GoalForm() {
 
   const goalOptions = allGoals.map((goal) => (
     <Radio name={FormField.Goal} key={goal} value={goal}>
-      {goalLabels[goal].toLowerCase()}
+      {t(goalLabelI18nKeys[goal]).toLowerCase()}
     </Radio>
   ));
 
@@ -54,11 +57,11 @@ export default function GoalForm() {
       {({ errors, touched, isSubmitting }) => (
         <Form name="goal" className="goal-form">
           <header>
-            <h1>What is your fitness goal?</h1>
+            <h1>{t(I18nKeys.GoalPageTitle)}</h1>
           </header>
 
           <div className="hint">
-            <p>If you want to improve your body shape, think what you can do to achieve it.</p>
+            <p>{t(I18nKeys.GoalPageFirstParagraph)}</p>
           </div>
 
           <div
@@ -68,7 +71,7 @@ export default function GoalForm() {
               errors.goal && touched.goal && 'input-wrapper--error'
             )}
           >
-            <p className="element">I want to:</p>
+            <p className="element">{t(I18nKeys.IWantTo)}</p>
             <ErrorMessage component="span" name={FormField.Goal} className="error-message" />
             <Radio.Group name={FormField.Goal} size="large" className="element control">
               <Space direction="vertical" size={12}>
@@ -84,7 +87,7 @@ export default function GoalForm() {
             disabled={isSubmitting}
             className="submit-button"
           >
-            Submit
+            {t(I18nKeys.SeeResults)}
           </Button>
         </Form>
       )}

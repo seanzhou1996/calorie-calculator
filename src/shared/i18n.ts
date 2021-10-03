@@ -5,6 +5,10 @@ import en from 'locales/en.json';
 import zh from 'locales/zh-hk.json';
 import { Language, allLanguages, StorageKey } from './models';
 
+enum Format {
+  Lowercase = 'lowercase',
+}
+
 const resources: Record<Language, ResourceLanguage> = {
   en: { translation: en },
   zh: { translation: zh },
@@ -25,5 +29,12 @@ i18n
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
+      format: function (value: string, format?: string) {
+        switch (format) {
+          case Format.Lowercase:
+            return value.toLowerCase();
+        }
+        return value;
+      },
     },
   });

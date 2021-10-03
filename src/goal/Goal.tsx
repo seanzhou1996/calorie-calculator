@@ -5,8 +5,11 @@ import { AllFormDataContext } from 'shared/allFormDataContext';
 import { isFormValid } from 'shared/utils';
 import { ActivityFormSchema } from 'shared/models';
 import { LeftOutlined } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
+import { I18nKeys } from 'result/i18n-keys';
 
 function Goal() {
+  const { t } = useTranslation();
   const history = useHistory();
   const { formModel } = useContext(AllFormDataContext);
   const location = useLocation();
@@ -21,7 +24,7 @@ function Goal() {
         className="go-back-button"
       >
         <LeftOutlined className="icon" />
-        <span>Previous question</span>
+        <span>{t(I18nKeys.PreviousQuestion)}</span>
       </button>
       <GoalForm />
     </div>
