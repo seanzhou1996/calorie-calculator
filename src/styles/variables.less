@@ -23,7 +23,6 @@
 @primary-color: @cc-green;
 @text-color: @cc-black;
 @text-color-secondary: @cc-grey-1;
-
 @radio-focus-shadow: none;
 @radio-button-focus-shadow: none;
 @radio-size: 32px;
@@ -31,13 +30,18 @@
 @radio-border-width: 2px;
 @radio-dot-color: @cc-green;
 @radio-duration: 0.2s;
-
 @border-width-base: 2px;
 @border-color-base: @cc-grey-1;
 @border-radius-base: 6px;
-
 @btn-border-width: 1px;
-
 @body-background: @cc-grey-5;
-
 @table-font-size: 1rem;
+
+// font weight override
+:root {
+  --bold: 500;
+
+  &:lang(en) {
+    --bold: bold;
+  }
+}

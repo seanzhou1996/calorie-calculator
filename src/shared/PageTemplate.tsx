@@ -4,10 +4,11 @@ import { useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import { I18nKeys } from 'result/i18n-keys';
 import AppSettings from './AppSettings';
+import { setHtmlLang } from './utils';
 
 function PageTemplate({ children }: { children: React.ReactNode }) {
   const location = useLocation();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [showSettings, setShowSettings] = useState(false);
   const toggleSettings = () => setShowSettings(!showSettings);
 
@@ -16,6 +17,10 @@ function PageTemplate({ children }: { children: React.ReactNode }) {
       setShowSettings(false);
     }
   }, [location]);
+
+  useEffect(() => {
+    setHtmlLang(i18n.resolvedLanguage);
+  }, [i18n.resolvedLanguage]);
 
   return (
     <div className="page">

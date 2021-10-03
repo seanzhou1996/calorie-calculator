@@ -43,3 +43,7 @@ export const computeTarget: (
 export function isFormValid(values: FullFormModel, schema: Yup.AnySchema): boolean {
   return schema.isValidSync(values);
 }
+
+export function setHtmlLang(lang: string): void {
+  document.documentElement.lang = lang;
+}
