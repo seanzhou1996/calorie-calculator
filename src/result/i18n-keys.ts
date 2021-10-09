@@ -6,7 +6,7 @@ export enum I18nKeys {
   DoNotSaveResultsParagraph = 'DoNotSaveResultsParagraph',
 
   // Last submission banner
-  LastSubmissionLoaded = 'LastSubmissionLoaded',
+  DoYouWantToKeepSubmission = 'DoYouWantToKeepSubmission',
   BannerFirstParagraph = 'BannerFirstParagraph',
   BannerKeepSubmission = 'BannerKeepSubmission',
   BannerDoNotKeepSubmission = 'BannerDoNotKeepSubmission',

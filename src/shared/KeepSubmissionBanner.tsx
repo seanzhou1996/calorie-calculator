@@ -17,7 +17,7 @@ function shouldShowBanner(lastSubmission: Submission, lastBannerAckTime: number)
   return !lastBannerAckTime;
 }
 
-function LastSubmissionBanner({ lastSubmission }: BannerProps) {
+function KeepSubmissionBanner({ lastSubmission }: BannerProps) {
   const { t } = useTranslation();
   const bannerAckTime = getSubmissionBannerAckTime();
   const { saveSubmissionFlag, setSaveSubmissionFlag } = useContext(SaveSubmissionFlagContext);
@@ -57,7 +57,7 @@ function LastSubmissionBanner({ lastSubmission }: BannerProps) {
           </>
         ) : (
           <>
-            <header>{t(I18nKeys.LastSubmissionLoaded)}</header>
+            <header>{t(I18nKeys.DoYouWantToKeepSubmission)}</header>
             <p>{t(I18nKeys.BannerFirstParagraph)}</p>
             <div className="action-group">
               <Button size="large" htmlType="button" className="button" onClick={handleClickYes}>
@@ -74,4 +74,4 @@ function LastSubmissionBanner({ lastSubmission }: BannerProps) {
   );
 }
 
-export default LastSubmissionBanner;
+export default KeepSubmissionBanner;

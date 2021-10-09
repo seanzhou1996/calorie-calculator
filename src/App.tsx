@@ -10,7 +10,7 @@ import Activity from './activity/Activity';
 import Goal from './goal/Goal';
 import Result from './result/Result';
 import HowItWorks from 'HowItWorks';
-import LastSubmissionBanner from 'shared/LastSubmissionBanner';
+import KeepSubmissionBanner from 'shared/KeepSubmissionBanner';
 import UpdateDocumentLang from 'shared/UpdateDocumentLang';
 import { SaveSubmissionFlagContextProvider } from 'shared/saveSubmissionFlagContext';
 import { ConfigProvider } from 'antd';
@@ -25,7 +25,7 @@ function App() {
     <ConfigProvider autoInsertSpaceInButton={false}>
       <SaveSubmissionFlagContextProvider>
         <AllFormDataContextProvider saveSubmissionFlag={saveSubmissionFlag}>
-          <LastSubmissionBanner lastSubmission={lastSubmission} />
+          <KeepSubmissionBanner lastSubmission={lastSubmission} />
           <Router>
             <PageTemplate>
               <Switch>
