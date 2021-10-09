@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 
 export enum Language {
   En = 'en',
-  ZhHK = 'zh-HK',
+  ZhHk = 'zh-HK',
   ZhYue = 'zh-yue-HK',
 }
 

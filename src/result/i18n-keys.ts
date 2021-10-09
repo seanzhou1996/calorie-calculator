@@ -39,6 +39,7 @@ export enum I18nKeys {
   CalorieCalculator = 'CalorieCalculator',
   HomeFirstParagraph = 'HomeFirstParagraph',
   HomeSecondParagraph = 'HomeSecondParagraph',
+  HomeThirdParagraph = 'HomeThirdParagraph',
 
   // Activity
   Home = 'Home',
@@ -59,8 +60,10 @@ export enum I18nKeys {
   // Goal
   PreviousQuestion = 'PreviousQuestion',
   GoalPageTitle = 'GoalPageTitle',
+  WhyAreWeAsking = 'WhyAreWeAsking',
   GoalPageFirstParagraph = 'GoalPageFirstParagraph',
-  IWantTo = 'IWantTo',
+  GoalPageSecondParagraph = 'GoalPageSecondParagraph',
+  GoalPageThirdParagraph = 'GoalPageThirdParagraph',
   SeeResults = 'SeeResults',
 
   // Results
@@ -81,6 +84,8 @@ export enum I18nKeys {
   StartAgain = 'StartAgain',
   PersonalDetails = 'PersonalDetails',
   ToAchieveGoal_goal = 'ToAchieveGoal_goal',
+  HowWeCalculateTarget = 'HowWeCalculateTarget',
+  LearnHowCalculationWorks = 'LearnHowCalculationWorks',
 
   // Meal table
   Meal = 'Meal',
@@ -90,4 +95,43 @@ export enum I18nKeys {
   Lunch = 'Lunch',
   Dinner = 'Dinner',
   Snacks = 'Snacks',
+}
+
+export enum HowItWorksI18nKeys {
+  GoBackToResults = 'GoBackToResults',
+  Title = 'Title',
+  Intro = 'Intro',
+  CalculateBMR = 'CalculateBMR',
+  CalculateTDEE = 'CalculateTDEE',
+  CaterToFitnessGoal = 'CaterToFitnessGoal',
+  HowTo = 'HowTo',
+
+  // Step one
+  StepOneFirstPara = 'StepOneFirstPara',
+  StepOneSecondPara = 'StepOneSecondPara',
+  BMREquationName = 'BMREquationName',
+  ForMen = 'ForMen',
+  FOrWomen = 'ForWomen',
+  StepOneThirdPara = 'StepOneThirdPara',
+
+  // Step two
+  StepTwoFirstPara = 'StepTwoFirstPara',
+  TheBMR = 'TheBMR',
+  FoodThermicEffect = 'FoodThermicEffect',
+  ActivityThermicEffect = 'ActivityThermicEffect',
+  StepTwoSecondPara = 'StepTwoSecondPara',
+  StepTwoThirdPara = 'StepTwoThirdPara',
+  StepTwoFourthPara = 'StepTwoFourthPara',
+  ActivityLevelFactorTableName = 'ActivityLevelFactorTableName',
+  WeeklyExerciseAmount = 'WeeklyExerciseAmount',
+  ActivityLevelFactor = 'ActivityLevelFactor',
+
+  // Step three
+  StepThreeFirstPara = 'StepThreeFirstPara',
+  StepThreeSecondPara = 'StepThreeSecondPara',
+  WeightGainingExplanation = 'WeightGainingExplanation',
+  WeightLossExplanation = 'WeightLossExplanation',
+  StepThreeThirdPara = 'StepThreeThirdPara',
+  StepThreeFourthPara = 'StepThreeFourthPara',
+  StepThreeFifthPara = 'StepThreeFifthPara',
 }

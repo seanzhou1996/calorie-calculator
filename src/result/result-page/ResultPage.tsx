@@ -1,5 +1,4 @@
 import React from 'react';
-import { Collapse } from 'antd';
 import {
   activityLabelI18nKeys,
   genderI18nKeys,
@@ -8,7 +7,6 @@ import {
   SummaryListRow,
 } from 'shared/models';
 import { computeBMR, computeTarget } from 'shared/utils';
-import { ActivityRateTable } from './activity-rate-table/ActivityRateTable';
 import { MealTable } from './meal-table/MealTable';
 import { useHistory } from 'react-router';
 import SummaryList from 'shared/SummaryList';
@@ -16,8 +14,6 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as ArrowRightCircle } from 'assets/icon-arrow-right-circle.svg';
 import { useTranslation } from 'react-i18next';
 import { I18nKeys } from 'result/i18n-keys';
-
-const { Panel } = Collapse;
 
 const targetToFood = (target: number, calorie: number) => (target / calorie).toFixed(1);
 
@@ -139,6 +135,16 @@ function ResultPage({ personInfo }: CalorieResultProps) {
       </section>
 
       <section className="page-section">
+        <header>{t(I18nKeys.HowWeCalculateTarget)}</header>
+        <div className="action">
+          <Link to="/how-it-works" className="action__link">
+            <ArrowRightCircle className="action__icon" />
+            <span>{t(I18nKeys.LearnHowCalculationWorks)}</span>
+          </Link>
+        </div>
+      </section>
+
+      <section className="page-section">
         <header>{t(I18nKeys.AnswersTitle)}</header>
         <button
           onClick={() => {
@@ -150,40 +156,6 @@ function ResultPage({ personInfo }: CalorieResultProps) {
         </button>
         <SummaryList data={summaryListData} />
       </section>
-      <Collapse style={{ display: 'none' }} bordered={false}>
-        <Panel key={2} header="Learn how is calorie calculated">
-          <div>
-            <p>First, compute basal metabolic rate (BMR).</p>
-            <p>Mifflin-St Jeor Equation is used:</p>
-            <ul>
-              <li>
-                <span>For men:</span>
-                <pre>{'BMR = 10 * weight\n      + 6.25 * height\n      - 5 * age\n      + 5'}</pre>
-              </li>
-              <li>
-                <span>For women:</span>
-                <pre>
-                  {'BMR = 10 * weight\n      + 6.25 * height\n      - 5 * age\n      - 161'}
-                </pre>
-              </li>
-            </ul>
-            <p>Weight and height are in kg and cm, respectively.</p>
-            <p>
-              Then, obtain total daily energy expenditure (TDEE) by multiplying BMR with an activity
-              rate.
-            </p>
-            <pre className="tdee-equation">TDEE = BMR * activityRate</pre>
-            <p>Activity rate table:</p>
-            <ActivityRateTable pagination={false} className="activity-rate-table" />
-            <p>Lastly, adjust TDEE according to selected goal:</p>
-            <ul>
-              <li>Maintain weight: same as TDEE</li>
-              <li>Gain muscle: add 10%</li>
-              <li>Lose fat: reduce 10%</li>
-            </ul>
-          </div>
-        </Panel>
-      </Collapse>
     </div>
   );
 }
