@@ -1,11 +1,8 @@
-:root {
-  --bold: 500;
-  text-align: justify;
-
-  &:lang(en) {
-    --bold: bold;
-    text-align: unset;
-  }
+.width-container {
+  margin: 0 auto;
+  padding: 0 16px;
+  width: 100%;
+  max-width: 425px;
 }
 
 .error-message {
@@ -38,19 +35,15 @@
 }
 
 .go-back-button {
+  .text-button();
+
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  margin: 0 0 16px 0;
-  border: none;
-  padding: 0;
-  background: none;
-  color: @link-color;
-  cursor: pointer;
+  margin-bottom: 24px;
 
   &:hover {
     text-decoration: underline;
-    color: @link-hover-color;
   }
 
   .icon {
@@ -64,6 +57,7 @@
   padding: 0;
   border: none;
   font-size: 1rem;
+  background: none;
   color: @link-color;
   cursor: pointer;
 

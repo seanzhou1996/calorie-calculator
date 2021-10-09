@@ -10,14 +10,14 @@ function Home() {
       <header>
         <h1>{t(I18nKeys.CalorieCalculator)}</h1>
       </header>
-      <div>
+      <div className="home__intro">
         <p>{t(I18nKeys.HomeFirstParagraph)}</p>
         <ul>
-          <li>{t(I18nKeys.GainMuscle)}</li>
-          <li>{t(I18nKeys.LoseFat)}</li>
-          <li>{t(I18nKeys.MaintainWeight)}</li>
+          <li>{t(I18nKeys.GainMuscle).toLowerCase()}</li>
+          <li>{t(I18nKeys.LoseFat).toLowerCase()}</li>
         </ul>
         <p>{t(I18nKeys.HomeSecondParagraph)}</p>
+        <p>{t(I18nKeys.HomeThirdParagraph)}</p>
       </div>
       <PersonalInfoForm />
     </div>

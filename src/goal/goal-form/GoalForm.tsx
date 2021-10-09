@@ -1,4 +1,4 @@
-import { Button, Space } from 'antd';
+import { Button, Collapse, Space } from 'antd';
 import React, { useContext } from 'react';
 import { Formik, Form, FormikConfig, ErrorMessage } from 'formik';
 import classnames from 'classnames';
@@ -18,6 +18,9 @@ import { AllFormDataContext } from 'shared/allFormDataContext';
 import { SaveSubmissionFlagContext } from 'shared/saveSubmissionFlagContext';
 import { useTranslation } from 'react-i18next';
 import { I18nKeys } from 'result/i18n-keys';
+import { CaretRightFilled } from '@ant-design/icons';
+
+const { Panel } = Collapse;
 
 const allGoals = Object.values(GoalType);
 
@@ -34,7 +37,7 @@ export default function GoalForm() {
 
   const goalOptions = allGoals.map((goal) => (
     <Radio name={FormField.Goal} key={goal} value={goal}>
-      {t(goalLabelI18nKeys[goal]).toLowerCase()}
+      {t(I18nKeys.ToAchieveGoal_goal, { goal: t(goalLabelI18nKeys[goal]).toLowerCase() })}
     </Radio>
   ));
 
@@ -61,7 +64,25 @@ export default function GoalForm() {
           </header>
 
           <div className="hint">
-            <p>{t(I18nKeys.GoalPageFirstParagraph)}</p>
+            <Collapse
+              ghost
+              className="hint__expander"
+              expandIcon={({ isActive }) => (
+                <CaretRightFilled rotate={isActive ? 90 : 0} className="hint__expand-icon" />
+              )}
+            >
+              <Panel
+                key={1}
+                header={<span className="hint__header">{t(I18nKeys.WhyAreWeAsking)}</span>}
+                className="hint__panel"
+              >
+                <div className="hint__content">
+                  <p>{t(I18nKeys.GoalPageFirstParagraph)}</p>
+                  <p>{t(I18nKeys.GoalPageSecondParagraph)}</p>
+                  <p>{t(I18nKeys.GoalPageThirdParagraph)}</p>
+                </div>
+              </Panel>
+            </Collapse>
           </div>
 
           <div
@@ -71,7 +92,6 @@ export default function GoalForm() {
               errors.goal && touched.goal && 'input-wrapper--error'
             )}
           >
-            <p className="element">{t(I18nKeys.IWantTo)}</p>
             <ErrorMessage component="span" name={FormField.Goal} className="error-message" />
             <Radio.Group name={FormField.Goal} size="large" className="element control">
               <Space direction="vertical" size={12}>

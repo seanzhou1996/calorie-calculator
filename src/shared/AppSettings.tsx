@@ -12,7 +12,7 @@ interface AppSettingsProps {
 
 const languageLabels: Record<Language, string> = {
   [Language.En]: 'English',
-  [Language.ZhHK]: '繁體中文',
+  [Language.ZhHk]: '繁體中文',
   [Language.ZhYue]: '粵語（香港）',
 };
 
