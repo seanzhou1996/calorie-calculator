@@ -44,6 +44,10 @@ export function isFormValid(values: FullFormModel, schema: Yup.AnySchema): boole
   return schema.isValidSync(values);
 }
 
-export function setHtmlLang(lang: string): void {
-  document.documentElement.lang = lang;
+export function formatDate(date: number | Date): string {
+  return new Intl.DateTimeFormat().format(date);
+}
+
+export function getLocaleTime(date: number | Date): string {
+  return new Intl.DateTimeFormat([], { timeStyle: 'short' }).format(date);
 }

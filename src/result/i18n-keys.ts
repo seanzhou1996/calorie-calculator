@@ -35,6 +35,12 @@ export enum I18nKeys {
   MaximumInput_field_max = 'MaximumInput_field_max',
   MinimumInput_field_min = 'MinimumInput_field_min',
 
+  // Result notification
+  ResultsAvailable = 'ResultsAvailable',
+  YouCompletedFormToday_time = 'YouCompletedFormToday_time',
+  YouCompletedFormOnDate_date = 'YouCompletedFormOnDate_date',
+  ViewResults = 'ViewResults',
+
   // Home
   CalorieCalculator = 'CalorieCalculator',
   HomeFirstParagraph = 'HomeFirstParagraph',
