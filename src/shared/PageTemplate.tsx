@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import { I18nKeys } from 'result/i18n-keys';
 import AppSettings from './AppSettings';
-import { setHtmlLang } from './utils';
 
 function PageTemplate({ children }: { children: React.ReactNode }) {
   const location = useLocation();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [showSettings, setShowSettings] = useState(false);
   const toggleSettings = () => setShowSettings(!showSettings);
 
@@ -18,16 +17,14 @@ function PageTemplate({ children }: { children: React.ReactNode }) {
     }
   }, [location]);
 
-  useEffect(() => {
-    setHtmlLang(i18n.resolvedLanguage);
-  }, [i18n.resolvedLanguage]);
-
   return (
     <div className="page">
       <header className="page-header">
         <div className="width-container">
           <div className="page-header__inner">
-            <div className="app-logo">{t(I18nKeys.CalorieCalculator)}</div>
+            <Link to="/" className="page-header__link">
+              <div className="app-logo">{t(I18nKeys.CalorieCalculator)}</div>
+            </Link>
             <button
               className={classNames('toggle-settings-button', showSettings ? 'open' : null)}
               onClick={toggleSettings}

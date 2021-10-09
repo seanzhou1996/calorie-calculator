@@ -11,6 +11,7 @@ import Goal from './goal/Goal';
 import Result from './result/Result';
 import HowItWorks from 'HowItWorks';
 import LastSubmissionBanner from 'shared/LastSubmissionBanner';
+import UpdateDocumentLang from 'shared/UpdateDocumentLang';
 import { SaveSubmissionFlagContextProvider } from 'shared/saveSubmissionFlagContext';
 import { ConfigProvider } from 'antd';
 
@@ -51,6 +52,7 @@ function App() {
             </PageTemplate>
             <ScrollToTop />
           </Router>
+          <UpdateDocumentLang />
         </AllFormDataContextProvider>
       </SaveSubmissionFlagContextProvider>
     </ConfigProvider>
