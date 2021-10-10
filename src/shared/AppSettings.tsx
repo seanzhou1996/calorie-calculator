@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { RadioChangeEvent, Radio, Switch } from 'antd';
 import { I18nKeys } from 'result/i18n-keys';
 import { ReactComponent as CloseIcon } from 'assets/icon-close.svg';
-import { allLanguages, Language, StorageKey } from './models';
+import { allLanguages, Language } from './models';
 import { SaveSubmissionFlagContext } from './saveSubmissionFlagContext';
 
 interface AppSettingsProps {
@@ -22,7 +22,6 @@ function AppSettings({ onClose }: AppSettingsProps) {
   const handleChangeLanguage = (event: RadioChangeEvent) => {
     const lang = event.target.value;
     i18n.changeLanguage(lang);
-    localStorage.setItem(StorageKey.Lang, lang);
   };
 
   return (

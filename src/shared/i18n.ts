@@ -7,7 +7,7 @@ import zhYue from 'locales/zh-yue.json';
 import howItWorksEn from 'locales/how-it-works/en.json';
 import howItWorksZh from 'locales/how-it-works/zh-hk.json';
 import howItWorksZhYue from 'locales/how-it-works/zh-yue.json';
-import { Language, allLanguages, StorageKey } from './models';
+import { Language, StorageKey } from './models';
 
 enum Format {
   Lowercase = 'lowercase',
@@ -27,7 +27,6 @@ i18n
     ns: ['general', 'how-it-works'],
     defaultNS: 'general',
     fallbackNS: ['how-it-works'],
-    supportedLngs: allLanguages,
     detection: {
       order: ['localStorage', 'navigator'],
       lookupLocalStorage: StorageKey.Lang,
