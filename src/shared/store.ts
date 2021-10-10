@@ -1,12 +1,12 @@
-import { FullFormModel, Submission, StorageKey } from './models';
+import { FullFormModel, Submission, StorageKey, FormState } from './models';
 
 export function setStoreSubmissionFlag(saveSubmission: boolean): void {
   localStorage.setItem(StorageKey.StoreSubmissionFlag, JSON.stringify(saveSubmission));
 }
 
-export function getStoreSubmissionFlag(): boolean {
+export function getStoreSubmissionFlag(): boolean | null {
   const item = localStorage.getItem(StorageKey.StoreSubmissionFlag);
-  return !item ? true : JSON.parse(item);
+  return !item ? null : JSON.parse(item);
 }
 
 export function setSubmission(data: FullFormModel, submissionTime: number): void {
@@ -23,24 +23,30 @@ export function clearSubmission(): void {
   localStorage.removeItem(StorageKey.Submission);
 }
 
-export function setFormData(value: FullFormModel): void {
-  sessionStorage.setItem(StorageKey.FormData, JSON.stringify(value));
+export function setInMemorySubmission(data: FullFormModel, submissionTime: number): void {
+  const submission: Submission = { data, submissionTime };
+  sessionStorage.setItem(StorageKey.Submission, JSON.stringify(submission));
 }
 
-export function getFormData(): FullFormModel {
-  const item = sessionStorage.getItem(StorageKey.FormData);
+export function getInMemorySubmission(): Submission {
+  const item = sessionStorage.getItem(StorageKey.Submission);
   return !item ? null : JSON.parse(item);
 }
 
-export function clearFormData(): void {
-  sessionStorage.removeItem(StorageKey.FormData);
+export function clearInMemorySubmission(): void {
+  sessionStorage.removeItem(StorageKey.Submission);
 }
 
-export function setSubmissionBannerAckTime(time: number): void {
-  localStorage.setItem(StorageKey.SubmissionBannerAckTime, time.toString());
+export function setInMemoryFormState(value: FullFormModel, updatedAt: number): void {
+  const formData: FormState = { formData: value, updatedAt };
+  sessionStorage.setItem(StorageKey.FormState, JSON.stringify(formData));
 }
 
-export function getSubmissionBannerAckTime(): number {
-  const item = localStorage.getItem(StorageKey.SubmissionBannerAckTime);
+export function getInMemoryFormState(): FormState {
+  const item = sessionStorage.getItem(StorageKey.FormState);
   return !item ? null : JSON.parse(item);
+}
+
+export function clearInMemoryFormState(): void {
+  sessionStorage.removeItem(StorageKey.FormState);
 }

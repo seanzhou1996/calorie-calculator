@@ -2,34 +2,22 @@ import React, { useContext, useState } from 'react';
 import { Button } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { I18nKeys } from 'result/i18n-keys';
-import { getSubmissionBannerAckTime, setSubmissionBannerAckTime } from 'shared/store';
-import { Submission } from './models';
 import { SaveSubmissionFlagContext } from './saveSubmissionFlagContext';
+import { SubmissionContext } from './SubmissionContext';
 
-interface BannerProps {
-  lastSubmission: Submission;
-}
-
-function shouldShowBanner(lastSubmission: Submission, lastBannerAckTime: number): boolean {
-  if (!lastSubmission) {
-    return false;
-  }
-  return !lastBannerAckTime;
-}
-
-function KeepSubmissionBanner({ lastSubmission }: BannerProps) {
+function KeepSubmissionBanner() {
   const { t } = useTranslation();
-  const bannerAckTime = getSubmissionBannerAckTime();
   const { saveSubmissionFlag, setSaveSubmissionFlag } = useContext(SaveSubmissionFlagContext);
-  const [showBanner, setShowBanner] = useState(shouldShowBanner(lastSubmission, bannerAckTime));
+  const { submission } = useContext(SubmissionContext);
+  const [showBanner, setShowBanner] = useState(submission && saveSubmissionFlag === null);
   const [showConfirmation, setShowConfirmation] = useState(false);
+
   const handleClickYes = () => {
-    setSubmissionBannerAckTime(Date.now());
+    setSaveSubmissionFlag(true);
     setShowConfirmation(true);
   };
   const handleClickNo = () => {
     setSaveSubmissionFlag(false);
-    setSubmissionBannerAckTime(Date.now());
     setShowConfirmation(true);
   };
   const hideBanner = () => setShowBanner(false);

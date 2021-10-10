@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Redirect, useHistory, useLocation } from 'react-router-dom';
 import GoalForm from './goal-form/GoalForm';
-import { AllFormDataContext } from 'shared/allFormDataContext';
+import { FormStateContext } from 'shared/FormStateContext';
 import { isFormValid } from 'shared/utils';
 import { ActivityFormSchema } from 'shared/models';
 import { LeftOutlined } from '@ant-design/icons';
@@ -11,9 +11,11 @@ import { I18nKeys } from 'result/i18n-keys';
 function Goal() {
   const { t } = useTranslation();
   const history = useHistory();
-  const { formModel } = useContext(AllFormDataContext);
+  const {
+    formState: { formData },
+  } = useContext(FormStateContext);
   const location = useLocation();
-  const isPrevFormValid = isFormValid(formModel, ActivityFormSchema);
+  const isPrevFormValid = isFormValid(formData, ActivityFormSchema);
 
   return isPrevFormValid ? (
     <div className="width-container">

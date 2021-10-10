@@ -93,6 +93,11 @@ export const emptyFormModel: FullFormModel = {
   goal: null,
 };
 
+export interface FormState {
+  formData: FullFormModel;
+  updatedAt: number;
+}
+
 export type PersonInfo = FullFormModel;
 
 export enum MealType {
@@ -161,9 +166,8 @@ export const FullFormSchema = Yup.object().shape({
 });
 
 export enum StorageKey {
-  FormData = 'formData',
+  FormState = 'formState',
   Submission = 'submission',
-  SubmissionBannerAckTime = 'SubmissionBannerAckTime',
   Lang = 'lang',
   StoreSubmissionFlag = 'storeSubmissionFlag',
 }

@@ -13,7 +13,7 @@ import {
   ActivityFormSchema,
   FullFormModel,
 } from 'shared/models';
-import { AllFormDataContext } from 'shared/allFormDataContext';
+import { FormStateContext } from 'shared/FormStateContext';
 import { I18nKeys } from 'result/i18n-keys';
 import { useTranslation } from 'react-i18next';
 
@@ -34,9 +34,12 @@ const allActivityLevels = Object.values(ActivityLevel);
 
 export default function ActivityForm() {
   const { t } = useTranslation();
-  const { formModel, setFormModel } = useContext(AllFormDataContext);
+  const {
+    formState: { formData },
+    updateFormState,
+  } = useContext(FormStateContext);
   const history = useHistory();
-  const initialValue: FormModel = getActivityFormData(formModel);
+  const initialValue: FormModel = getActivityFormData(formData);
   const activityOptions = allActivityLevels.map((type) => (
     <Radio name={FormField.Level} key={type} value={type}>
       {t(activityLabelI18nKeys[type])}
@@ -44,8 +47,7 @@ export default function ActivityForm() {
   ));
 
   const handleSubmit: FormikConfig<FormModel>['onSubmit'] = (values, { setSubmitting }) => {
-    const updatedFormModel = { ...formModel, ...values };
-    setFormModel(updatedFormModel);
+    updateFormState({ ...formData, ...values }, Date.now());
     setSubmitting(false);
     history.push('/goal');
   };

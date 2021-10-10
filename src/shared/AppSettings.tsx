@@ -54,13 +54,13 @@ function AppSettings({ onClose }: AppSettingsProps) {
           <div className="setting__name">{t(I18nKeys.SaveSubmissionResults)}</div>
           <div className="setting__content">
             <Switch
-              checked={saveSubmissionFlag}
+              checked={saveSubmissionFlag !== false}
               onChange={setSaveSubmissionFlag}
               className="toggle-keep-submission"
             />
             <span>
               {t(
-                saveSubmissionFlag
+                saveSubmissionFlag !== false
                   ? I18nKeys.SaveResultsParagraph
                   : I18nKeys.DoNotSaveResultsParagraph
               )}

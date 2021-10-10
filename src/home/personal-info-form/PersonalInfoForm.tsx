@@ -3,6 +3,7 @@ import { Button } from 'antd';
 import { Formik, Form, FormikConfig, ErrorMessage } from 'formik';
 import classnames from 'classnames';
 import { useHistory } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { InputNumber, Radio } from 'shared/formik-antd';
 import {
   FullFormModel,
@@ -11,8 +12,7 @@ import {
   PersonalInfoFormModel as FormModel,
   PersonalInfoFormSchema,
 } from 'shared/models';
-import { AllFormDataContext } from 'shared/allFormDataContext';
-import { useTranslation } from 'react-i18next';
+import { FormStateContext } from 'shared/FormStateContext';
 import { I18nKeys } from 'result/i18n-keys';
 
 const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
@@ -27,14 +27,16 @@ const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
 
 const PersonalInfoForm = () => {
   const { t } = useTranslation();
-  const { formModel, setFormModel } = useContext(AllFormDataContext);
-  const initialValues: FormModel = getPersonalInfo(formModel);
+  const {
+    formState: { formData },
+    updateFormState,
+  } = useContext(FormStateContext);
+  const initialValues: FormModel = getPersonalInfo(formData);
 
   const history = useHistory();
 
   const handleSubmit: FormikConfig<FormModel>['onSubmit'] = (values, { setSubmitting }) => {
-    const updatedFormModel = { ...formModel, ...values };
-    setFormModel(updatedFormModel);
+    updateFormState({ ...formData, ...values }, Date.now());
     setSubmitting(false);
     history.push('/activity');
   };

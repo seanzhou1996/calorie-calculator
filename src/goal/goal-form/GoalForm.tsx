@@ -13,12 +13,11 @@ import {
   FullFormModel,
 } from 'shared/models';
 
-import { setSubmission } from 'shared/store';
-import { AllFormDataContext } from 'shared/allFormDataContext';
-import { SaveSubmissionFlagContext } from 'shared/saveSubmissionFlagContext';
+import { FormStateContext } from 'shared/FormStateContext';
 import { useTranslation } from 'react-i18next';
 import { I18nKeys } from 'result/i18n-keys';
 import { CaretRightFilled } from '@ant-design/icons';
+import { SubmissionContext } from 'shared/SubmissionContext';
 
 const { Panel } = Collapse;
 
@@ -30,10 +29,13 @@ const getGoalFormData: (values: FullFormModel) => FormModel = (values) => {
 
 export default function GoalForm() {
   const { t } = useTranslation();
-  const { formModel, setFormModel } = useContext(AllFormDataContext);
-  const { saveSubmissionFlag } = useContext(SaveSubmissionFlagContext);
+  const {
+    formState: { formData },
+    updateFormState,
+  } = useContext(FormStateContext);
+  const { updateSubmission } = useContext(SubmissionContext);
   const history = useHistory();
-  const initialValue: FormModel = getGoalFormData(formModel);
+  const initialValue: FormModel = getGoalFormData(formData);
 
   const goalOptions = allGoals.map((goal) => (
     <Radio name={FormField.Goal} key={goal} value={goal}>
@@ -42,9 +44,10 @@ export default function GoalForm() {
   ));
 
   const handleSubmit: FormikConfig<FormModel>['onSubmit'] = (values, { setSubmitting }) => {
-    const updatedFormModel = { ...formModel, ...values };
-    setFormModel(updatedFormModel);
-    !saveSubmissionFlag ? null : setSubmission(updatedFormModel, Date.now());
+    const submissionTime = Date.now();
+    const updatedFormData = { ...formData, ...values };
+    updateFormState(updatedFormData, submissionTime);
+    updateSubmission(updatedFormData, submissionTime);
     setSubmitting(false);
     history.push('/result');
   };

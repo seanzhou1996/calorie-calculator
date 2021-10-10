@@ -5,18 +5,18 @@ import { I18nKeys } from 'result/i18n-keys';
 import { formatDate, getLocaleTime } from 'shared/utils';
 import { useHistory } from 'react-router';
 import { SaveSubmissionFlagContext } from 'shared/saveSubmissionFlagContext';
-import { getSubmission } from 'shared/store';
+import { SubmissionContext } from 'shared/SubmissionContext';
 
 function ResultNotification() {
+  const { t } = useTranslation();
+  const history = useHistory();
   const { saveSubmissionFlag } = useContext(SaveSubmissionFlagContext);
-  const latestSubmission = getSubmission();
+  const { submission: latestSubmission } = useContext(SubmissionContext);
 
-  if (!saveSubmissionFlag || !latestSubmission) {
+  if (saveSubmissionFlag !== true || !latestSubmission) {
     return null;
   }
 
-  const { t } = useTranslation();
-  const history = useHistory();
   const { submissionTime } = latestSubmission;
   const isToday = formatDate(Date.now()) === formatDate(submissionTime);
 

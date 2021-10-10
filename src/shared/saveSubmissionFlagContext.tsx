@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { clearSubmission, getStoreSubmissionFlag, setStoreSubmissionFlag } from './store';
+import React, { useEffect, useState } from 'react';
+import { getStoreSubmissionFlag, setStoreSubmissionFlag } from './store';
 
 interface SaveSubmissionFlagContextType {
-  saveSubmissionFlag: boolean;
+  saveSubmissionFlag: boolean | null;
   setSaveSubmissionFlag: (save: boolean) => void;
 }
 
@@ -20,15 +20,14 @@ export const SaveSubmissionFlagContext = React.createContext<SaveSubmissionFlagC
 export const SaveSubmissionFlagContextProvider = ({
   children,
 }: SaveSubmissionFlagContextProviderProps) => {
-  const [saveSubmissionFlag, setFlag] = useState(getStoreSubmissionFlag());
+  const [saveSubmissionFlag, setSaveSubmissionFlag] = useState(getStoreSubmissionFlag());
 
-  const setSaveSubmissionFlag = (save: boolean) => {
-    setFlag(save);
-    setStoreSubmissionFlag(save);
-    if (!save) {
-      clearSubmission();
+  useEffect(() => {
+    if (saveSubmissionFlag === null) {
+      return;
     }
-  };
+    setStoreSubmissionFlag(saveSubmissionFlag);
+  }, [saveSubmissionFlag]);
 
   return (
     <SaveSubmissionFlagContext.Provider
