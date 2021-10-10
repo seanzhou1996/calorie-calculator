@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, Space, Collapse } from 'antd';
+import { Space, Collapse } from 'antd';
 import { CaretRightFilled } from '@ant-design/icons';
 import { Formik, Form, FormikConfig, ErrorMessage } from 'formik';
 import classnames from 'classnames';
@@ -16,6 +16,7 @@ import {
 import { FormStateContext } from 'shared/FormStateContext';
 import { I18nKeys } from 'result/i18n-keys';
 import { useTranslation } from 'react-i18next';
+import SubmitButton from 'shared/SubmitButton';
 
 const { Panel } = Collapse;
 
@@ -60,7 +61,7 @@ export default function ActivityForm() {
       validateOnBlur
       validateOnChange
     >
-      {({ errors, touched, isSubmitting }) => (
+      {({ errors, touched }) => (
         <Form name="activity-level" className="activity-form">
           <header>
             <h1>{t(I18nKeys.ActivityPageTitle)}</h1>
@@ -106,15 +107,7 @@ export default function ActivityForm() {
             </Radio.Group>
           </div>
 
-          <Button
-            type="primary"
-            htmlType="submit"
-            size="large"
-            disabled={isSubmitting}
-            className="submit-button"
-          >
-            {t(I18nKeys.Continue)}
-          </Button>
+          <SubmitButton<FormModel> redirectTo="/goal">{t(I18nKeys.Continue)}</SubmitButton>
         </Form>
       )}
     </Formik>

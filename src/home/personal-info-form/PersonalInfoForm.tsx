@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { Button } from 'antd';
 import { Formik, Form, FormikConfig, ErrorMessage } from 'formik';
 import classnames from 'classnames';
 import { useHistory } from 'react-router-dom';
@@ -14,6 +13,7 @@ import {
 } from 'shared/models';
 import { FormStateContext } from 'shared/FormStateContext';
 import { I18nKeys } from 'result/i18n-keys';
+import SubmitButton from 'shared/SubmitButton';
 
 const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
   const { age, gender, height, weight } = value;
@@ -25,7 +25,7 @@ const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
   };
 };
 
-const PersonalInfoForm = () => {
+function PersonalInfoForm() {
   const { t } = useTranslation();
   const {
     formState: { formData },
@@ -50,7 +50,7 @@ const PersonalInfoForm = () => {
         validateOnBlur
         validateOnChange
       >
-        {({ errors, touched, isSubmitting }) => (
+        {({ errors, touched }) => (
           <Form name="personal-info" className="personal-info-form">
             <div
               className={classnames(
@@ -158,20 +158,12 @@ const PersonalInfoForm = () => {
               </ErrorMessage>
             </div>
 
-            <Button
-              type="primary"
-              htmlType="submit"
-              size="large"
-              disabled={isSubmitting}
-              className="submit-button"
-            >
-              {t(I18nKeys.Continue)}
-            </Button>
+            <SubmitButton<FormModel> redirectTo="/activity">{t(I18nKeys.Continue)}</SubmitButton>
           </Form>
         )}
       </Formik>
     </div>
   );
-};
+}
 
 export default PersonalInfoForm;

@@ -72,6 +72,11 @@ export enum I18nKeys {
   GoalPageThirdParagraph = 'GoalPageThirdParagraph',
   SeeResults = 'SeeResults',
 
+  // Input change notification
+  YouHaveUnsubmittedData = 'YouHaveUnsubmittedData',
+  NotificationFirstPara = 'NotificationFirstPara',
+  GoBack = 'GoBack',
+
   // Results
   ResultsTitle = 'ResultsTitle',
   CaloriesPerDay = 'CaloriesPerDay',

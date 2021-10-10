@@ -81,5 +81,8 @@
   "Dinner": "Dinner",
   "Snacks": "Snacks",
   "HowWeCalculateTarget": "How we calculate your target",
-  "LearnHowCalculationWorks": "Learn how the calculation works"
+  "LearnHowCalculationWorks": "Learn how the calculation works",
+  "YouHaveUnsubmittedData": "You have unsubmitted data",
+  "NotificationFirstPara": "The following content may be outdated. Please submit the form to get the latest results.",
+  "GoBack": "Go back"
 }

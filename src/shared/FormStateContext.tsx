@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { emptyFormModel, FormState, FullFormModel } from './models';
 import { getInMemoryFormState, setInMemoryFormState } from './store';
 
+type UpdateFormState = (formData: FullFormModel, updatedAt: number) => void;
+
 interface FormStateContextType {
   formState: FormState;
-  updateFormState: (formData: FullFormModel, updatedAt: number) => void;
+  updateFormState: UpdateFormState;
 }
 
 export const FormStateContext = React.createContext<FormStateContextType>({

@@ -46,7 +46,9 @@ export default function GoalForm() {
   const handleSubmit: FormikConfig<FormModel>['onSubmit'] = (values, { setSubmitting }) => {
     const submissionTime = Date.now();
     const updatedFormData = { ...formData, ...values };
-    updateFormState(updatedFormData, submissionTime);
+    if (values[FormField.Goal] !== initialValue[FormField.Goal]) {
+      updateFormState(updatedFormData, submissionTime);
+    }
     updateSubmission(updatedFormData, submissionTime);
     setSubmitting(false);
     history.push('/result');

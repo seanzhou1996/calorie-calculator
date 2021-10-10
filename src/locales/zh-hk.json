@@ -81,5 +81,8 @@
   "Dinner": "晚餐",
   "Snacks": "零食",
   "HowWeCalculateTarget": "我們如何計算你的目標",
-  "LearnHowCalculationWorks": "了解計數原理"
+  "LearnHowCalculationWorks": "了解計數原理",
+  "YouHaveUnsubmittedData": "你有尚未提交的資料",
+  "NotificationFirstPara": "以下內容可能已過時。請重新提交表單以查看最新結果。",
+  "GoBack": "返回"
 }
