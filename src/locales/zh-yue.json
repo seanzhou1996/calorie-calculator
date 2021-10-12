@@ -26,9 +26,11 @@
   "YouCompletedFormOnDate_date": "你喺 {{ date }} 提交咗表單。",
   "ViewResults": "睇吓結果",
   "CalorieCalculator": "卡路里計數機",
-  "HomeFirstParagraph": "搵出你每日需要攝取幾多能量來實現呢啲目標",
-  "HomeSecondParagraph": "或維持現有體重。",
-  "HomeThirdParagraph": "我哋需要少少個人資料來計你嘅攝入量。要開始使用，請填寫下面嘅問卷。",
+  "HomeFirstParagraph": "我哋可以幫手搵出你嘅每日卡路里攝入目標。",
+  "HomeSecondParagraph": "每日攝取適量嘅卡路里對達成身材目標至關重要。如果你想要增肌或減脂，呢部計數機就啱你使用。",
+  "HomeThirdParagraph": "為咗令我哋提供最準確嘅結果，你須年滿 18 歲先可以使用呢部計數機。",
+  "StartNow": "開始使用",
+  "PersonalDetailsPageTitle": "輸入你嘅個人資料",
   "FieldIsRequired_field": "{{ field }}係必填字段",
   "ChooseAnOption": "請選擇一項",
   "ChooseAnOption_field": "請選擇{{ field }}",
@@ -85,5 +87,4 @@
   "YouHaveUnsubmittedData": "你有尚未提交嘅資料",
   "NotificationFirstPara": "以下內容可能已過時。請重新提交表單以查看最新結果。",
   "GoBack": "返回"
-
 }

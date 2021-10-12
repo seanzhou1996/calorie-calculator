@@ -2,11 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
 import 'shared/i18n';
+import { SubmissionContextProvider } from 'shared/SubmissionContext';
 import { FormStateContextProvider } from 'shared/FormStateContext';
 import { SaveSubmissionFlagContextProvider } from 'shared/saveSubmissionFlagContext';
 import PageTemplate from 'shared/PageTemplate';
 import ScrollToTop from 'shared/ScrollToTop';
 import Home from './home/Home';
+import PersonalDetails from 'personal-details/PersonalDetails';
 import Activity from './activity/Activity';
 import Goal from './goal/Goal';
 import Result from './result/Result';
@@ -15,7 +17,6 @@ import KeepSubmissionBanner from 'shared/KeepSubmissionBanner';
 import UpdateDocumentLang from 'shared/UpdateDocumentLang';
 
 import './App.less';
-import { SubmissionContextProvider } from 'shared/SubmissionContext';
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
                 <Switch>
                   <Route path="/" exact>
                     <Home />
+                  </Route>
+
+                  <Route path="/personal-details">
+                    <PersonalDetails />
                   </Route>
 
                   <Route path="/activity">

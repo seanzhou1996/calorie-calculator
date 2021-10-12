@@ -46,6 +46,10 @@ export enum I18nKeys {
   HomeFirstParagraph = 'HomeFirstParagraph',
   HomeSecondParagraph = 'HomeSecondParagraph',
   HomeThirdParagraph = 'HomeThirdParagraph',
+  StartNow = 'StartNow',
+
+  // Personal details
+  PersonalDetailsPageTitle = 'PersonalDetailsPageTitle',
 
   // Activity
   Home = 'Home',

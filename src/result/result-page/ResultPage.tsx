@@ -62,7 +62,7 @@ function ResultPage({ personInfo }: CalorieResultProps) {
       ),
       action: {
         name: t(I18nKeys.Change),
-        callback: () => history.push('/'),
+        callback: () => history.push('/personal-details'),
       },
     },
     {

@@ -1,4 +1,4 @@
-import { Button, Collapse, Space } from 'antd';
+import { Button, Space } from 'antd';
 import React, { useContext } from 'react';
 import { Formik, Form, FormikConfig, ErrorMessage } from 'formik';
 import classnames from 'classnames';
@@ -16,10 +16,8 @@ import {
 import { FormStateContext } from 'shared/FormStateContext';
 import { useTranslation } from 'react-i18next';
 import { I18nKeys } from 'result/i18n-keys';
-import { CaretRightFilled } from '@ant-design/icons';
 import { SubmissionContext } from 'shared/SubmissionContext';
-
-const { Panel } = Collapse;
+import Expander from 'shared/Expander';
 
 const allGoals = Object.values(GoalType);
 
@@ -69,25 +67,13 @@ export default function GoalForm() {
           </header>
 
           <div className="hint">
-            <Collapse
-              ghost
-              className="hint__expander"
-              expandIcon={({ isActive }) => (
-                <CaretRightFilled rotate={isActive ? 90 : 0} className="hint__expand-icon" />
-              )}
-            >
-              <Panel
-                key={1}
-                header={<span className="hint__header">{t(I18nKeys.WhyAreWeAsking)}</span>}
-                className="hint__panel"
-              >
-                <div className="hint__content">
-                  <p>{t(I18nKeys.GoalPageFirstParagraph)}</p>
-                  <p>{t(I18nKeys.GoalPageSecondParagraph)}</p>
-                  <p>{t(I18nKeys.GoalPageThirdParagraph)}</p>
-                </div>
-              </Panel>
-            </Collapse>
+            <Expander title={t(I18nKeys.WhyAreWeAsking)}>
+              <>
+                <p>{t(I18nKeys.GoalPageFirstParagraph)}</p>
+                <p>{t(I18nKeys.GoalPageSecondParagraph)}</p>
+                <p>{t(I18nKeys.GoalPageThirdParagraph)}</p>
+              </>
+            </Expander>
           </div>
 
           <div

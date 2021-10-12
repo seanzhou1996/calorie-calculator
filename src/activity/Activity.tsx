@@ -22,12 +22,12 @@ function Activity() {
     <div className="width-container">
       <button
         onClick={() => {
-          history.push('/');
+          history.push('/personal-details');
         }}
         className="go-back-button"
       >
         <LeftOutlined className="icon" />
-        <span>{t(I18nKeys.Home)}</span>
+        <span>{t(I18nKeys.PreviousQuestion)}</span>
       </button>
 
       <ActivityForm />

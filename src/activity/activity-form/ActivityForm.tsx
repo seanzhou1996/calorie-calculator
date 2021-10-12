@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
-import { Space, Collapse } from 'antd';
-import { CaretRightFilled } from '@ant-design/icons';
+import { Space, Button } from 'antd';
 import { Formik, Form, FormikConfig, ErrorMessage } from 'formik';
 import classnames from 'classnames';
 import { useHistory } from 'react-router-dom';
@@ -16,9 +15,7 @@ import {
 import { FormStateContext } from 'shared/FormStateContext';
 import { I18nKeys } from 'result/i18n-keys';
 import { useTranslation } from 'react-i18next';
-import SubmitButton from 'shared/SubmitButton';
-
-const { Panel } = Collapse;
+import Expander from 'shared/Expander';
 
 const getActivityFormData: (values: FullFormModel) => FormModel = (values) => {
   return { activityLevel: values.activityLevel };
@@ -48,7 +45,10 @@ export default function ActivityForm() {
   ));
 
   const handleSubmit: FormikConfig<FormModel>['onSubmit'] = (values, { setSubmitting }) => {
-    updateFormState({ ...formData, ...values }, Date.now());
+    const dirty = Object.values(FormField).some((key) => values[key] !== initialValue[key]);
+    if (dirty) {
+      updateFormState({ ...formData, ...values }, Date.now());
+    }
     setSubmitting(false);
     history.push('/goal');
   };
@@ -61,36 +61,24 @@ export default function ActivityForm() {
       validateOnBlur
       validateOnChange
     >
-      {({ errors, touched }) => (
+      {({ errors, touched, isSubmitting }) => (
         <Form name="activity-level" className="activity-form">
           <header>
             <h1>{t(I18nKeys.ActivityPageTitle)}</h1>
           </header>
 
           <div className="hint">
-            <Collapse
-              ghost
-              className="hint__expander"
-              expandIcon={({ isActive }) => (
-                <CaretRightFilled rotate={isActive ? 90 : 0} className="hint__expand-icon" />
-              )}
-            >
-              <Panel
-                key={1}
-                header={<span className="hint__header">{t(I18nKeys.WhatCounts)}</span>}
-                className="hint__panel"
-              >
-                <div className="hint__content">
-                  <p>{t(I18nKeys.CountFirstParagraph)}</p>
-                  <ul>
-                    {exampleActivityI18nKeys.map((key) => (
-                      <li key={key}>{t(I18nKeys[key]).toLowerCase()}</li>
-                    ))}
-                  </ul>
-                  <p>{t(I18nKeys.CountSecondParagraph)}</p>
-                </div>
-              </Panel>
-            </Collapse>
+            <Expander title={t(I18nKeys.WhatCounts)}>
+              <>
+                <p>{t(I18nKeys.CountFirstParagraph)}</p>
+                <ul>
+                  {exampleActivityI18nKeys.map((key) => (
+                    <li key={key}>{t(I18nKeys[key]).toLowerCase()}</li>
+                  ))}
+                </ul>
+                <p>{t(I18nKeys.CountSecondParagraph)}</p>
+              </>
+            </Expander>
           </div>
 
           <div
@@ -107,7 +95,15 @@ export default function ActivityForm() {
             </Radio.Group>
           </div>
 
-          <SubmitButton<FormModel> redirectTo="/goal">{t(I18nKeys.Continue)}</SubmitButton>
+          <Button
+            type="primary"
+            htmlType="submit"
+            size="large"
+            disabled={isSubmitting}
+            className="submit-button"
+          >
+            {t(I18nKeys.Continue)}
+          </Button>
         </Form>
       )}
     </Formik>

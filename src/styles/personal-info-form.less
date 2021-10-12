@@ -1,24 +1,28 @@
-.home__intro {
-  margin-bottom: 40px;
-}
-
 .personal-info-form {
   width: 100%;
 
+  .form-item {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid @cc-grey-4;
+
+    &:not(:last-of-type) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
   .input-wrapper {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
 
     .label {
-      width: 72px;
+      margin-bottom: 1em;
+      font-size: calc(1rem + 2px);
+      font-weight: var(--bold);
     }
 
     .control {
-      position: relative;
-      flex: 1 0 auto;
-
+      width: 10rem;
       transition: none;
     }
 
@@ -31,6 +35,12 @@
 
     .gender-control {
       display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .radio-button:not(:last-child) {
+      margin-right: 1rem;
     }
 
     .suffix {
@@ -59,10 +69,6 @@
         border-color: transparent;
       }
     }
-  }
-
-  .input-wrapper + .input-wrapper {
-    margin-top: 24px;
   }
 
   .submit-button {
