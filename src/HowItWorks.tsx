@@ -4,13 +4,14 @@ import { useTranslation } from 'react-i18next';
 import { I18nKeys, HowItWorksI18nKeys } from 'result/i18n-keys';
 import ActivityRateTable from 'result/result-page/activity-rate-table/ActivityRateTable';
 import { useHistory } from 'react-router';
+import { RoutePath } from 'shared/models';
 
 function HowItWorks() {
   const { t } = useTranslation();
   const history = useHistory();
   return (
     <div className="width-container">
-      <button onClick={() => history.push('/result')} className="go-back-button">
+      <button onClick={() => history.push(RoutePath.Results)} className="go-back-button">
         <LeftOutlined className="icon" />
         <span>{t(HowItWorksI18nKeys.GoBackToResults)}</span>
       </button>
@@ -75,7 +76,7 @@ function HowItWorks() {
           <p>{t(HowItWorksI18nKeys.StepThreeFifthPara)}</p>
         </section>
       </div>
-      <button onClick={() => history.push('/result')} className="go-back-button">
+      <button onClick={() => history.push(RoutePath.Results)} className="go-back-button">
         <LeftOutlined className="icon" />
         <span>{t(HowItWorksI18nKeys.GoBackToResults)}</span>
       </button>

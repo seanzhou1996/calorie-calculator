@@ -3,7 +3,7 @@ import { Redirect, useHistory, useLocation } from 'react-router-dom';
 import ActivityForm from './activity-form/ActivityForm';
 import { FormStateContext } from 'shared/FormStateContext';
 import { isFormValid } from 'shared/utils';
-import { PersonalInfoFormSchema } from 'shared/models';
+import { PersonalInfoFormSchema, RoutePath } from 'shared/models';
 import { LeftOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { I18nKeys } from 'result/i18n-keys';
@@ -22,7 +22,7 @@ function Activity() {
     <div className="width-container">
       <button
         onClick={() => {
-          history.push('/personal-details');
+          history.push(RoutePath.PersonalDetails);
         }}
         className="go-back-button"
       >
@@ -35,7 +35,7 @@ function Activity() {
   ) : (
     <Redirect
       to={{
-        pathname: '/',
+        pathname: RoutePath.PersonalDetails,
         state: { from: location },
       }}
     />

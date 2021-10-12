@@ -4,6 +4,7 @@ import { I18nKeys } from 'result/i18n-keys';
 import PersonalInfoForm from './PersonalInfoForm';
 import { useHistory } from 'react-router';
 import { useTranslation } from 'react-i18next';
+import { RoutePath } from 'shared/models';
 
 function PersonalDetails() {
   const { t } = useTranslation();
@@ -12,7 +13,7 @@ function PersonalDetails() {
     <div className="width-container">
       <button
         onClick={() => {
-          history.push('/');
+          history.push(RoutePath.Home);
         }}
         className="go-back-button"
       >

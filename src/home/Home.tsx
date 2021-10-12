@@ -3,6 +3,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router';
 import { I18nKeys } from 'result/i18n-keys';
+import { RoutePath } from 'shared/models';
 import ResultNotification from './ResultNotification';
 
 function Home() {
@@ -24,7 +25,7 @@ function Home() {
         size="large"
         type="primary"
         htmlType="button"
-        onClick={() => history.push('/personal-details')}
+        onClick={() => history.push(RoutePath.PersonalDetails)}
         block
       >
         {t(I18nKeys.StartNow)}

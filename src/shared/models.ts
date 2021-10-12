@@ -1,6 +1,15 @@
 import { I18nKeys } from 'result/i18n-keys';
 import * as Yup from 'yup';
 
+export enum RoutePath {
+  Home = '/',
+  PersonalDetails = '/personal-details',
+  ActivityLevel = '/activity-level',
+  Goal = '/goal',
+  Results = '/results',
+  How = '/how',
+}
+
 export enum Language {
   En = 'en',
   ZhHk = 'zh',

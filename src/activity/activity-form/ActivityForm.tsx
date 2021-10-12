@@ -11,6 +11,7 @@ import {
   ActivityLevel,
   ActivityFormSchema,
   FullFormModel,
+  RoutePath,
 } from 'shared/models';
 import { FormStateContext } from 'shared/FormStateContext';
 import { I18nKeys } from 'result/i18n-keys';
@@ -50,7 +51,7 @@ export default function ActivityForm() {
       updateFormState({ ...formData, ...values }, Date.now());
     }
     setSubmitting(false);
-    history.push('/goal');
+    history.push(RoutePath.Goal);
   };
 
   return (

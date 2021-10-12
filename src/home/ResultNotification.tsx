@@ -6,6 +6,7 @@ import { formatDate, getLocaleTime } from 'shared/utils';
 import { useHistory } from 'react-router';
 import { SaveSubmissionFlagContext } from 'shared/saveSubmissionFlagContext';
 import { SubmissionContext } from 'shared/SubmissionContext';
+import { RoutePath } from 'shared/models';
 
 function ResultNotification() {
   const { t } = useTranslation();
@@ -28,7 +29,7 @@ function ResultNotification() {
           ? t(I18nKeys.YouCompletedFormToday_time, { time: getLocaleTime(submissionTime) })
           : t(I18nKeys.YouCompletedFormOnDate_date, { date: formatDate(submissionTime) })}
       </p>
-      <Button type="primary" htmlType="button" onClick={() => history.push('/result')}>
+      <Button type="primary" htmlType="button" onClick={() => history.push(RoutePath.Results)}>
         {t(I18nKeys.ViewResults)}
       </Button>
     </div>

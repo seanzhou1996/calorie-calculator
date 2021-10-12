@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router';
 import { FormStateContext } from 'shared/FormStateContext';
+import { RoutePath } from 'shared/models';
 import { SubmissionContext } from 'shared/SubmissionContext';
 import { I18nKeys } from './i18n-keys';
 
@@ -20,7 +21,7 @@ function InputChangeNotification() {
       <h3 className="notification__header">{t(I18nKeys.YouHaveUnsubmittedData)}</h3>
       <p>{t(I18nKeys.NotificationFirstPara)}</p>
 
-      <Button type="primary" htmlType="button" onClick={() => history.push('/goal')}>
+      <Button type="primary" htmlType="button" onClick={() => history.push(RoutePath.Goal)}>
         {t(I18nKeys.GoBack)}
       </Button>
     </div>

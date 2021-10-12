@@ -4,6 +4,7 @@ import {
   genderI18nKeys,
   goalLabelI18nKeys,
   PersonInfo,
+  RoutePath,
   SummaryListRow,
 } from 'shared/models';
 import { computeBMR, computeTarget } from 'shared/utils';
@@ -62,7 +63,7 @@ function ResultPage({ personInfo }: CalorieResultProps) {
       ),
       action: {
         name: t(I18nKeys.Change),
-        callback: () => history.push('/personal-details'),
+        callback: () => history.push(RoutePath.PersonalDetails),
       },
     },
     {
@@ -70,7 +71,7 @@ function ResultPage({ personInfo }: CalorieResultProps) {
       value: t(activityLabelI18nKeys[activityLevel]),
       action: {
         name: t(I18nKeys.Change),
-        callback: () => history.push('/activity'),
+        callback: () => history.push(RoutePath.ActivityLevel),
       },
     },
     {
@@ -78,7 +79,7 @@ function ResultPage({ personInfo }: CalorieResultProps) {
       value: t(I18nKeys.ToAchieveGoal_goal, { goal: t(goalLabelI18nKeys[goal]) }),
       action: {
         name: t(I18nKeys.Change),
-        callback: () => history.push('/goal'),
+        callback: () => history.push(RoutePath.Goal),
       },
     },
   ];
@@ -127,7 +128,7 @@ function ResultPage({ personInfo }: CalorieResultProps) {
           ))}
         </div>
         <div className="action">
-          <Link to="/" className="action__link">
+          <Link to={RoutePath.Home} className="action__link">
             <ArrowRightCircle className="action__icon" />
             <span>{t(I18nKeys.CheckCaloriesInOtherFood)}</span>
           </Link>
@@ -137,7 +138,7 @@ function ResultPage({ personInfo }: CalorieResultProps) {
       <section className="page-section">
         <header>{t(I18nKeys.HowWeCalculateTarget)}</header>
         <div className="action">
-          <Link to="/how-it-works" className="action__link">
+          <Link to={RoutePath.How} className="action__link">
             <ArrowRightCircle className="action__icon" />
             <span>{t(I18nKeys.LearnHowCalculationWorks)}</span>
           </Link>
@@ -148,7 +149,7 @@ function ResultPage({ personInfo }: CalorieResultProps) {
         <header>{t(I18nKeys.AnswersTitle)}</header>
         <button
           onClick={() => {
-            history.push('/');
+            history.push(RoutePath.Home);
           }}
           className="start-again-button"
         >

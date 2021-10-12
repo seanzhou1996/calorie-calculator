@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import { I18nKeys } from 'result/i18n-keys';
 import AppSettings from './AppSettings';
+import { RoutePath } from './models';
 
 function PageTemplate({ children }: { children: React.ReactNode }) {
   const location = useLocation();
@@ -22,7 +23,7 @@ function PageTemplate({ children }: { children: React.ReactNode }) {
       <header className="page-header">
         <div className="width-container">
           <div className="page-header__inner">
-            <Link to="/" className="page-header__link">
+            <Link to={RoutePath.Home} className="page-header__link">
               <div className="app-logo">{t(I18nKeys.CalorieCalculator)}</div>
             </Link>
             <button

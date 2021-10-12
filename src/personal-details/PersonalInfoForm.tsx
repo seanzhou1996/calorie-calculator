@@ -11,6 +11,7 @@ import {
   PersonalInfoFormField as FormField,
   PersonalInfoFormModel as FormModel,
   PersonalInfoFormSchema,
+  RoutePath,
 } from 'shared/models';
 import { FormStateContext } from 'shared/FormStateContext';
 import { I18nKeys } from 'result/i18n-keys';
@@ -42,7 +43,7 @@ function PersonalInfoForm() {
       updateFormState({ ...formData, ...values }, Date.now());
     }
     setSubmitting(false);
-    history.push('/activity');
+    history.push(RoutePath.ActivityLevel);
   };
 
   return (

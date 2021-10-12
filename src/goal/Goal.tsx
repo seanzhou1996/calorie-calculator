@@ -3,7 +3,7 @@ import { Redirect, useHistory, useLocation } from 'react-router-dom';
 import GoalForm from './goal-form/GoalForm';
 import { FormStateContext } from 'shared/FormStateContext';
 import { isFormValid } from 'shared/utils';
-import { ActivityFormSchema } from 'shared/models';
+import { ActivityFormSchema, RoutePath } from 'shared/models';
 import { LeftOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { I18nKeys } from 'result/i18n-keys';
@@ -21,7 +21,7 @@ function Goal() {
     <div className="width-container">
       <button
         onClick={() => {
-          history.push('/activity');
+          history.push(RoutePath.ActivityLevel);
         }}
         className="go-back-button"
       >
@@ -33,7 +33,7 @@ function Goal() {
   ) : (
     <Redirect
       to={{
-        pathname: '/activity',
+        pathname: RoutePath.ActivityLevel,
         state: { from: location },
       }}
     />

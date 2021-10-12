@@ -11,6 +11,7 @@ import {
   GoalType,
   GoalFormSchema,
   FullFormModel,
+  RoutePath,
 } from 'shared/models';
 
 import { FormStateContext } from 'shared/FormStateContext';
@@ -49,7 +50,7 @@ export default function GoalForm() {
     }
     updateSubmission(updatedFormData, submissionTime);
     setSubmitting(false);
-    history.push('/result');
+    history.push(RoutePath.Results);
   };
 
   return (

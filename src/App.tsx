@@ -17,6 +17,7 @@ import KeepSubmissionBanner from 'shared/KeepSubmissionBanner';
 import UpdateDocumentLang from 'shared/UpdateDocumentLang';
 
 import './App.less';
+import { RoutePath } from 'shared/models';
 
 function App() {
   return (
@@ -28,27 +29,27 @@ function App() {
             <Router>
               <PageTemplate>
                 <Switch>
-                  <Route path="/" exact>
+                  <Route path={RoutePath.Home} exact>
                     <Home />
                   </Route>
 
-                  <Route path="/personal-details">
+                  <Route path={RoutePath.PersonalDetails}>
                     <PersonalDetails />
                   </Route>
 
-                  <Route path="/activity">
+                  <Route path={RoutePath.ActivityLevel}>
                     <Activity />
                   </Route>
 
-                  <Route path="/goal">
+                  <Route path={RoutePath.Goal}>
                     <Goal />
                   </Route>
 
-                  <Route path="/result">
+                  <Route path={RoutePath.Results}>
                     <Result />
                   </Route>
 
-                  <Route path="/how-it-works">
+                  <Route path={RoutePath.How}>
                     <HowItWorks />
                   </Route>
                 </Switch>
