@@ -16,6 +16,12 @@ export enum Language {
   ZhYue = 'zh-yue-HK',
 }
 
+export enum I18nNamespace {
+  General = 'general',
+  PersonalDetails = 'personal-details',
+  HowItWorks = 'how-it-works',
+}
+
 export const allLanguages = Object.values(Language);
 
 export type Gender = 'male' | 'female';

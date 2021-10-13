@@ -14,7 +14,7 @@ import {
   RoutePath,
 } from 'shared/models';
 import { FormStateContext } from 'shared/FormStateContext';
-import { I18nKeys } from 'result/i18n-keys';
+import { I18nKeys, PersonalDetailsI18nKeys } from 'result/i18n-keys';
 import Expander from 'shared/Expander';
 
 const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
@@ -58,22 +58,19 @@ function PersonalInfoForm() {
         {({ errors, touched, isSubmitting }) => (
           <Form name="personal-info" className="personal-info-form">
             <header>
-              <h1>{t(I18nKeys.PersonalDetailsPageTitle)}</h1>
+              <h1>{t(PersonalDetailsI18nKeys.PageTitle)}</h1>
             </header>
-            <p>Enter your age, gender, height and weight.</p>
+            <p>{t(PersonalDetailsI18nKeys.EnterAgeSexHeightWeight)}</p>
             <div className="hint">
-              <Expander title="Why do we need them?">
+              <Expander title={t(PersonalDetailsI18nKeys.WhyDoWeNeedThem)}>
                 <>
-                  <p>We need age, sex and body mass to calculate the basal metabolic rate.</p>
-                  <p>
-                    The basal metabolic rate (BMR) is the amount of energy your body needs at rest.
-                    It is the foundation for calculating your daily calorie intake target.
-                  </p>
-                  <p>Age, sex and body mass affects the BMR:</p>
+                  <p>{t(PersonalDetailsI18nKeys.AnswerFirstParagraph)}</p>
+                  <p>{t(PersonalDetailsI18nKeys.AnswerSecondParagraph)}</p>
+                  <p>{t(PersonalDetailsI18nKeys.AnswerThirdParagraph)}</p>
                   <ul>
-                    <li>A person&apos;s BMR declines gradually after age 20</li>
-                    <li>BMR is higher in men than in women</li>
-                    <li>BMR is proportional to a person&apos;s body mass</li>
+                    <li>{t(PersonalDetailsI18nKeys.FactorFirstParagraph)}</li>
+                    <li>{t(PersonalDetailsI18nKeys.FactorSecondParagraph)}</li>
+                    <li>{t(PersonalDetailsI18nKeys.FactorThirdParagraph)}</li>
                   </ul>
                 </>
               </Expander>

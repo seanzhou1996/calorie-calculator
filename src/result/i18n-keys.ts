@@ -112,6 +112,18 @@ export enum I18nKeys {
   Snacks = 'Snacks',
 }
 
+export enum PersonalDetailsI18nKeys {
+  PageTitle = 'PageTitle',
+  EnterAgeSexHeightWeight = 'EnterAgeSexHeightWeight',
+  WhyDoWeNeedThem = 'WhyDoWeNeedThem',
+  AnswerFirstParagraph = 'AnswerFirstParagraph',
+  AnswerSecondParagraph = 'AnswerSecondParagraph',
+  AnswerThirdParagraph = 'AnswerThirdParagraph',
+  FactorFirstParagraph = 'FactorFirstParagraph',
+  FactorSecondParagraph = 'FactorSecondParagraph',
+  FactorThirdParagraph = 'FactorThirdParagraph',
+}
+
 export enum HowItWorksI18nKeys {
   GoBackToResults = 'GoBackToResults',
   Title = 'Title',
