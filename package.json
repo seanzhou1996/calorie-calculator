@@ -62,5 +62,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.25.3",
     "prettier": "2.4.1"
-  }
+  },
+  "packageManager": "yarn@3.0.2"
 }
