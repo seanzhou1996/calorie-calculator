@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { RadioChangeEvent, Radio, Switch } from 'antd';
 import { I18nKeys } from 'result/i18n-keys';
@@ -50,7 +51,7 @@ function AppSettings({ onClose }: AppSettingsProps) {
           </div>
         </div>
         <div className="setting">
-          <div className="setting__name">{t(I18nKeys.SaveSubmissionResults)}</div>
+          <div className="setting__name">{t(I18nKeys.SaveSubmissions)}</div>
           <div className="setting__content">
             <Switch
               checked={saveSubmissionFlag !== false}
@@ -66,6 +67,18 @@ function AppSettings({ onClose }: AppSettingsProps) {
             </span>
           </div>
         </div>
+
+        <div className="links">
+          {/** TODO update links **/}
+          <Link to="/" className="links__item">
+            {t(I18nKeys.Acknowledgements)}
+          </Link>
+          <Link to="/" className="links__item">
+            {t(I18nKeys.ReportProblem)}
+          </Link>
+        </div>
+
+        <footer>2021 Sean Zhou</footer>
       </div>
     </div>
   );

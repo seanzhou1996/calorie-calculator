@@ -1,8 +1,10 @@
 {
   "Settings": "設定",
-  "SaveSubmissionResults": "保留最近一次提交",
-  "SaveResultsParagraph": "我哋會保留你嘅提交。",
+  "SaveSubmissions": "儲存提交",
+  "SaveResultsParagraph": "我哋將保留最近一次提交。",
   "DoNotSaveResultsParagraph": "你嘅提交將不獲保留。",
+  "Acknowledgements": "致謝",
+  "ReportProblem": "報告問題",
   "DoYouWantToKeepSubmission": "要唔要保留最近一次提交？",
   "BannerFirstParagraph": "我哋可以將你最近一次嘅提交儲喺呢部機入面。我哋唔會分享你嘅資料。",
   "BannerKeepSubmission": "保留提交",

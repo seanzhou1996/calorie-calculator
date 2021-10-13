@@ -1,9 +1,11 @@
 export enum I18nKeys {
   // App header
   Settings = 'Settings',
-  SaveSubmissionResults = 'SaveSubmissionResults',
+  SaveSubmissions = 'SaveSubmissions',
   SaveResultsParagraph = 'SaveResultsParagraph',
   DoNotSaveResultsParagraph = 'DoNotSaveResultsParagraph',
+  Acknowledgements = 'Acknowledgements',
+  ReportProblem = 'ReportProblem',
 
   // Last submission banner
   DoYouWantToKeepSubmission = 'DoYouWantToKeepSubmission',

@@ -35,3 +35,14 @@ Activity rate table:
 For weight loss: reduce by 10%
 
 For muscle gain: increase by 10% 
+
+## Credits
+
+Most health advice is from www.nhs.uk, the official website for UK National Health Service.
+
+The UI is based on the NHS design system.
+
+## Report a problem
+
+Via GitHub
+Via Facebook post

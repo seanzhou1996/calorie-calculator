@@ -1,8 +1,10 @@
 {
   "Settings": "Settings",
-  "SaveSubmissionResults": "Keep most recent submission",
-  "SaveResultsParagraph": "We will keep your submissions.",
+  "SaveSubmissions": "Save submissions",
+  "SaveResultsParagraph": "We will keep your most recent submission.",
   "DoNotSaveResultsParagraph": "Your submissions will not be kept.",
+  "Acknowledgements": "Acknowledgements",
+  "ReportProblem": "Report a problem",
   "DoYouWantToKeepSubmission": "Do you want to keep the most recent submission?",
   "BannerFirstParagraph": "We can store your most recent submission to this device. We won't share your data.",
   "BannerKeepSubmission": "Keep submissions",
