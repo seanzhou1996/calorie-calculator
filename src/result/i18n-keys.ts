@@ -27,6 +27,7 @@ export enum I18nKeys {
   Goal = 'Goal',
   Continue = 'Continue',
   Change = 'Change',
+  PreviousPage = 'PreviousPage',
 
   // Error messages
   FieldIsRequired_field = 'FieldIsRequired_field',

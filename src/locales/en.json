@@ -22,6 +22,7 @@
   "Goal": "Goal",
   "Continue": "Continue",
   "Change": "Change",
+  "PreviousPage": "Go back",
   "ResultsAvailable": "Last submission results available",
   "YouCompletedFormToday_time": "You submitted the form today at {{ time }}.",
   "YouCompletedFormOnDate_date": "You submitted the form on {{ date }}.",

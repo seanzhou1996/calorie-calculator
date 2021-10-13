@@ -22,6 +22,7 @@
   "Goal": "目標",
   "Continue": "繼續",
   "Change": "更改",
+  "PreviousPage": "上一頁",
   "ResultsAvailable": "可查看上次提交嘅結果",
   "YouCompletedFormToday_time": "你喺今日 {{ time }} 提交咗表單。",
   "YouCompletedFormOnDate_date": "你喺 {{ date }} 提交咗表單。",
