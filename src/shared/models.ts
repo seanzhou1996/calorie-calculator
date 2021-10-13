@@ -139,19 +139,19 @@ export const mealLabelI18nKeys: Record<MealType, I18nKeys> = {
 const ageSchema = Yup.number()
   .nullable()
   .required(I18nKeys.FieldIsRequired_field)
-  .integer(I18nKeys.AgeMustBeInteger)
-  .min(18, I18nKeys.MinimumInput_field_min)
-  .max(120, I18nKeys.MaximumInput_field_max);
+  .integer(I18nKeys.FieldMustBeInteger_field)
+  .min(18, I18nKeys.FieldCannotBeLowerThan_field_min)
+  .max(120, I18nKeys.FieldCannotBeHigherThan_field_max);
 const heightSchema = Yup.number()
   .nullable()
   .required(I18nKeys.FieldIsRequired_field)
-  .min(100, I18nKeys.MinimumInput_field_min)
-  .max(272, I18nKeys.MaximumInput_field_max);
+  .min(100, I18nKeys.FieldCannotBeLowerThan_field_min)
+  .max(272, I18nKeys.FieldCannotBeHigherThan_field_max);
 const weightSchema = Yup.number()
   .nullable()
   .required(I18nKeys.FieldIsRequired_field)
-  .min(30, I18nKeys.MinimumInput_field_min)
-  .max(130, I18nKeys.MaximumInput_field_max);
+  .min(30, I18nKeys.FieldCannotBeLowerThan_field_min)
+  .max(130, I18nKeys.FieldCannotBeHigherThan_field_max);
 const sexSchema = Yup.string().nullable().required(I18nKeys.ChooseAnOption_field);
 const activityLevelSchema = Yup.string().nullable().required(I18nKeys.ChooseAnOption);
 const goalSchema = Yup.string().nullable().required(I18nKeys.ChooseAnOption_field);

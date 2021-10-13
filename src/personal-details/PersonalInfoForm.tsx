@@ -28,7 +28,7 @@ const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
 };
 
 function PersonalInfoForm() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const {
     formState: { formData },
     updateFormState,
@@ -96,7 +96,7 @@ function PersonalInfoForm() {
                   />
                 </div>
 
-                <ErrorMessage name={FormField.Age}>
+                <ErrorMessage key={i18n.resolvedLanguage} name={FormField.Age}>
                   {(key) => (
                     <span className="error-message">
                       {t(key, { field: t(I18nKeys.Age), max: 120, min: 18 })}
@@ -122,7 +122,7 @@ function PersonalInfoForm() {
                     {t(sexI18nKeys['female'])}
                   </Radio>
                 </Radio.Group>
-                <ErrorMessage name={FormField.Sex}>
+                <ErrorMessage key={i18n.resolvedLanguage} name={FormField.Sex}>
                   {(key) => (
                     <span className="error-message">{t(key, { field: t(I18nKeys.Sex) })}</span>
                   )}
@@ -154,7 +154,7 @@ function PersonalInfoForm() {
                   </span>
                 </div>
 
-                <ErrorMessage name={FormField.Height}>
+                <ErrorMessage key={i18n.resolvedLanguage} name={FormField.Height}>
                   {(key) => (
                     <span className="error-message">
                       {t(key, { field: t(I18nKeys.Height), max: '272 cm', min: '100 cm' })}
@@ -188,7 +188,7 @@ function PersonalInfoForm() {
                   </span>
                 </div>
 
-                <ErrorMessage name={FormField.Weight}>
+                <ErrorMessage key={i18n.resolvedLanguage} name={FormField.Weight}>
                   {(key) => (
                     <span className="error-message">
                       {t(key, { field: t(I18nKeys.Weight), max: '130 kg', min: '30 kg' })}

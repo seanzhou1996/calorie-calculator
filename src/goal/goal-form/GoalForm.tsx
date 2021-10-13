@@ -27,7 +27,7 @@ const getGoalFormData: (values: FullFormModel) => FormModel = (values) => {
 };
 
 export default function GoalForm() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const {
     formState: { formData },
     updateFormState,
@@ -84,7 +84,11 @@ export default function GoalForm() {
               errors.goal && touched.goal && 'input-wrapper--error'
             )}
           >
-            <ErrorMessage component="span" name={FormField.Goal} className="error-message" />
+            <ErrorMessage key={i18n.resolvedLanguage} name={FormField.Goal}>
+              {(key) => (
+                <span className="error-message">{t(key, { field: t(I18nKeys.Goal) })}</span>
+              )}
+            </ErrorMessage>
             <Radio.Group name={FormField.Goal} size="large" className="element control">
               <Space direction="vertical" size={12}>
                 {goalOptions}

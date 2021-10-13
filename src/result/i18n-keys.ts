@@ -24,6 +24,7 @@ export enum I18nKeys {
   Female = 'Female',
   Height = 'Height',
   Weight = 'Weight',
+  Goal = 'Goal',
   Continue = 'Continue',
   Change = 'Change',
 
@@ -31,9 +32,9 @@ export enum I18nKeys {
   FieldIsRequired_field = 'FieldIsRequired_field',
   ChooseAnOption = 'ChooseAnOption',
   ChooseAnOption_field = 'ChooseAnOption_field',
-  AgeMustBeInteger = 'AgeMustBeInteger',
-  MaximumInput_field_max = 'MaximumInput_field_max',
-  MinimumInput_field_min = 'MinimumInput_field_min',
+  FieldMustBeInteger_field = 'FieldMustBeInteger_field',
+  FieldCannotBeHigherThan_field_max = 'FieldCannotBeHigherThan_field_max',
+  FieldCannotBeLowerThan_field_min = 'FieldCannotBeLowerThan_field_min',
 
   // Result notification
   ResultsAvailable = 'ResultsAvailable',
