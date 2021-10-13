@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   activityLabelI18nKeys,
-  genderI18nKeys,
+  sexI18nKeys,
   goalLabelI18nKeys,
   PersonInfo,
   RoutePath,
@@ -25,8 +25,8 @@ interface CalorieResultProps {
 function ResultPage({ personInfo }: CalorieResultProps) {
   const { t } = useTranslation();
   const history = useHistory();
-  const { age, gender, height, weight, activityLevel, goal } = personInfo;
-  const bmr = computeBMR(age, gender, height, weight);
+  const { age, sex, height, weight, activityLevel, goal } = personInfo;
+  const bmr = computeBMR(age, sex, height, weight);
 
   // const tdee = computeTDEE(bmr, activityLevel);
   const target = computeTarget(bmr, activityLevel, goal);
@@ -51,7 +51,7 @@ function ResultPage({ personInfo }: CalorieResultProps) {
             {t(I18nKeys.Age)}: {age}
           </li>
           <li>
-            {t(I18nKeys.Gender)}: {t(genderI18nKeys[gender])}
+            {t(I18nKeys.Sex)}: {t(sexI18nKeys[sex])}
           </li>
           <li>
             {t(I18nKeys.Height)}: {height} cm

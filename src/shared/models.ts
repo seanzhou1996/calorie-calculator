@@ -24,23 +24,23 @@ export enum I18nNamespace {
 
 export const allLanguages = Object.values(Language);
 
-export type Gender = 'male' | 'female';
+export type Sex = 'male' | 'female';
 
-export const genderI18nKeys: Record<Gender, I18nKeys> = {
+export const sexI18nKeys: Record<Sex, I18nKeys> = {
   male: I18nKeys.Male,
   female: I18nKeys.Female,
 };
 
 export enum PersonalInfoFormField {
   Age = 'age',
-  Gender = 'gender',
+  Sex = 'sex',
   Height = 'height',
   Weight = 'weight',
 }
 
 export interface PersonalInfoFormModel {
   [PersonalInfoFormField.Age]: number;
-  [PersonalInfoFormField.Gender]: Gender;
+  [PersonalInfoFormField.Sex]: Sex;
   [PersonalInfoFormField.Height]: number; // cm
   [PersonalInfoFormField.Weight]: number; // kg
 }
@@ -101,7 +101,7 @@ export interface FullFormModel extends PersonalInfoFormModel, ActivityFormModel,
 
 export const emptyFormModel: FullFormModel = {
   age: null,
-  gender: null,
+  sex: null,
   height: null,
   weight: null,
   activityLevel: null,
@@ -152,7 +152,7 @@ const weightSchema = Yup.number()
   .required(I18nKeys.FieldIsRequired_field)
   .min(30, I18nKeys.MinimumInput_field_min)
   .max(130, I18nKeys.MaximumInput_field_max);
-const genderSchema = Yup.string().nullable().required(I18nKeys.ChooseAnOption_field);
+const sexSchema = Yup.string().nullable().required(I18nKeys.ChooseAnOption_field);
 const activityLevelSchema = Yup.string().nullable().required(I18nKeys.ChooseAnOption);
 const goalSchema = Yup.string().nullable().required(I18nKeys.ChooseAnOption_field);
 
@@ -160,7 +160,7 @@ export const PersonalInfoFormSchema = Yup.object().shape({
   [PersonalInfoFormField.Age]: ageSchema,
   [PersonalInfoFormField.Height]: heightSchema,
   [PersonalInfoFormField.Weight]: weightSchema,
-  [PersonalInfoFormField.Gender]: genderSchema,
+  [PersonalInfoFormField.Sex]: sexSchema,
 });
 
 export const ActivityFormSchema = Yup.object().shape({
@@ -175,7 +175,7 @@ export const FullFormSchema = Yup.object().shape({
   [PersonalInfoFormField.Age]: ageSchema,
   [PersonalInfoFormField.Height]: heightSchema,
   [PersonalInfoFormField.Weight]: weightSchema,
-  [PersonalInfoFormField.Gender]: genderSchema,
+  [PersonalInfoFormField.Sex]: sexSchema,
   [ActivityFormField.Level]: activityLevelSchema,
   [GoalFormField.Goal]: goalSchema,
 });

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-shadow */
 import * as Yup from 'yup';
-import { ActivityLevel, FullFormModel, Gender, GoalType } from './models';
+import { ActivityLevel, FullFormModel, Sex, GoalType } from './models';
 
 const activityRates: Record<ActivityLevel, number> = {
   [ActivityLevel.Sendentary]: 1.2,
@@ -16,16 +16,16 @@ const goalRates: Record<GoalType, number> = {
   [GoalType.Cut]: 0.9,
 };
 
-export const computeBMR: (age: number, gender: Gender, height: number, weight: number) => number = (
+export const computeBMR: (age: number, sex: Sex, height: number, weight: number) => number = (
   age,
-  gender,
+  sex,
   height,
   weight
 ) => {
-  if (!age || !gender || !height) {
+  if (!age || !sex || !height) {
     return 0;
   }
-  return 10 * weight + 6.25 * height - 5 * age + (gender === 'male' ? 5 : -161);
+  return 10 * weight + 6.25 * height - 5 * age + (sex === 'male' ? 5 : -161);
 };
 
 export const computeTDEE: (bmr: number, activityLevel: ActivityLevel) => number = (

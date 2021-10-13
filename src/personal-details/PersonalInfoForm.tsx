@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 import { InputNumber, Radio } from 'shared/formik-antd';
 import {
   FullFormModel,
-  genderI18nKeys,
+  sexI18nKeys,
   PersonalInfoFormField as FormField,
   PersonalInfoFormModel as FormModel,
   PersonalInfoFormSchema,
@@ -18,10 +18,10 @@ import { I18nKeys, PersonalDetailsI18nKeys } from 'result/i18n-keys';
 import Expander from 'shared/Expander';
 
 const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
-  const { age, gender, height, weight } = value;
+  const { age, sex, height, weight } = value;
   return {
     age,
-    gender,
+    sex,
     height,
     weight,
   };
@@ -110,25 +110,21 @@ function PersonalInfoForm() {
               <div
                 className={classnames(
                   'input-wrapper',
-                  errors.gender && touched.gender ? 'input-wrapper--error' : null
+                  errors.sex && touched.sex ? 'input-wrapper--error' : null
                 )}
               >
-                <span className="label">{t(I18nKeys.Gender)}</span>
-                <Radio.Group
-                  name={FormField.Gender}
-                  size="large"
-                  className="control gender-control"
-                >
-                  <Radio name={FormField.Gender} value="male" className="radio-button">
-                    {t(genderI18nKeys['male'])}
+                <span className="label">{t(I18nKeys.Sex)}</span>
+                <Radio.Group name={FormField.Sex} size="large" className="control radio-group">
+                  <Radio name={FormField.Sex} value="male" className="radio-button">
+                    {t(sexI18nKeys['male'])}
                   </Radio>
-                  <Radio name={FormField.Gender} value="female" className="radio-button">
-                    {t(genderI18nKeys['female'])}
+                  <Radio name={FormField.Sex} value="female" className="radio-button">
+                    {t(sexI18nKeys['female'])}
                   </Radio>
                 </Radio.Group>
-                <ErrorMessage name={FormField.Gender}>
+                <ErrorMessage name={FormField.Sex}>
                   {(key) => (
-                    <span className="error-message">{t(key, { field: t(I18nKeys.Gender) })}</span>
+                    <span className="error-message">{t(key, { field: t(I18nKeys.Sex) })}</span>
                   )}
                 </ErrorMessage>
               </div>
