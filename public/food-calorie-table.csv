@@ -1,0 +1,14 @@
+type, name, portion, amount, calorie, isDrink
+1, Rice (cooked), 1 bowl, 200, 260
+2, Ham, 1 slice, 20, 26
+3, Boiled Chinese flowering cabbage, 1/2 bowl, 65, 13
+4, Red apple (with skin), 1 piece, 180, 97
+5, Flat noodles in soup with stewed beef brisket, 1 bowl, 720, 619
+6, Cheese burger, 1 piece, 254, 610
+7, Steamed barbecued pork bun, 1 piece, 55, 143
+8, Dry-roasted plain macadamia nuts, 10 - 12 kernels, 28, 204
+9, Cream soup with puff pastry, 1 bowl, 315, 410
+10, Full-fat milk, 1 cup, 240, 146, true
+11, Olive oil, 1 tablespoon, 14, 126
+12, Ginger puree, 1 tablespoon, 18, 85
+13, Hainanese chicken rice, 1 plate, 382, 607
