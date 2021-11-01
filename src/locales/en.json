@@ -1,7 +1,7 @@
 {
   "Settings": "Settings",
-  "SaveSubmissionResults": "Keep most recent submission",
-  "SaveResultsParagraph": "We will keep your submissions.",
+  "SaveSubmissionResults": "Keep the last submission",
+  "SaveResultsParagraph": "We will keep your most recent submission.",
   "DoNotSaveResultsParagraph": "Your submissions will not be kept.",
   "DoYouWantToKeepSubmission": "Do you want to keep the most recent submission?",
   "BannerFirstParagraph": "We can store your most recent submission to this device. We won't share your data.",
@@ -23,7 +23,7 @@
   "Continue": "Continue",
   "Change": "Change",
   "PreviousPage": "Go back",
-  "ResultsAvailable": "Last submission results available",
+  "ResultsAvailable": "Results available",
   "YouCompletedFormToday_time": "You submitted the form today at {{ time }}.",
   "YouCompletedFormOnDate_date": "You submitted the form on {{ date }}.",
   "ViewResults": "View results",
