@@ -29,7 +29,7 @@ export default function HomeResultNotification() {
           ? t(I18nKeys.YouCompletedFormToday_time, { time: getLocaleTime(submissionTime) })
           : t(I18nKeys.YouCompletedFormOnDate_date, { date: formatDate(submissionTime) })}
       </p>
-      <Button type="primary" htmlType="button" onClick={() => history.push(RoutePath.Results)}>
+      <Button type="default" htmlType="button" onClick={() => history.push(RoutePath.Results)}>
         {t(I18nKeys.ViewResults)}
       </Button>
     </div>
