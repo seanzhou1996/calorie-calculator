@@ -2,7 +2,7 @@ import React from 'react';
 import { PersonInfo } from 'shared/models';
 import { computeBMR, computeTarget } from 'shared/utils';
 import { useTranslation } from 'react-i18next';
-import { I18nKeys } from 'result/i18n-keys';
+import { I18nKeys } from 'shared/i18n-keys';
 import ResultSectionChoosingFood from './ResultSectionChoosingFood';
 import ResultSectionYourAnswers from './ResultSectionYourAnswers';
 import ResultSectionHowCalculationWorks from './ResultSectionHowCalculationWorks';

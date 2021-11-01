@@ -2,7 +2,7 @@ import { Button } from 'antd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router';
-import { I18nKeys } from 'result/i18n-keys';
+import { I18nKeys } from 'shared/i18n-keys';
 import { RoutePath } from 'shared/models';
 import ResultNotification from './ResultNotification';
 

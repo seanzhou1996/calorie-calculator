@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { HowItWorksI18nKeys as I18nKeys } from 'result/i18n-keys';
+import { HowItWorksI18nKeys as I18nKeys } from 'shared/i18n-keys';
 import { I18nNamespace, RoutePath } from 'shared/models';
 
 export default function ResultSectionHowCalculationWorks() {

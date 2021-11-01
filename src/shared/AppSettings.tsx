@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { RadioChangeEvent, Radio, Switch } from 'antd';
-import { I18nKeys } from 'result/i18n-keys';
+import { I18nKeys } from 'shared/i18n-keys';
 import { ReactComponent as CloseIcon } from 'assets/icon-close.svg';
 import { allLanguages, Language } from './models';
 import { SaveSubmissionFlagContext } from './saveSubmissionFlagContext';

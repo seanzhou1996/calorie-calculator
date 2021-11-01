@@ -14,7 +14,7 @@ import {
   RoutePath,
 } from 'shared/models';
 import { FormStateContext } from 'shared/FormStateContext';
-import { I18nKeys } from 'result/i18n-keys';
+import { I18nKeys } from 'shared/i18n-keys';
 import { useTranslation } from 'react-i18next';
 import Expander from 'shared/Expander';
 

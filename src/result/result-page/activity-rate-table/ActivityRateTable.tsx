@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, TableProps } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { HowItWorksI18nKeys } from 'result/i18n-keys';
+import { HowItWorksI18nKeys } from 'shared/i18n-keys';
 import { activityLabelI18nKeys, activityRates, ActivityLevel } from 'shared/models';
 
 const { Column } = Table;

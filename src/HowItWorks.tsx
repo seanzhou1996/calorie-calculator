@@ -1,7 +1,7 @@
 import React from 'react';
 import { LeftOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { I18nKeys, HowItWorksI18nKeys } from 'result/i18n-keys';
+import { I18nKeys, HowItWorksI18nKeys } from 'shared/i18n-keys';
 import ActivityRateTable from 'result/result-page/activity-rate-table/ActivityRateTable';
 import { useHistory } from 'react-router';
 import { RoutePath } from 'shared/models';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { ChoosingFoodsI18nKeys as I18nKeys } from 'result/i18n-keys';
+import { ChoosingFoodsI18nKeys as I18nKeys } from 'shared/i18n-keys';
 import BaseActionLink from 'shared/BaseActionLink';
 import { I18nNamespace, RoutePath } from 'shared/models';
 

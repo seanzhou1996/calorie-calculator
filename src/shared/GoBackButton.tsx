@@ -2,7 +2,7 @@ import React from 'react';
 import { LeftOutlined } from '@ant-design/icons';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { I18nKeys } from 'result/i18n-keys';
+import { I18nKeys } from 'shared/i18n-keys';
 
 interface GoBackButtonProps {
   to: string;

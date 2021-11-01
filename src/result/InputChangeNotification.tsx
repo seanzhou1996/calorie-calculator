@@ -5,7 +5,7 @@ import { useHistory } from 'react-router';
 import { FormStateContext } from 'shared/FormStateContext';
 import { RoutePath } from 'shared/models';
 import { SubmissionContext } from 'shared/SubmissionContext';
-import { I18nKeys } from './i18n-keys';
+import { I18nKeys } from 'shared/i18n-keys';
 
 function InputChangeNotification() {
   const { t } = useTranslation();

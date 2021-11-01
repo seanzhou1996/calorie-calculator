@@ -16,7 +16,7 @@ import {
 
 import { FormStateContext } from 'shared/FormStateContext';
 import { useTranslation } from 'react-i18next';
-import { I18nKeys } from 'result/i18n-keys';
+import { I18nKeys } from 'shared/i18n-keys';
 import { SubmissionContext } from 'shared/SubmissionContext';
 import Expander from 'shared/Expander';
 

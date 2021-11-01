@@ -1,6 +1,6 @@
 import React from 'react';
 import BaseActionLink from 'shared/BaseActionLink';
-import { ResultSectionHowToLoseWeightI18nKeys as I18nKeys } from 'result/i18n-keys';
+import { ResultSectionHowToLoseWeightI18nKeys as I18nKeys } from 'shared/i18n-keys';
 import { useTranslation } from 'react-i18next';
 import { I18nNamespace, RoutePath } from 'shared/models';
 

@@ -1,4 +1,4 @@
-import { I18nKeys } from 'result/i18n-keys';
+import { I18nKeys } from 'shared/i18n-keys';
 import * as Yup from 'yup';
 
 export enum RoutePath {

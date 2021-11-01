@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Button } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { I18nKeys } from 'result/i18n-keys';
+import { I18nKeys } from 'shared/i18n-keys';
 import { formatDate, getLocaleTime } from 'shared/utils';
 import { useHistory } from 'react-router';
 import { SaveSubmissionFlagContext } from 'shared/saveSubmissionFlagContext';
