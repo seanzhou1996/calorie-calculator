@@ -90,13 +90,7 @@ export enum I18nKeys {
   DietFirstParagraph = 'DietFirstParagraph',
   DietSecondParagraph = 'DietSecondParagraph',
   DietThirdParagraph = 'DietThirdParagraph',
-  CompareTitle = 'CompareTitle',
-  YourTargetIsEquivalentTo = 'YourTargetIsEquivalentTo',
   Servings = 'Servings',
-  BigMac = 'BigMac',
-  ChickenRice = 'ChickenRice',
-  CaloriesPerServing_amount = 'CaloriesPerServing_amount',
-  CheckCaloriesInOtherFood = 'CheckCaloriesInOtherFood',
   AnswersTitle = 'AnswersTitle',
   StartAgain = 'StartAgain',
   PersonalDetails = 'PersonalDetails',
@@ -130,6 +124,8 @@ export enum HowItWorksI18nKeys {
   GoBackToResults = 'GoBackToResults',
   Title = 'Title',
   Intro = 'Intro',
+  IntroActiveVoice = 'IntroActiveVoice',
+  LearnMoreAboutHowCalculationWorks_Link = 'LearnMoreAboutHowCalculationWorks_Link',
   CalculateBMR = 'CalculateBMR',
   CalculateTDEE = 'CalculateTDEE',
   CaterToFitnessGoal = 'CaterToFitnessGoal',
@@ -163,4 +159,59 @@ export enum HowItWorksI18nKeys {
   StepThreeThirdPara = 'StepThreeThirdPara',
   StepThreeFourthPara = 'StepThreeFourthPara',
   StepThreeFifthPara = 'StepThreeFifthPara',
+}
+
+export enum PlanningDietI18nKeys {
+  Title = 'Title',
+  Breakfast = 'Breakfast',
+  Lunch = 'Lunch',
+  Dinner = 'Dinner',
+  Snacks = 'Snacks',
+  mealCaloriesAndPercent_meal_calorie_percent = 'mealCaloriesAndPercent_meal_calorie_percent',
+  FirstParagraphGainMuscle_target = 'FirstParagraphGainMuscle_target',
+  FirstParagraphLoseWeight_target = 'FirstParagraphLoseWeight_target',
+  FirstParagraphMaintainWeight_target = 'FirstParagraphMaintainWeight_target',
+  FirstParagraph = 'FirstParagraph',
+  SecondParagraph = 'SecondParagraph',
+  ThirdParagraph = 'ThirdParagraph',
+  FourthParagraph = 'FourthParagraph',
+  FifthParagraph = 'FifthParagraph',
+}
+
+export enum ChoosingFoodsI18nKeys {
+  Title = 'Title',
+  BigMac = 'BigMac',
+  ChickenRice = 'ChickenRice',
+  CaloriesPerServing_amount = 'CaloriesPerServing_amount',
+  PercentOfTarget_percent = 'PercentOfTarget_percent',
+  OpenFoodCalorieChecker = 'OpenFoodCalorieChecker',
+  FirstParagraph = 'FirstParagraph',
+  SecondParagraph = 'SecondParagraph',
+  ThirdParagraph = 'ThirdParagraph',
+  FourthParagraph = 'FourthParagraph',
+  FifthParagraph = 'FifthParagraph',
+}
+
+export enum ResultSectionHowToLoseWeightI18nKeys {
+  Title = 'Title',
+  OpenWeightLossGuide = 'OpenWeightLossGuide',
+  FirstParagraph = 'FirstParagraph',
+  SecondParagraph = 'SecondParagraph',
+  ThirdParagraph = 'ThirdParagraph',
+}
+
+export enum ResultSectionHowToGainWeightI18nKeys {
+  Title = 'Title',
+  OpenWeightGainGuide = 'OpenWeightGainGuide',
+  FirstParagraph = 'FirstParagraph',
+  SecondParagraph = 'SecondParagraph',
+  ThirdParagraph = 'ThirdParagraph',
+}
+
+export enum ResultSectionHowToEatWellI18nKeys {
+  Title = 'Title',
+  OpenEatWellGuide = 'OpenEatWellGuide',
+  FirstParagraph = 'FirstParagraph',
+  SecondParagraph = 'SecondParagraph',
+  ThirdParagraph = 'ThirdParagraph',
 }

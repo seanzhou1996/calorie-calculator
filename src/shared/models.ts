@@ -8,6 +8,9 @@ export enum RoutePath {
   Goal = '/goal',
   Results = '/results',
   How = '/how',
+  WeightLossGuide = '/weight-loss-guide',
+  WeightGainGuide = '/weight-gain-guide',
+  EatWellGuide = '/eat-well-guide',
 }
 
 export enum Language {
@@ -19,7 +22,12 @@ export enum Language {
 export enum I18nNamespace {
   General = 'general',
   PersonalDetails = 'personal-details',
-  HowItWorks = 'how-it-works',
+  HowCalculationWorks = 'how-calculation-works',
+  ChoosingFoods = 'choosing-foods',
+  PlanningDiet = 'planning-diet',
+  ResultSectionHowToLoseWeight = 'result-section-how-to-lose-weight',
+  ResultSectionHowToGainWeight = 'result-section-how-to-gain-weight',
+  ResultSectionHowToEatWell = 'result-section-how-to-eat-well',
 }
 
 export const allLanguages = Object.values(Language);
