@@ -1,32 +1,31 @@
 import React, { useContext } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
-import GoalForm from './goal-form/GoalForm';
+import ActivityLevelForm from './ActivityLevelForm';
 import { FormStateContext } from 'shared/FormStateContext';
 import { isFormValid } from 'shared/utils';
-import { ActivityFormSchema, RoutePath } from 'shared/models';
+import { PersonalInfoFormSchema, RoutePath } from 'shared/models';
 import GoBackButton from 'shared/GoBackButton';
 
-function Goal() {
+export default function ActivityLevel() {
   const {
     formState: { formData },
   } = useContext(FormStateContext);
   const location = useLocation();
-  const isPrevFormValid = isFormValid(formData, ActivityFormSchema);
+
+  const isPrevFormValid = isFormValid(formData, PersonalInfoFormSchema);
 
   return isPrevFormValid ? (
     <div className="width-container">
-      <GoBackButton to={RoutePath.ActivityLevel} />
+      <GoBackButton to={RoutePath.PersonalDetails} />
 
-      <GoalForm />
+      <ActivityLevelForm />
     </div>
   ) : (
     <Redirect
       to={{
-        pathname: RoutePath.ActivityLevel,
+        pathname: RoutePath.PersonalDetails,
         state: { from: location },
       }}
     />
   );
 }
-
-export default Goal;

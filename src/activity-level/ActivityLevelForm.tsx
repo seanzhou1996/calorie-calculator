@@ -31,7 +31,7 @@ const exampleActivityI18nKeys: I18nKeys[] = [
 
 const allActivityLevels = Object.values(ActivityLevel);
 
-export default function ActivityForm() {
+export default function ActivityLevelForm() {
   const { t, i18n } = useTranslation();
   const {
     formState: { formData },
@@ -51,7 +51,7 @@ export default function ActivityForm() {
       updateFormState({ ...formData, ...values }, Date.now());
     }
     setSubmitting(false);
-    history.push(RoutePath.Goal);
+    history.push(RoutePath.FitnessGoal);
   };
 
   return (

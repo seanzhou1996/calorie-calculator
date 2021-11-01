@@ -59,7 +59,7 @@ export default function ResultSectionYourAnswers({
       value: t(I18nKeys.ToAchieveGoal_goal, { goal: t(goalLabelI18nKeys[goal]) }),
       action: {
         name: t(I18nKeys.Change),
-        callback: () => history.push(RoutePath.Goal),
+        callback: () => history.push(RoutePath.FitnessGoal),
       },
     },
   ];

@@ -8,7 +8,7 @@ import { SaveSubmissionFlagContext } from 'shared/saveSubmissionFlagContext';
 import { SubmissionContext } from 'shared/SubmissionContext';
 import { RoutePath } from 'shared/models';
 
-function ResultNotification() {
+export default function HomeResultNotification() {
   const { t } = useTranslation();
   const history = useHistory();
   const { saveSubmissionFlag } = useContext(SaveSubmissionFlagContext);
@@ -35,5 +35,3 @@ function ResultNotification() {
     </div>
   );
 }
-
-export default ResultNotification;

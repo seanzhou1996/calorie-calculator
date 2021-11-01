@@ -26,7 +26,7 @@ const getGoalFormData: (values: FullFormModel) => FormModel = (values) => {
   return { goal: values.goal };
 };
 
-export default function GoalForm() {
+export default function FitnessGoalForm() {
   const { t, i18n } = useTranslation();
   const {
     formState: { formData },

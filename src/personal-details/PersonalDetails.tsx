@@ -1,5 +1,5 @@
 import React from 'react';
-import PersonalInfoForm from './PersonalInfoForm';
+import PersonalDetailsForm from './PersonalDetailsForm';
 import { RoutePath } from 'shared/models';
 import GoBackButton from 'shared/GoBackButton';
 
@@ -8,7 +8,7 @@ function PersonalDetails() {
     <div className="width-container">
       <GoBackButton to={RoutePath.Home} />
 
-      <PersonalInfoForm />
+      <PersonalDetailsForm />
     </div>
   );
 }

@@ -27,7 +27,7 @@ const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
   };
 };
 
-function PersonalInfoForm() {
+export default function PersonalDetailsForm() {
   const { t, i18n } = useTranslation();
   const {
     formState: { formData },
@@ -213,5 +213,3 @@ function PersonalInfoForm() {
     </div>
   );
 }
-
-export default PersonalInfoForm;

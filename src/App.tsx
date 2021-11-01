@@ -10,8 +10,8 @@ import PageTemplate from 'shared/PageTemplate';
 import ScrollToTop from 'shared/ScrollToTop';
 import Home from './home/Home';
 import PersonalDetails from 'personal-details/PersonalDetails';
-import Activity from './activity/Activity';
-import Goal from './goal/Goal';
+import ActivityLevel from './activity-level/ActivityLevel';
+import FitnessGoal from './fitness-goal/FitnessGoal';
 import Result from './results/Result';
 import HowCalculationWorks from 'how-calculation-works/HowCalculationWorks';
 import KeepSubmissionBanner from 'shared/KeepSubmissionBanner';
@@ -41,18 +41,18 @@ function App() {
                   </Route>
 
                   <Route path={RoutePath.ActivityLevel}>
-                    <Activity />
+                    <ActivityLevel />
                   </Route>
 
-                  <Route path={RoutePath.Goal}>
-                    <Goal />
+                  <Route path={RoutePath.FitnessGoal}>
+                    <FitnessGoal />
                   </Route>
 
                   <Route path={RoutePath.Results}>
                     <Result />
                   </Route>
 
-                  <Route path={RoutePath.How}>
+                  <Route path={RoutePath.HowCalculationWorks}>
                     <HowCalculationWorks />
                   </Route>
 

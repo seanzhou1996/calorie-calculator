@@ -10,7 +10,7 @@ function Result() {
   const { submission } = useContext(SubmissionContext);
 
   if (!submission) {
-    return <Redirect to={{ pathname: RoutePath.Goal, state: { from: location } }} />;
+    return <Redirect to={{ pathname: RoutePath.FitnessGoal, state: { from: location } }} />;
   }
 
   return (

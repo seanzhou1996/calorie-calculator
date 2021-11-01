@@ -20,7 +20,7 @@ export default function ResultSectionHowCalculationWorks() {
         <Trans
           t={t}
           i18nKey={I18nKeys.LearnMoreAboutHowCalculationWorks_Link}
-          components={{ Link: <Link to={RoutePath.How} /> }}
+          components={{ Link: <Link to={RoutePath.HowCalculationWorks} /> }}
         />
       </p>
     </section>
