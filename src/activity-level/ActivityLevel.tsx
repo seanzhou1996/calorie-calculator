@@ -4,7 +4,7 @@ import ActivityLevelForm from './ActivityLevelForm';
 import { FormStateContext } from 'shared/FormStateContext';
 import { isFormValid } from 'shared/utils';
 import { PersonalInfoFormSchema, RoutePath } from 'shared/models';
-import GoBackButton from 'shared/GoBackButton';
+import BaseGoBackButton from 'shared/BaseGoBackButton';
 
 export default function ActivityLevel() {
   const {
@@ -16,7 +16,7 @@ export default function ActivityLevel() {
 
   return isPrevFormValid ? (
     <div className="width-container">
-      <GoBackButton to={RoutePath.PersonalDetails} />
+      <BaseGoBackButton to={RoutePath.PersonalDetails} />
 
       <ActivityLevelForm />
     </div>

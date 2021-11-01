@@ -4,7 +4,7 @@ import FitnessGoalForm from './FitnessGoalForm';
 import { FormStateContext } from 'shared/FormStateContext';
 import { isFormValid } from 'shared/utils';
 import { ActivityFormSchema, RoutePath } from 'shared/models';
-import GoBackButton from 'shared/GoBackButton';
+import BaseGoBackButton from 'shared/BaseGoBackButton';
 
 export default function FitnessGoal() {
   const {
@@ -15,7 +15,7 @@ export default function FitnessGoal() {
 
   return isPrevFormValid ? (
     <div className="width-container">
-      <GoBackButton to={RoutePath.ActivityLevel} />
+      <BaseGoBackButton to={RoutePath.ActivityLevel} />
 
       <FitnessGoalForm />
     </div>

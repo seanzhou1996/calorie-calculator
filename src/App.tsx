@@ -6,7 +6,7 @@ import { SubmissionContextProvider } from 'shared/SubmissionContext';
 import { FormStateContextProvider } from 'shared/FormStateContext';
 import { SaveSubmissionFlagContextProvider } from 'shared/saveSubmissionFlagContext';
 import { RoutePath } from 'shared/models';
-import PageTemplate from 'shared/PageTemplate';
+import PageTemplate from 'shared/page-template/PageTemplate';
 import ScrollToTop from 'shared/ScrollToTop';
 import Home from './home/Home';
 import PersonalDetails from 'personal-details/PersonalDetails';

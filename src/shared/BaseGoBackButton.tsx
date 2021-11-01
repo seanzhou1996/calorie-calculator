@@ -4,19 +4,20 @@ import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { I18nKeys } from 'shared/i18n-keys';
 
-interface GoBackButtonProps {
+interface BaseGoBackButtonProps {
   to: string;
+  titleOverride?: string;
 }
 
-function GoBackButton({ to }: GoBackButtonProps) {
+function BaseGoBackButton({ to, titleOverride }: BaseGoBackButtonProps) {
   const { t } = useTranslation();
   const history = useHistory();
   return (
     <button onClick={() => history.push(to)} className="go-back-button">
       <LeftOutlined className="icon" />
-      <span>{t(I18nKeys.PreviousPage)}</span>
+      <span>{titleOverride || t(I18nKeys.PreviousPage)}</span>
     </button>
   );
 }
 
-export default GoBackButton;
+export default BaseGoBackButton;

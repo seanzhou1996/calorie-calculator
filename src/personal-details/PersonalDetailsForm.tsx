@@ -15,7 +15,7 @@ import {
 } from 'shared/models';
 import { FormStateContext } from 'shared/FormStateContext';
 import { I18nKeys, PersonalDetailsI18nKeys } from 'shared/i18n-keys';
-import Expander from 'shared/Expander';
+import BaseExpander from 'shared/BaseExpander';
 
 const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
   const { age, sex, height, weight } = value;
@@ -62,7 +62,7 @@ export default function PersonalDetailsForm() {
             </header>
             <p>{t(PersonalDetailsI18nKeys.EnterAgeSexHeightWeight)}</p>
             <div className="hint">
-              <Expander title={t(PersonalDetailsI18nKeys.WhyDoWeNeedThem)}>
+              <BaseExpander title={t(PersonalDetailsI18nKeys.WhyDoWeNeedThem)}>
                 <>
                   <p>{t(PersonalDetailsI18nKeys.AnswerFirstParagraph)}</p>
                   <p>{t(PersonalDetailsI18nKeys.AnswerSecondParagraph)}</p>
@@ -73,7 +73,7 @@ export default function PersonalDetailsForm() {
                     <li>{t(PersonalDetailsI18nKeys.FactorThirdParagraph)}</li>
                   </ul>
                 </>
-              </Expander>
+              </BaseExpander>
             </div>
             <div className="form-item">
               <div

@@ -1,7 +1,7 @@
 import React from 'react';
 import { SummaryListProps } from './models';
 
-function SummaryList({ data }: SummaryListProps) {
+function BaseSummaryList({ data }: SummaryListProps) {
   const rowElems = data.map(({ key, value, action }, index) => (
     <div key={index} className="summary-list__row">
       <dt className="summary-list__key">{key}</dt>
@@ -16,4 +16,4 @@ function SummaryList({ data }: SummaryListProps) {
   return <dl className="summary-list">{rowElems}</dl>;
 }
 
-export default SummaryList;
+export default BaseSummaryList;

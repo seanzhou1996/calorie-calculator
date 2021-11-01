@@ -10,7 +10,7 @@ import {
   sexI18nKeys,
   SummaryListRow,
 } from 'shared/models';
-import SummaryList from 'shared/SummaryList';
+import BaseSummaryList from 'shared/BaseSummaryList';
 
 interface ResultSectionYourAnswersProps {
   personInfo: PersonInfo;
@@ -75,7 +75,7 @@ export default function ResultSectionYourAnswers({
       >
         <span>{t(I18nKeys.StartAgain)}</span>
       </button>
-      <SummaryList data={summaryListData} />
+      <BaseSummaryList data={summaryListData} />
     </section>
   );
 }

@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import classNames from 'classnames';
 import { I18nKeys } from 'shared/i18n-keys';
-import AppSettings from './AppSettings';
-import { RoutePath } from './models';
+import PageTemplateAppSettings from './PageTemplateAppSettings';
+import { RoutePath } from '../models';
 
 function PageTemplate({ children }: { children: React.ReactNode }) {
   const location = useLocation();
@@ -34,7 +34,7 @@ function PageTemplate({ children }: { children: React.ReactNode }) {
             </button>
           </div>
         </div>
-        {!showSettings ? null : <AppSettings onClose={() => setShowSettings(false)} />}
+        {!showSettings ? null : <PageTemplateAppSettings onClose={() => setShowSettings(false)} />}
       </header>
       <main className="page-body">{children}</main>
     </div>

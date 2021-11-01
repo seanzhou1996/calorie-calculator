@@ -18,7 +18,7 @@ import { FormStateContext } from 'shared/FormStateContext';
 import { useTranslation } from 'react-i18next';
 import { I18nKeys } from 'shared/i18n-keys';
 import { SubmissionContext } from 'shared/SubmissionContext';
-import Expander from 'shared/Expander';
+import BaseExpander from 'shared/BaseExpander';
 
 const allGoals = Object.values(GoalType);
 
@@ -68,13 +68,13 @@ export default function FitnessGoalForm() {
           </header>
 
           <div className="hint">
-            <Expander title={t(I18nKeys.WhyAreWeAsking)}>
+            <BaseExpander title={t(I18nKeys.WhyAreWeAsking)}>
               <>
                 <p>{t(I18nKeys.GoalPageFirstParagraph)}</p>
                 <p>{t(I18nKeys.GoalPageSecondParagraph)}</p>
                 <p>{t(I18nKeys.GoalPageThirdParagraph)}</p>
               </>
-            </Expander>
+            </BaseExpander>
           </div>
 
           <div

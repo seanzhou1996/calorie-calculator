@@ -3,10 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { RadioChangeEvent, Radio, Switch } from 'antd';
 import { I18nKeys } from 'shared/i18n-keys';
 import { ReactComponent as CloseIcon } from 'assets/icon-close.svg';
-import { allLanguages, Language } from './models';
-import { SaveSubmissionFlagContext } from './saveSubmissionFlagContext';
+import { allLanguages, Language } from '../models';
+import { SaveSubmissionFlagContext } from '../saveSubmissionFlagContext';
 
-interface AppSettingsProps {
+interface PageTemplateAppSettingsProps {
   onClose: () => void;
 }
 
@@ -16,7 +16,7 @@ const languageLabels: Record<Language, string> = {
   [Language.ZhYue]: '粵語（香港）',
 };
 
-function AppSettings({ onClose }: AppSettingsProps) {
+export default function PageTemplateAppSettings({ onClose }: PageTemplateAppSettingsProps) {
   const { t, i18n } = useTranslation();
   const { saveSubmissionFlag, setSaveSubmissionFlag } = useContext(SaveSubmissionFlagContext);
   const handleChangeLanguage = (event: RadioChangeEvent) => {
@@ -70,5 +70,3 @@ function AppSettings({ onClose }: AppSettingsProps) {
     </div>
   );
 }
-
-export default AppSettings;

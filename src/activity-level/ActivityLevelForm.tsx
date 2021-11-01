@@ -16,7 +16,7 @@ import {
 import { FormStateContext } from 'shared/FormStateContext';
 import { I18nKeys } from 'shared/i18n-keys';
 import { useTranslation } from 'react-i18next';
-import Expander from 'shared/Expander';
+import BaseExpander from 'shared/BaseExpander';
 
 const getActivityFormData: (values: FullFormModel) => FormModel = (values) => {
   return { activityLevel: values.activityLevel };
@@ -69,7 +69,7 @@ export default function ActivityLevelForm() {
           </header>
 
           <div className="hint">
-            <Expander title={t(I18nKeys.WhatCounts)}>
+            <BaseExpander title={t(I18nKeys.WhatCounts)}>
               <>
                 <p>{t(I18nKeys.CountFirstParagraph)}</p>
                 <ul>
@@ -79,7 +79,7 @@ export default function ActivityLevelForm() {
                 </ul>
                 <p>{t(I18nKeys.CountSecondParagraph)}</p>
               </>
-            </Expander>
+            </BaseExpander>
           </div>
 
           <div

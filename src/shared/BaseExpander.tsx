@@ -2,14 +2,14 @@ import React from 'react';
 import { Collapse } from 'antd';
 import { CaretRightFilled } from '@ant-design/icons';
 
-interface ExpanderProps {
+interface BaseExpanderProps {
   title: string;
   children: React.ReactNode;
 }
 
 const { Panel } = Collapse;
 
-function Expander({ title, children }: ExpanderProps) {
+function BaseExpander({ title, children }: BaseExpanderProps) {
   return (
     <Collapse ghost className="expander" collapsible="header">
       <Panel
@@ -29,4 +29,4 @@ function Expander({ title, children }: ExpanderProps) {
   );
 }
 
-export default Expander;
+export default BaseExpander;
