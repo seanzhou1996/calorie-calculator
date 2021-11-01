@@ -1,13 +1,13 @@
-import { I18nKeys } from 'result/i18n-keys';
+import { I18nKeys } from 'shared/i18n-keys';
 import * as Yup from 'yup';
 
 export enum RoutePath {
   Home = '/',
   PersonalDetails = '/personal-details',
   ActivityLevel = '/activity-level',
-  Goal = '/goal',
+  FitnessGoal = '/fitness-goal',
   Results = '/results',
-  How = '/how',
+  HowCalculationWorks = '/how-calculation-works',
   WeightLossGuide = '/weight-loss-guide',
   WeightGainGuide = '/weight-gain-guide',
   EatWellGuide = '/eat-well-guide',

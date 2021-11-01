@@ -1,14 +1,14 @@
 import React from 'react';
-import PersonalInfoForm from './PersonalInfoForm';
+import PersonalDetailsForm from './PersonalDetailsForm';
 import { RoutePath } from 'shared/models';
-import GoBackButton from 'shared/GoBackButton';
+import BaseGoBackButton from 'shared/BaseGoBackButton';
 
 function PersonalDetails() {
   return (
     <div className="width-container">
-      <GoBackButton to={RoutePath.Home} />
+      <BaseGoBackButton to={RoutePath.Home} />
 
-      <PersonalInfoForm />
+      <PersonalDetailsForm />
     </div>
   );
 }
