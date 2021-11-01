@@ -12,8 +12,8 @@ import Home from './home/Home';
 import PersonalDetails from 'personal-details/PersonalDetails';
 import Activity from './activity/Activity';
 import Goal from './goal/Goal';
-import Result from './result/Result';
-import HowItWorks from 'HowItWorks';
+import Result from './results/Result';
+import HowCalculationWorks from 'how-calculation-works/HowCalculationWorks';
 import KeepSubmissionBanner from 'shared/KeepSubmissionBanner';
 import UpdateDocumentLang from 'shared/UpdateDocumentLang';
 import WeightGainGuide from 'WeightGainGuide';
@@ -53,7 +53,7 @@ function App() {
                   </Route>
 
                   <Route path={RoutePath.How}>
-                    <HowItWorks />
+                    <HowCalculationWorks />
                   </Route>
 
                   <Route path={RoutePath.WeightGainGuide}>

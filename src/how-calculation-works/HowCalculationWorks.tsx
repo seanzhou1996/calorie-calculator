@@ -2,11 +2,11 @@ import React from 'react';
 import { LeftOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { I18nKeys, HowItWorksI18nKeys } from 'shared/i18n-keys';
-import ActivityRateTable from 'result/result-page/activity-rate-table/ActivityRateTable';
+import ActivityRateTable from 'how-calculation-works/HowCalculationWorksActivityRateTable';
 import { useHistory } from 'react-router';
 import { RoutePath } from 'shared/models';
 
-function HowItWorks() {
+export default function HowCalculationWorks() {
   const { t } = useTranslation();
   const history = useHistory();
   return (
@@ -83,5 +83,3 @@ function HowItWorks() {
     </div>
   );
 }
-
-export default HowItWorks;

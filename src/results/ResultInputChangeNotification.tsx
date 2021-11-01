@@ -7,7 +7,7 @@ import { RoutePath } from 'shared/models';
 import { SubmissionContext } from 'shared/SubmissionContext';
 import { I18nKeys } from 'shared/i18n-keys';
 
-function InputChangeNotification() {
+function ResultInputChangeNotification() {
   const { t } = useTranslation();
   const history = useHistory();
   const { formState } = useContext(FormStateContext);
@@ -28,4 +28,4 @@ function InputChangeNotification() {
   );
 }
 
-export default InputChangeNotification;
+export default ResultInputChangeNotification;

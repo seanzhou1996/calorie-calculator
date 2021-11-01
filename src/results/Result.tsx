@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
-import ResultPage from './result-page/ResultPage';
+import ResultPage from './ResultPage';
 import { SubmissionContext } from 'shared/SubmissionContext';
-import InputChangeNotification from './InputChangeNotification';
+import ResultInputChangeNotification from './ResultInputChangeNotification';
 import { RoutePath } from 'shared/models';
 
 function Result() {
@@ -15,7 +15,7 @@ function Result() {
 
   return (
     <div className="width-container">
-      <InputChangeNotification />
+      <ResultInputChangeNotification />
       <ResultPage personInfo={submission.data} />
     </div>
   );
