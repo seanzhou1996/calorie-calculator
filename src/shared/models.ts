@@ -8,6 +8,9 @@ export enum RoutePath {
   Goal = '/goal',
   Results = '/results',
   How = '/how',
+  WeightLossGuide = '/weight-loss-guide',
+  WeightGainGuide = '/weight-gain-guide',
+  EatWellGuide = '/eat-well-guide',
 }
 
 export enum Language {
@@ -19,28 +22,33 @@ export enum Language {
 export enum I18nNamespace {
   General = 'general',
   PersonalDetails = 'personal-details',
-  HowItWorks = 'how-it-works',
+  HowCalculationWorks = 'how-calculation-works',
+  ChoosingFoods = 'choosing-foods',
+  PlanningDiet = 'planning-diet',
+  ResultSectionHowToLoseWeight = 'result-section-how-to-lose-weight',
+  ResultSectionHowToGainWeight = 'result-section-how-to-gain-weight',
+  ResultSectionHowToEatWell = 'result-section-how-to-eat-well',
 }
 
 export const allLanguages = Object.values(Language);
 
-export type Gender = 'male' | 'female';
+export type Sex = 'male' | 'female';
 
-export const genderI18nKeys: Record<Gender, I18nKeys> = {
+export const sexI18nKeys: Record<Sex, I18nKeys> = {
   male: I18nKeys.Male,
   female: I18nKeys.Female,
 };
 
 export enum PersonalInfoFormField {
   Age = 'age',
-  Gender = 'gender',
+  Sex = 'sex',
   Height = 'height',
   Weight = 'weight',
 }
 
 export interface PersonalInfoFormModel {
   [PersonalInfoFormField.Age]: number;
-  [PersonalInfoFormField.Gender]: Gender;
+  [PersonalInfoFormField.Sex]: Sex;
   [PersonalInfoFormField.Height]: number; // cm
   [PersonalInfoFormField.Weight]: number; // kg
 }
@@ -101,7 +109,7 @@ export interface FullFormModel extends PersonalInfoFormModel, ActivityFormModel,
 
 export const emptyFormModel: FullFormModel = {
   age: null,
-  gender: null,
+  sex: null,
   height: null,
   weight: null,
   activityLevel: null,
@@ -139,20 +147,20 @@ export const mealLabelI18nKeys: Record<MealType, I18nKeys> = {
 const ageSchema = Yup.number()
   .nullable()
   .required(I18nKeys.FieldIsRequired_field)
-  .integer(I18nKeys.AgeMustBeInteger)
-  .min(18, I18nKeys.MinimumInput_field_min)
-  .max(120, I18nKeys.MaximumInput_field_max);
+  .integer(I18nKeys.FieldMustBeInteger_field)
+  .min(18, I18nKeys.FieldCannotBeLowerThan_field_min)
+  .max(120, I18nKeys.FieldCannotBeHigherThan_field_max);
 const heightSchema = Yup.number()
   .nullable()
   .required(I18nKeys.FieldIsRequired_field)
-  .min(100, I18nKeys.MinimumInput_field_min)
-  .max(272, I18nKeys.MaximumInput_field_max);
+  .min(100, I18nKeys.FieldCannotBeLowerThan_field_min)
+  .max(272, I18nKeys.FieldCannotBeHigherThan_field_max);
 const weightSchema = Yup.number()
   .nullable()
   .required(I18nKeys.FieldIsRequired_field)
-  .min(30, I18nKeys.MinimumInput_field_min)
-  .max(130, I18nKeys.MaximumInput_field_max);
-const genderSchema = Yup.string().nullable().required(I18nKeys.ChooseAnOption_field);
+  .min(30, I18nKeys.FieldCannotBeLowerThan_field_min)
+  .max(130, I18nKeys.FieldCannotBeHigherThan_field_max);
+const sexSchema = Yup.string().nullable().required(I18nKeys.ChooseAnOption_field);
 const activityLevelSchema = Yup.string().nullable().required(I18nKeys.ChooseAnOption);
 const goalSchema = Yup.string().nullable().required(I18nKeys.ChooseAnOption_field);
 
@@ -160,7 +168,7 @@ export const PersonalInfoFormSchema = Yup.object().shape({
   [PersonalInfoFormField.Age]: ageSchema,
   [PersonalInfoFormField.Height]: heightSchema,
   [PersonalInfoFormField.Weight]: weightSchema,
-  [PersonalInfoFormField.Gender]: genderSchema,
+  [PersonalInfoFormField.Sex]: sexSchema,
 });
 
 export const ActivityFormSchema = Yup.object().shape({
@@ -175,7 +183,7 @@ export const FullFormSchema = Yup.object().shape({
   [PersonalInfoFormField.Age]: ageSchema,
   [PersonalInfoFormField.Height]: heightSchema,
   [PersonalInfoFormField.Weight]: weightSchema,
-  [PersonalInfoFormField.Gender]: genderSchema,
+  [PersonalInfoFormField.Sex]: sexSchema,
   [ActivityFormField.Level]: activityLevelSchema,
   [GoalFormField.Goal]: goalSchema,
 });

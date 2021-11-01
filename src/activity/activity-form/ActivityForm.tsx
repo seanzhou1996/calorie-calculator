@@ -32,7 +32,7 @@ const exampleActivityI18nKeys: I18nKeys[] = [
 const allActivityLevels = Object.values(ActivityLevel);
 
 export default function ActivityForm() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const {
     formState: { formData },
     updateFormState,
@@ -88,7 +88,9 @@ export default function ActivityForm() {
               errors.activityLevel && touched.activityLevel ? 'input-wrapper--error' : null
             )}
           >
-            <ErrorMessage component="span" name={FormField.Level} className="error-message" />
+            <ErrorMessage key={i18n.resolvedLanguage} name={FormField.Level}>
+              {(key) => <span className="error-message">{t(key)}</span>}
+            </ErrorMessage>
             <Radio.Group name={FormField.Level} size="large" className="control">
               <Space direction="vertical" size={12}>
                 {activityOptions}
