@@ -17,7 +17,7 @@ export default function BaseMarkdownConverter({ url }: BaseMarkdownConverterProp
 
   useEffect(() => {
     init();
-  }, []);
+  }, [url]);
 
   return (
     <div
