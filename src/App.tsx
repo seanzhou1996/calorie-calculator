@@ -5,6 +5,7 @@ import 'shared/i18n';
 import { SubmissionContextProvider } from 'shared/SubmissionContext';
 import { FormStateContextProvider } from 'shared/FormStateContext';
 import { SaveSubmissionFlagContextProvider } from 'shared/saveSubmissionFlagContext';
+import { RoutePath } from 'shared/models';
 import PageTemplate from 'shared/PageTemplate';
 import ScrollToTop from 'shared/ScrollToTop';
 import Home from './home/Home';
@@ -15,9 +16,11 @@ import Result from './result/Result';
 import HowItWorks from 'HowItWorks';
 import KeepSubmissionBanner from 'shared/KeepSubmissionBanner';
 import UpdateDocumentLang from 'shared/UpdateDocumentLang';
+import WeightGainGuide from 'WeightGainGuide';
+import WeightLossGuide from 'WeightLossGuide';
+import EatWellGuide from 'EatWellGuide';
 
 import './App.less';
-import { RoutePath } from 'shared/models';
 
 function App() {
   return (
@@ -51,6 +54,18 @@ function App() {
 
                   <Route path={RoutePath.How}>
                     <HowItWorks />
+                  </Route>
+
+                  <Route path={RoutePath.WeightGainGuide}>
+                    <WeightGainGuide />
+                  </Route>
+
+                  <Route path={RoutePath.WeightLossGuide}>
+                    <WeightLossGuide />
+                  </Route>
+
+                  <Route path={RoutePath.EatWellGuide}>
+                    <EatWellGuide />
                   </Route>
                 </Switch>
               </PageTemplate>
