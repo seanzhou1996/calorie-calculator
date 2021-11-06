@@ -54,6 +54,43 @@ span.@{radio-prefix-cls} + * {
   padding-left: 10px;
 }
 
+@radio-button-border-width: 1px;
+@radio-button-border-color: rgb(217, 217, 217);
+@radio-button-border-radius: 2px;
+
+.@{radio-prefix-cls}-button-wrapper {
+  border: @radio-button-border-width @border-style-base @radio-button-border-color;
+  border-top-width: @radio-button-border-width + 0.02px;
+  border-left-width: 0;
+
+  &:not(:first-child) {
+    &::before {
+      top: @radio-button-border-width * -1;
+      padding: @radio-button-border-width 0;
+      background-color: @radio-button-border-color;
+    }
+  }
+
+  &:first-child {
+    border-left: @radio-button-border-width @border-style-base @radio-button-border-color;
+    border-radius: @radio-button-border-radius 0 0 @radio-button-border-radius;
+  }
+
+  &:last-child {
+    border-radius: 0 @radio-button-border-radius @radio-button-border-radius 0;
+  }
+
+  &:first-child:last-child {
+    border-radius: @radio-button-border-radius;
+  }
+
+  &-checked:not(&-disabled) {
+    &::before {
+      background-color: @radio-button-active-color;
+    }
+  }
+}
+
 .@{table-prefix-cls} {
   background: transparent;
 

@@ -1,4 +1,4 @@
-import { I18nKeys } from 'shared/i18n-keys';
+import { I18nKeys, CalorieCheckerI18nKeys } from 'shared/i18n-keys';
 import * as Yup from 'yup';
 
 export enum RoutePath {
@@ -7,6 +7,7 @@ export enum RoutePath {
   ActivityLevel = '/activity-level',
   FitnessGoal = '/fitness-goal',
   Results = '/results',
+  CalorieChecker = '/calorie-checker',
   HowCalculationWorks = '/how-calculation-works',
   WeightLossGuide = '/weight-loss-guide',
   WeightGainGuide = '/weight-gain-guide',
@@ -28,6 +29,7 @@ export enum I18nNamespace {
   ResultSectionHowToLoseWeight = 'result-section-how-to-lose-weight',
   ResultSectionHowToGainWeight = 'result-section-how-to-gain-weight',
   ResultSectionHowToEatWell = 'result-section-how-to-eat-well',
+  CalorieChecker = 'calorie-checker',
 }
 
 export const allLanguages = Object.values(Language);
@@ -214,3 +216,116 @@ export interface SummaryListRow {
 export interface SummaryListProps {
   data: SummaryListRow[];
 }
+
+export enum FoodType {
+  Grains = 'grains',
+  MeatFishEggAlternatives = 'meat_fish_egg_alternatives',
+  Vegetables = 'vegetables',
+  Fruits = 'fruits',
+  ReadyToEatDishes = 'ready_to_eat_dishes',
+  BreadCakesPastries = 'bread_cakes_pastries',
+  ChineseDimSum = 'chinese_dim_sum',
+  Snacks = 'snacks',
+  OtherReadyToEatFoods = 'other_ready_to_eat_foods',
+  Drinks = 'drinks',
+  FatsAndOils = 'fat_and_oils',
+  Others = 'others',
+}
+
+export const allFoodTypes = Object.values(FoodType);
+
+export const foodTypeI18nKeys: Record<FoodType, CalorieCheckerI18nKeys> = {
+  [FoodType.Grains]: CalorieCheckerI18nKeys.Grains,
+  [FoodType.MeatFishEggAlternatives]: CalorieCheckerI18nKeys.MeatFishEggAlternatives,
+  [FoodType.Vegetables]: CalorieCheckerI18nKeys.Vegetables,
+  [FoodType.Fruits]: CalorieCheckerI18nKeys.Fruits,
+  [FoodType.ReadyToEatDishes]: CalorieCheckerI18nKeys.ReadyToEatDishes,
+  [FoodType.BreadCakesPastries]: CalorieCheckerI18nKeys.BreadCakesPastries,
+  [FoodType.ChineseDimSum]: CalorieCheckerI18nKeys.ChineseDimSum,
+  [FoodType.Snacks]: CalorieCheckerI18nKeys.Snacks,
+  [FoodType.OtherReadyToEatFoods]: CalorieCheckerI18nKeys.OtherReadyToEatFoods,
+  [FoodType.Drinks]: CalorieCheckerI18nKeys.Drinks,
+  [FoodType.FatsAndOils]: CalorieCheckerI18nKeys.FatsAndOils,
+  [FoodType.Others]: CalorieCheckerI18nKeys.Others,
+};
+
+export interface Food {
+  type: FoodType;
+  name: string;
+  nameZh: string;
+  portion: string | null;
+  unit: FoodUnit | null;
+  weight: number;
+  calorie: number;
+}
+
+export interface FoodWithPortionAndUnit extends Food {
+  portion: string;
+  unit: FoodUnit;
+}
+
+export enum FoodUnit {
+  BowlAlt = 'bowl-alt',
+  Bowl = 'bowl',
+  Slice = 'slice',
+  Link = 'link',
+  Chop = 'chop',
+  Thigh = 'thigh',
+  Wing = 'wing',
+  Duck = 'duck',
+  Goose = 'goose',
+  Fillet = 'fillet',
+  PieceAlt = 'piece-alt',
+  PieceAlt_2 = 'piece-alt-2',
+  Piece = 'piece',
+  Large = 'large',
+  Block = 'block',
+  Tablespoon = 'tablespoon',
+  Stalk = 'stalk',
+  Ear = 'ear',
+  Mushroom = 'mushroom',
+  Medium = 'medium',
+  Plate = 'plate',
+  Kernel = 'kernel',
+  Candy = 'candy',
+  Bar = 'bar',
+  Scoop = 'scoop',
+  Ball = 'ball',
+  Bag = 'bag',
+  Portion = 'portion',
+  Cup = 'cup',
+  Can = 'can',
+}
+
+export const foodUnitI18nKeys: Record<FoodUnit, CalorieCheckerI18nKeys> = {
+  [FoodUnit.BowlAlt]: CalorieCheckerI18nKeys.BowlAlt,
+  [FoodUnit.Bowl]: CalorieCheckerI18nKeys.Bowl,
+  [FoodUnit.Slice]: CalorieCheckerI18nKeys.Slice,
+  [FoodUnit.Link]: CalorieCheckerI18nKeys.Link,
+  [FoodUnit.Chop]: CalorieCheckerI18nKeys.Chop,
+  [FoodUnit.Thigh]: CalorieCheckerI18nKeys.Thigh,
+  [FoodUnit.Wing]: CalorieCheckerI18nKeys.Wing,
+  [FoodUnit.Duck]: CalorieCheckerI18nKeys.Duck,
+  [FoodUnit.Goose]: CalorieCheckerI18nKeys.Goose,
+  [FoodUnit.Fillet]: CalorieCheckerI18nKeys.Fillet,
+  [FoodUnit.PieceAlt]: CalorieCheckerI18nKeys.PieceAlt,
+  [FoodUnit.PieceAlt_2]: CalorieCheckerI18nKeys.PieceAlt_2,
+  [FoodUnit.Piece]: CalorieCheckerI18nKeys.Piece,
+  [FoodUnit.Large]: CalorieCheckerI18nKeys.Large,
+  [FoodUnit.Block]: CalorieCheckerI18nKeys.Block,
+  [FoodUnit.Tablespoon]: CalorieCheckerI18nKeys.Tablespoon,
+  [FoodUnit.Stalk]: CalorieCheckerI18nKeys.Stalk,
+  [FoodUnit.Ear]: CalorieCheckerI18nKeys.Ear,
+  [FoodUnit.Mushroom]: CalorieCheckerI18nKeys.Mushroom,
+  [FoodUnit.Medium]: CalorieCheckerI18nKeys.Medium,
+  [FoodUnit.Plate]: CalorieCheckerI18nKeys.Plate,
+  [FoodUnit.Kernel]: CalorieCheckerI18nKeys.Kernel,
+  [FoodUnit.Candy]: CalorieCheckerI18nKeys.Candy,
+  [FoodUnit.Bar]: CalorieCheckerI18nKeys.Bar,
+  [FoodUnit.Scoop]: CalorieCheckerI18nKeys.Scoop,
+  [FoodUnit.Ball]: CalorieCheckerI18nKeys.Ball,
+  [FoodUnit.Bag]: CalorieCheckerI18nKeys.Bag,
+  [FoodUnit.Portion]: CalorieCheckerI18nKeys.Portion,
+  [FoodUnit.Cup]: CalorieCheckerI18nKeys.Cup,
+  [FoodUnit.Can]: CalorieCheckerI18nKeys.Can,
+};

@@ -19,6 +19,7 @@ import UpdateDocumentLang from 'shared/UpdateDocumentLang';
 import WeightGainGuide from 'WeightGainGuide';
 import WeightLossGuide from 'WeightLossGuide';
 import EatWellGuide from 'EatWellGuide';
+import CalorieChecker from 'calorie-checker/CalorieChecker';
 
 import './App.less';
 
@@ -50,6 +51,10 @@ function App() {
 
                   <Route path={RoutePath.Results}>
                     <Result />
+                  </Route>
+
+                  <Route path={RoutePath.CalorieChecker}>
+                    <CalorieChecker />
                   </Route>
 
                   <Route path={RoutePath.HowCalculationWorks}>

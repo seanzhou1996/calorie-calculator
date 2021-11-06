@@ -14,7 +14,7 @@ export default function ResultSectionChoosingFood() {
       <p>{t(I18nKeys.SecondParagraph)}</p>
       <p>{t(I18nKeys.FourthParagraph)}</p>
       <div className="action">
-        <BaseActionLink to={RoutePath.Home} title={t(I18nKeys.OpenFoodCalorieChecker)} />
+        <BaseActionLink to={RoutePath.CalorieChecker} title={t(I18nKeys.OpenFoodCalorieChecker)} />
       </div>
     </section>
   );

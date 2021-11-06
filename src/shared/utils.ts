@@ -51,3 +51,7 @@ export function formatDate(date: number | Date): string {
 export function getLocaleTime(date: number | Date): string {
   return new Intl.DateTimeFormat([], { timeStyle: 'short' }).format(date);
 }
+
+export function isFraction(string: string): boolean {
+  return string.includes('/');
+}

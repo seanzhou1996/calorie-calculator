@@ -20,6 +20,8 @@ import resultSectionHowToGainWeightEn from 'locales/result-section-how-to-gain-w
 import resultSectionHowToGainWeightZh from 'locales/result-section-how-to-gain-weight/result-section-how-to-gain-weight-zh.json';
 import resultSectionHowToEatWellEn from 'locales/result-section-how-to-eat-well/result-section-how-to-eat-well-en.json';
 import resultSectionHowToEatWellZh from 'locales/result-section-how-to-eat-well/result-section-how-to-eat-well-zh.json';
+import calorieCheckerEn from 'locales/calorie-checker/calorie-checker-en.json';
+import calorieCheckerZh from 'locales/calorie-checker/calorie-checker-zh.json';
 import { I18nNamespace, Language, StorageKey } from './models';
 
 enum Format {
@@ -38,6 +40,7 @@ const resources: Record<Language, ResourceLanguage> = {
     [I18nNamespace.ResultSectionHowToLoseWeight]: resultSectionHowToLoseWeightEn,
     [I18nNamespace.ResultSectionHowToGainWeight]: resultSectionHowToGainWeightEn,
     [I18nNamespace.ResultSectionHowToEatWell]: resultSectionHowToEatWellEn,
+    [I18nNamespace.CalorieChecker]: calorieCheckerEn,
   },
   [Language.ZhHk]: {
     [I18nNamespace.General]: zh,
@@ -48,6 +51,7 @@ const resources: Record<Language, ResourceLanguage> = {
     [I18nNamespace.ResultSectionHowToLoseWeight]: resultSectionHowToLoseWeightZh,
     [I18nNamespace.ResultSectionHowToGainWeight]: resultSectionHowToGainWeightZh,
     [I18nNamespace.ResultSectionHowToEatWell]: resultSectionHowToEatWellZh,
+    [I18nNamespace.CalorieChecker]: calorieCheckerZh,
   },
   [Language.ZhYue]: {
     [I18nNamespace.General]: zhYue,

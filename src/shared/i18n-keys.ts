@@ -15,8 +15,12 @@ export enum I18nKeys {
   HideThisMessage = 'HideThisMessage',
 
   // Common
+  Amount = 'Amount',
+  BackToTop = 'BackToTop',
   MaintainWeight = 'MaintainWeight',
+  Milliliter_amount = 'Milliliter_amount',
   GainMuscle = 'GainMuscle',
+  Grams_amount = 'Grams_amount',
   LoseFat = 'LoseFat',
   Age = 'Age',
   Sex = 'Sex',
@@ -29,6 +33,7 @@ export enum I18nKeys {
   Change = 'Change',
   PreviousPage = 'PreviousPage',
   Calories = 'Calories',
+  Kilocalorie_amount = 'Kilocalorie_amount',
 
   // Error messages
   FieldIsRequired_field = 'FieldIsRequired_field',
@@ -211,4 +216,58 @@ export enum ResultSectionHowToEatWellI18nKeys {
   FirstParagraph = 'FirstParagraph',
   SecondParagraph = 'SecondParagraph',
   ThirdParagraph = 'ThirdParagraph',
+}
+
+export enum CalorieCheckerI18nKeys {
+  Title = 'Title',
+
+  // Food types
+  Grains = 'Grains',
+  MeatFishEggAlternatives = 'MeatFishEggAlternatives',
+  Vegetables = 'Vegetables',
+  Fruits = 'Fruits',
+  ReadyToEatDishes = 'ReadyToEatDishes',
+  BreadCakesPastries = 'BreadCakesPastries',
+  ChineseDimSum = 'ChineseDimSum',
+  Snacks = 'Snacks',
+  OtherReadyToEatFoods = 'OtherReadyToEatFoods',
+  Drinks = 'Drinks',
+  FatsAndOils = 'FatsAndOils',
+  Others = 'Others',
+
+  PortionWithUnit_portion_unit = 'PortionWithUnit_portion_unit',
+  HalfPortionWithUnit_unit = 'HalfPortionWithUnit_unit',
+  PortionAndWeightInBrackets_portion_weight = 'PortionAndWeightInBrackets_portion_weight',
+
+  // Food unit
+  BowlAlt = 'BowlAlt',
+  Bowl = 'Bowl',
+  Slice = 'Slice',
+  Link = 'Link',
+  Chop = 'Chop',
+  Thigh = 'Thigh',
+  Wing = 'Wing',
+  Duck = 'Duck',
+  Goose = 'Goose',
+  Fillet = 'Fillet',
+  PieceAlt = 'PieceAlt',
+  PieceAlt_2 = 'PieceAlt_2',
+  Piece = 'Piece',
+  Large = 'Large',
+  Block = 'Block',
+  Tablespoon = 'Tablespoon',
+  Stalk = 'Stalk',
+  Ear = 'Ear',
+  Mushroom = 'Mushroom',
+  Medium = 'Medium',
+  Plate = 'Plate',
+  Kernel = 'Kernel',
+  Candy = 'Candy',
+  Bar = 'Bar',
+  Scoop = 'Scoop',
+  Ball = 'Ball',
+  Bag = 'Bag',
+  Portion = 'Portion',
+  Cup = 'Cup',
+  Can = 'Can',
 }

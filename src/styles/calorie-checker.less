@@ -1,0 +1,130 @@
+.food-list-item {
+  padding: 1rem 0;
+
+  &:not(:last-child):not(:last-of-type) {
+    border-bottom: 1px solid @cc-grey-4;
+  }
+}
+
+.food__header {
+  margin-bottom: 1rem;
+  font-size: calc(1rem + 2px);
+}
+
+.food__grid {
+  display: grid;
+  grid-template-columns: max-content auto;
+  align-items: center;
+  row-gap: 0.25rem;
+  column-gap: 2rem;
+}
+
+.food__property {
+  font-weight: var(--bold);
+}
+
+.food-expander-panel {
+  border-top: 1px solid @cc-grey-4 !important;
+  border-radius: 0 !important;
+  background-color: white;
+
+  &:last-child,
+  &:last-of-type {
+    border-bottom: 1px solid @cc-grey-4 !important;
+    border-radius: 0 !important;
+  }
+}
+
+.food-expander-header {
+  padding: 1rem 0;
+  font-size: 1rem;
+}
+
+.food-expander-header-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expander-icon-wrapper {
+  margin-left: 1rem;
+  display: block;
+}
+
+.expander-icon {
+  font-size: 24px;
+  color: @cc-blue;
+}
+
+.expander-icon__open {
+  display: unset;
+}
+
+.expander-icon__collapse {
+  display: none;
+}
+
+.food-expander-action {
+  padding: 1rem 0;
+}
+
+.back-to-top-button {
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+.food-expanders {
+  .@{collapse-prefix-cls} {
+    .@{collapse-prefix-cls}-item {
+      &.@{collapse-prefix-cls}-no-arrow {
+        > .@{collapse-prefix-cls}-header {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+
+      &.@{collapse-prefix-cls}-item-active {
+        .food-expander-header {
+          border-top-color: @cc-blue;
+          background-color: @cc-blue;
+          color: white;
+        }
+
+        .expander-icon {
+          color: white;
+        }
+
+        .expander-icon__open {
+          display: none;
+        }
+
+        .expander-icon__collapse {
+          display: unset;
+        }
+      }
+
+      > .@{collapse-prefix-cls}-content {
+        > .@{collapse-prefix-cls}-content-box {
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+
+    &.@{collapse-prefix-cls}-ghost {
+      > .@{collapse-prefix-cls}-item {
+        > .@{collapse-prefix-cls}-header {
+          padding-top: 0;
+          padding-bottom: 0;
+        }
+        > .@{collapse-prefix-cls}-content {
+          > .@{collapse-prefix-cls}-content-box {
+            padding-top: 0;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
