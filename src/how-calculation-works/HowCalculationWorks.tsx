@@ -1,84 +1,86 @@
 import React from 'react';
 import { LeftOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
-import { I18nKeys, HowItWorksI18nKeys } from 'shared/i18n-keys';
+import { I18nKeys as CommonI18nKeys, HowItWorksI18nKeys as I18nKeys } from 'shared/i18n-keys';
 import ActivityRateTable from 'how-calculation-works/HowCalculationWorksActivityRateTable';
 import { useHistory } from 'react-router';
-import { RoutePath } from 'shared/models';
+import { I18nNamespace, RoutePath } from 'shared/models';
 
 export default function HowCalculationWorks() {
-  const { t } = useTranslation();
+  const { t } = useTranslation(I18nNamespace.HowCalculationWorks);
   const history = useHistory();
   return (
     <div className="width-container">
       <button onClick={() => history.push(RoutePath.Results)} className="go-back-button">
         <LeftOutlined className="icon" />
-        <span>{t(HowItWorksI18nKeys.GoBackToResults)}</span>
+        <span>{t(I18nKeys.GoBackToResults)}</span>
       </button>
       <div className="how-it-works">
-        <h1>{t(HowItWorksI18nKeys.Title)}</h1>
-        <p>{t(HowItWorksI18nKeys.Intro)}</p>
+        <h1>{t(I18nKeys.Title)}</h1>
+        <p>{t(I18nKeys.Intro)}</p>
         <ol className="summary">
-          <li>{t(HowItWorksI18nKeys.CalculateBMR)}</li>
-          <li>{t(HowItWorksI18nKeys.CalculateTDEE)}</li>
-          <li>{t(HowItWorksI18nKeys.CaterToFitnessGoal)}</li>
+          <li>{t(I18nKeys.CalculateBMR)}</li>
+          <li>{t(I18nKeys.CalculateTDEE)}</li>
+          <li>{t(I18nKeys.CaterToFitnessGoal)}</li>
         </ol>
         <section>
-          <h2>1. {t(HowItWorksI18nKeys.CalculateBMR)}</h2>
-          <p>{t(HowItWorksI18nKeys.StepOneFirstPara)}</p>
-          <strong>{t(HowItWorksI18nKeys.HowTo)}</strong>
-          <p>{t(HowItWorksI18nKeys.StepOneSecondPara)}</p>
-          <strong>{t(HowItWorksI18nKeys.BMREquationName)}</strong>
+          <h2>1. {t(I18nKeys.CalculateBMR)}</h2>
+          <p>{t(I18nKeys.StepOneFirstPara)}</p>
+          <strong>{t(I18nKeys.HowTo)}</strong>
+          <p>{t(I18nKeys.StepOneSecondPara)}</p>
+          <strong>{t(I18nKeys.BMREquationName)}</strong>
           <ul>
             <li>
-              <div>{t(HowItWorksI18nKeys.ForMen)}</div>
+              <div>{t(I18nKeys.ForMen)}</div>
               <span>
-                10 × {t(I18nKeys.Weight).toLowerCase()} + 6.25 × {t(I18nKeys.Height).toLowerCase()}{' '}
-                - 5 × {t(I18nKeys.Age).toLowerCase()} + 5
+                10 × {t(CommonI18nKeys.Weight).toLowerCase()} + 6.25 ×{' '}
+                {t(CommonI18nKeys.Height).toLowerCase()} - 5 × {t(CommonI18nKeys.Age).toLowerCase()}{' '}
+                + 5
               </span>
             </li>
             <li>
-              <div>{t(HowItWorksI18nKeys.FOrWomen)}</div>
+              <div>{t(I18nKeys.FOrWomen)}</div>
               <span>
-                10 × {t(I18nKeys.Weight).toLowerCase()} + 6.25 × {t(I18nKeys.Height).toLowerCase()}{' '}
-                - 5 × {t(I18nKeys.Age).toLowerCase()} - 161
+                10 × {t(CommonI18nKeys.Weight).toLowerCase()} + 6.25 ×{' '}
+                {t(CommonI18nKeys.Height).toLowerCase()} - 5 × {t(CommonI18nKeys.Age).toLowerCase()}{' '}
+                - 161
               </span>
             </li>
           </ul>
-          <p>{t(HowItWorksI18nKeys.StepOneThirdPara)}</p>
+          <p>{t(I18nKeys.StepOneThirdPara)}</p>
         </section>
         <section>
-          <h2>2. {t(HowItWorksI18nKeys.CalculateTDEE)}</h2>
-          <p>{t(HowItWorksI18nKeys.StepTwoFirstPara)}</p>
+          <h2>2. {t(I18nKeys.CalculateTDEE)}</h2>
+          <p>{t(I18nKeys.StepTwoFirstPara)}</p>
           <ul>
-            <li>{t(HowItWorksI18nKeys.TheBMR)}</li>
-            <li>{t(HowItWorksI18nKeys.FoodThermicEffect)}</li>
-            <li>{t(HowItWorksI18nKeys.ActivityThermicEffect)}</li>
+            <li>{t(I18nKeys.TheBMR)}</li>
+            <li>{t(I18nKeys.FoodThermicEffect)}</li>
+            <li>{t(I18nKeys.ActivityThermicEffect)}</li>
           </ul>
-          <p>{t(HowItWorksI18nKeys.StepTwoSecondPara)}</p>
-          <strong>{t(HowItWorksI18nKeys.HowTo)}</strong>
-          <p>{t(HowItWorksI18nKeys.StepTwoThirdPara)}</p>
-          <p>{t(HowItWorksI18nKeys.StepTwoFourthPara)}</p>
-          <strong>{t(HowItWorksI18nKeys.ActivityLevelFactorTableName)}</strong>
+          <p>{t(I18nKeys.StepTwoSecondPara)}</p>
+          <strong>{t(I18nKeys.HowTo)}</strong>
+          <p>{t(I18nKeys.StepTwoThirdPara)}</p>
+          <p>{t(I18nKeys.StepTwoFourthPara)}</p>
+          <strong>{t(I18nKeys.ActivityLevelFactorTableName)}</strong>
           <ActivityRateTable pagination={false} className="activity-rate-table" />
         </section>
         <section>
-          <h2>3. {t(HowItWorksI18nKeys.CaterToFitnessGoal)}</h2>
-          <p>{t(HowItWorksI18nKeys.StepThreeFirstPara)}</p>
-          <p>{t(HowItWorksI18nKeys.StepThreeSecondPara)}</p>
+          <h2>3. {t(I18nKeys.CaterToFitnessGoal)}</h2>
+          <p>{t(I18nKeys.StepThreeFirstPara)}</p>
+          <p>{t(I18nKeys.StepThreeSecondPara)}</p>
           <ul>
-            <li>{t(HowItWorksI18nKeys.WeightGainingExplanation)}</li>
-            <li>{t(HowItWorksI18nKeys.WeightLossExplanation)}</li>
+            <li>{t(I18nKeys.WeightGainingExplanation)}</li>
+            <li>{t(I18nKeys.WeightLossExplanation)}</li>
           </ul>
-          <strong>{t(HowItWorksI18nKeys.HowTo)}</strong>
-          <p>{t(HowItWorksI18nKeys.StepThreeThirdPara)}</p>
-          <p>{t(HowItWorksI18nKeys.StepThreeFourthPara)}</p>
-          <p>{t(HowItWorksI18nKeys.StepThreeFifthPara)}</p>
+          <strong>{t(I18nKeys.HowTo)}</strong>
+          <p>{t(I18nKeys.StepThreeThirdPara)}</p>
+          <p>{t(I18nKeys.StepThreeFourthPara)}</p>
+          <p>{t(I18nKeys.StepThreeFifthPara)}</p>
         </section>
       </div>
       <button onClick={() => history.push(RoutePath.Results)} className="go-back-button">
         <LeftOutlined className="icon" />
-        <span>{t(HowItWorksI18nKeys.GoBackToResults)}</span>
+        <span>{t(I18nKeys.GoBackToResults)}</span>
       </button>
     </div>
   );

@@ -12,10 +12,12 @@ import {
   PersonalInfoFormModel as FormModel,
   PersonalInfoFormSchema,
   RoutePath,
+  I18nNamespace,
 } from 'shared/models';
 import { FormStateContext } from 'shared/FormStateContext';
-import { I18nKeys, PersonalDetailsI18nKeys } from 'shared/i18n-keys';
+import { I18nKeys as CommonI18nKeys, PersonalDetailsI18nKeys as I18nKeys } from 'shared/i18n-keys';
 import BaseExpander from 'shared/BaseExpander';
+import PersonalDetailsRationale from './PersonalDetailsRationale';
 
 const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
   const { age, sex, height, weight } = value;
@@ -28,7 +30,7 @@ const getPersonalInfo: (value: FullFormModel) => FormModel = (value) => {
 };
 
 export default function PersonalDetailsForm() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(I18nNamespace.PersonalDetails);
   const {
     formState: { formData },
     updateFormState,
@@ -58,21 +60,12 @@ export default function PersonalDetailsForm() {
         {({ errors, touched, isSubmitting }) => (
           <Form name="personal-info" className="personal-info-form">
             <header>
-              <h1>{t(PersonalDetailsI18nKeys.PageTitle)}</h1>
+              <h1>{t(I18nKeys.PageTitle)}</h1>
             </header>
-            <p>{t(PersonalDetailsI18nKeys.EnterAgeSexHeightWeight)}</p>
+            <p>{t(I18nKeys.EnterAgeSexHeightWeight)}</p>
             <div className="hint">
-              <BaseExpander title={t(PersonalDetailsI18nKeys.WhyDoWeNeedThem)}>
-                <>
-                  <p>{t(PersonalDetailsI18nKeys.AnswerFirstParagraph)}</p>
-                  <p>{t(PersonalDetailsI18nKeys.AnswerSecondParagraph)}</p>
-                  <p>{t(PersonalDetailsI18nKeys.AnswerThirdParagraph)}</p>
-                  <ul>
-                    <li>{t(PersonalDetailsI18nKeys.FactorFirstParagraph)}</li>
-                    <li>{t(PersonalDetailsI18nKeys.FactorSecondParagraph)}</li>
-                    <li>{t(PersonalDetailsI18nKeys.FactorThirdParagraph)}</li>
-                  </ul>
-                </>
+              <BaseExpander title={t(I18nKeys.WhyDoWeNeedThem)}>
+                <PersonalDetailsRationale />
               </BaseExpander>
             </div>
             <div className="form-item">
@@ -83,7 +76,7 @@ export default function PersonalDetailsForm() {
                 )}
               >
                 <label htmlFor="input_age" className="label">
-                  {t(I18nKeys.Age)}
+                  {t(CommonI18nKeys.Age)}
                 </label>
                 <div>
                   <InputNumber
@@ -99,7 +92,7 @@ export default function PersonalDetailsForm() {
                 <ErrorMessage key={i18n.resolvedLanguage} name={FormField.Age}>
                   {(key) => (
                     <span className="error-message">
-                      {t(key, { field: t(I18nKeys.Age), max: 120, min: 18 })}
+                      {t(key, { field: t(CommonI18nKeys.Age), max: 120, min: 18 })}
                     </span>
                   )}
                 </ErrorMessage>
@@ -113,7 +106,7 @@ export default function PersonalDetailsForm() {
                   errors.sex && touched.sex ? 'input-wrapper--error' : null
                 )}
               >
-                <span className="label">{t(I18nKeys.Sex)}</span>
+                <span className="label">{t(CommonI18nKeys.Sex)}</span>
                 <Radio.Group name={FormField.Sex} size="large" className="control radio-group">
                   <Radio name={FormField.Sex} value="male" className="radio-button">
                     {t(sexI18nKeys['male'])}
@@ -124,7 +117,9 @@ export default function PersonalDetailsForm() {
                 </Radio.Group>
                 <ErrorMessage key={i18n.resolvedLanguage} name={FormField.Sex}>
                   {(key) => (
-                    <span className="error-message">{t(key, { field: t(I18nKeys.Sex) })}</span>
+                    <span className="error-message">
+                      {t(key, { field: t(CommonI18nKeys.Sex) })}
+                    </span>
                   )}
                 </ErrorMessage>
               </div>
@@ -138,7 +133,7 @@ export default function PersonalDetailsForm() {
                 )}
               >
                 <label htmlFor="input_height" className="label">
-                  {t(I18nKeys.Height)}
+                  {t(CommonI18nKeys.Height)}
                 </label>
                 <div>
                   <InputNumber
@@ -157,7 +152,7 @@ export default function PersonalDetailsForm() {
                 <ErrorMessage key={i18n.resolvedLanguage} name={FormField.Height}>
                   {(key) => (
                     <span className="error-message">
-                      {t(key, { field: t(I18nKeys.Height), max: '272 cm', min: '100 cm' })}
+                      {t(key, { field: t(CommonI18nKeys.Height), max: '272 cm', min: '100 cm' })}
                     </span>
                   )}
                 </ErrorMessage>
@@ -172,7 +167,7 @@ export default function PersonalDetailsForm() {
                 )}
               >
                 <label htmlFor="input_weight" className="label">
-                  {t(I18nKeys.Weight)}
+                  {t(CommonI18nKeys.Weight)}
                 </label>
                 <div>
                   <InputNumber
@@ -191,7 +186,7 @@ export default function PersonalDetailsForm() {
                 <ErrorMessage key={i18n.resolvedLanguage} name={FormField.Weight}>
                   {(key) => (
                     <span className="error-message">
-                      {t(key, { field: t(I18nKeys.Weight), max: '130 kg', min: '30 kg' })}
+                      {t(key, { field: t(CommonI18nKeys.Weight), max: '130 kg', min: '30 kg' })}
                     </span>
                   )}
                 </ErrorMessage>
@@ -205,7 +200,7 @@ export default function PersonalDetailsForm() {
               disabled={isSubmitting}
               className="submit-button"
             >
-              {t(I18nKeys.Continue)}
+              {t(CommonI18nKeys.Continue)}
             </Button>
           </Form>
         )}

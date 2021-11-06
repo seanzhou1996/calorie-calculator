@@ -63,7 +63,7 @@ i18n
     resources,
     ns: allI18nNamespaces,
     defaultNS: I18nNamespace.General,
-    fallbackNS: [I18nNamespace.PersonalDetails, I18nNamespace.HowCalculationWorks],
+    fallbackNS: [I18nNamespace.General],
     detection: {
       order: ['localStorage', 'navigator'],
       lookupLocalStorage: StorageKey.Lang,

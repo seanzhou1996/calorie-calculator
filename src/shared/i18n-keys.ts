@@ -28,6 +28,7 @@ export enum I18nKeys {
   Continue = 'Continue',
   Change = 'Change',
   PreviousPage = 'PreviousPage',
+  Calories = 'Calories',
 
   // Error messages
   FieldIsRequired_field = 'FieldIsRequired_field',
@@ -50,10 +51,7 @@ export enum I18nKeys {
   HomeThirdParagraph = 'HomeThirdParagraph',
   StartNow = 'StartNow',
 
-  // Personal details
-  PersonalDetailsPageTitle = 'PersonalDetailsPageTitle',
-
-  // Activity
+  // Activity level
   Home = 'Home',
   ActivityPageTitle = 'ActivityPageTitle',
   WhatCounts = 'WhatCounts',
@@ -69,7 +67,7 @@ export enum I18nKeys {
   ActiveHours = 'ActiveHours',
   ExtraActiveHours = 'ExtraActiveHours',
 
-  // Goal
+  // Fitness goal
   PreviousQuestion = 'PreviousQuestion',
   GoalPageTitle = 'GoalPageTitle',
   WhyAreWeAsking = 'WhyAreWeAsking',
@@ -101,7 +99,6 @@ export enum I18nKeys {
   // Meal table
   Meal = 'Meal',
   TargetPercentage = 'TargetPercentage',
-  Calories = 'Calories',
   Breakfast = 'Breakfast',
   Lunch = 'Lunch',
   Dinner = 'Dinner',
@@ -112,9 +109,9 @@ export enum PersonalDetailsI18nKeys {
   PageTitle = 'PageTitle',
   EnterAgeSexHeightWeight = 'EnterAgeSexHeightWeight',
   WhyDoWeNeedThem = 'WhyDoWeNeedThem',
-  AnswerFirstParagraph = 'AnswerFirstParagraph',
-  AnswerSecondParagraph = 'AnswerSecondParagraph',
-  AnswerThirdParagraph = 'AnswerThirdParagraph',
+  RationaleFirstParagraph = 'RationaleFirstParagraph',
+  RationaleSecondParagraph = 'RationaleSecondParagraph',
+  RationaleThirdParagraph = 'RationaleThirdParagraph',
   FactorFirstParagraph = 'FactorFirstParagraph',
   FactorSecondParagraph = 'FactorSecondParagraph',
   FactorThirdParagraph = 'FactorThirdParagraph',
