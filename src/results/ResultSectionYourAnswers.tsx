@@ -41,26 +41,26 @@ export default function ResultSectionYourAnswers({
           </li>
         </ul>
       ),
-      action: {
-        name: t(I18nKeys.Change),
-        callback: () => history.push(RoutePath.PersonalDetails),
-      },
+      // action: {
+      //   name: t(I18nKeys.Change),
+      //   callback: () => history.push(RoutePath.PersonalDetails),
+      // },
     },
     {
       key: `2. ${t(I18nKeys.ActivityPageTitle)}`,
       value: t(activityLabelI18nKeys[activityLevel]),
-      action: {
-        name: t(I18nKeys.Change),
-        callback: () => history.push(RoutePath.ActivityLevel),
-      },
+      // action: {
+      //   name: t(I18nKeys.Change),
+      //   callback: () => history.push(RoutePath.ActivityLevel),
+      // },
     },
     {
       key: `3. ${t(I18nKeys.GoalPageTitle)}`,
       value: t(I18nKeys.ToAchieveGoal_goal, { goal: t(goalLabelI18nKeys[goal]) }),
-      action: {
-        name: t(I18nKeys.Change),
-        callback: () => history.push(RoutePath.FitnessGoal),
-      },
+      // action: {
+      //   name: t(I18nKeys.Change),
+      //   callback: () => history.push(RoutePath.FitnessGoal),
+      // },
     },
   ];
 

@@ -210,7 +210,7 @@ export interface SummaryListAction {
 export interface SummaryListRow {
   key: string;
   value: React.ReactNode;
-  action: SummaryListAction;
+  action?: SummaryListAction;
 }
 
 export interface SummaryListProps {
