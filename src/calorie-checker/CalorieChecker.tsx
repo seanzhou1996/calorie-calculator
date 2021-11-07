@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Collapse, Spin } from 'antd';
-import { ArrowUpOutlined, LoadingOutlined } from '@ant-design/icons';
+import { LoadingOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { allFoodTypes, Food, foodTypeI18nKeys, I18nNamespace, RoutePath } from 'shared/models';
 import { listFoodCalories } from 'services/calorie-checker-service';
 import CalorieCheckerFood from './CalorieCheckerFood';
 import { I18nKeys as CommonI18nKeys, CalorieCheckerI18nKeys as I18nKeys } from 'shared/i18n-keys';
 import BaseGoBackButton from 'shared/BaseGoBackButton';
+import BaseBackToTopButton from 'shared/BaseBackToTopButton';
 
 const { Panel } = Collapse;
 
@@ -27,7 +28,7 @@ export default function CalorieChecker() {
           to={RoutePath.Results}
           titleOverride={t(CommonI18nKeys.GoBackToResults)}
         />
-        <h1>{t(I18nKeys.Title)}</h1>
+        <h1 id="page_title">{t(I18nKeys.Title)}</h1>
       </div>
       {foodArray.length === 0 ? (
         <div className="spinner-wrapper">
@@ -69,10 +70,7 @@ export default function CalorieChecker() {
                     </div>
                     <div className="back-to-top">
                       <div className="width-container">
-                        <a href="#calorie-checker_nav_list" className="back-to-top__link">
-                          <ArrowUpOutlined className="back-to-top__arrow" />
-                          <span>{t(CommonI18nKeys.BackToTop)}</span>
-                        </a>
+                        <BaseBackToTopButton href="#page_title" />
                       </div>
                     </div>
                   </div>

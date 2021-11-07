@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import BaseBackToTopButton from 'shared/BaseBackToTopButton';
 import BaseGoBackButton from 'shared/BaseGoBackButton';
 import BaseMarkdownConverter from 'shared/BaseMarkdownConverter';
 import { I18nKeys } from 'shared/i18n-keys';
@@ -13,6 +14,7 @@ export default function WeightGainGuide() {
     <div className="width-container">
       <BaseGoBackButton to={RoutePath.Results} titleOverride={t(I18nKeys.GoBackToResults)} />
       <BaseMarkdownConverter url={url} />
+      <BaseBackToTopButton />
     </div>
   );
 }

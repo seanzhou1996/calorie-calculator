@@ -7,6 +7,7 @@ import {
 import ActivityRateTable from 'how-calculation-works/HowCalculationWorksActivityRateTable';
 import { I18nNamespace, RoutePath } from 'shared/models';
 import BaseGoBackButton from 'shared/BaseGoBackButton';
+import BaseBackToTopButton from 'shared/BaseBackToTopButton';
 
 export default function HowCalculationWorks() {
   const { t } = useTranslation(I18nNamespace.HowCalculationWorks);
@@ -76,7 +77,7 @@ export default function HowCalculationWorks() {
           <p>{t(I18nKeys.StepThreeFifthPara)}</p>
         </section>
       </div>
-      <BaseGoBackButton to={RoutePath.Results} titleOverride={t(CommonI18nKeys.GoBackToResults)} />
+      <BaseBackToTopButton />
     </div>
   );
 }

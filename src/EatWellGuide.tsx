@@ -4,6 +4,7 @@ import BaseGoBackButton from 'shared/BaseGoBackButton';
 import BaseMarkdownConverter from 'shared/BaseMarkdownConverter';
 import { RoutePath } from 'shared/models';
 import { I18nKeys } from 'shared/i18n-keys';
+import BaseBackToTopButton from 'shared/BaseBackToTopButton';
 
 export default function EatWellGuide() {
   const { t, i18n } = useTranslation();
@@ -13,6 +14,7 @@ export default function EatWellGuide() {
     <div className="width-container">
       <BaseGoBackButton to={RoutePath.Results} titleOverride={t(I18nKeys.GoBackToResults)} />
       <BaseMarkdownConverter url={url} />
+      <BaseBackToTopButton />
     </div>
   );
 }
