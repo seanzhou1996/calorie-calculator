@@ -20,6 +20,7 @@ export enum I18nKeys {
   MaintainWeight = 'MaintainWeight',
   Milliliter_amount = 'Milliliter_amount',
   GainMuscle = 'GainMuscle',
+  GoBackToResults = 'GoBackToResults',
   Grams_amount = 'Grams_amount',
   LoseFat = 'LoseFat',
   Age = 'Age',
@@ -123,7 +124,6 @@ export enum PersonalDetailsI18nKeys {
 }
 
 export enum HowItWorksI18nKeys {
-  GoBackToResults = 'GoBackToResults',
   Title = 'Title',
   Intro = 'Intro',
   IntroActiveVoice = 'IntroActiveVoice',

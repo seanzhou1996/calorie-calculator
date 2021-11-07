@@ -1,20 +1,15 @@
 import React from 'react';
-import { LeftOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import { I18nKeys as CommonI18nKeys, HowItWorksI18nKeys as I18nKeys } from 'shared/i18n-keys';
 import ActivityRateTable from 'how-calculation-works/HowCalculationWorksActivityRateTable';
-import { useHistory } from 'react-router';
 import { I18nNamespace, RoutePath } from 'shared/models';
+import BaseGoBackButton from 'shared/BaseGoBackButton';
 
 export default function HowCalculationWorks() {
   const { t } = useTranslation(I18nNamespace.HowCalculationWorks);
-  const history = useHistory();
   return (
     <div className="width-container">
-      <button onClick={() => history.push(RoutePath.Results)} className="go-back-button">
-        <LeftOutlined className="icon" />
-        <span>{t(I18nKeys.GoBackToResults)}</span>
-      </button>
+      <BaseGoBackButton to={RoutePath.Results} titleOverride={t(CommonI18nKeys.GoBackToResults)} />
       <div className="how-it-works">
         <h1>{t(I18nKeys.Title)}</h1>
         <p>{t(I18nKeys.Intro)}</p>
@@ -78,10 +73,7 @@ export default function HowCalculationWorks() {
           <p>{t(I18nKeys.StepThreeFifthPara)}</p>
         </section>
       </div>
-      <button onClick={() => history.push(RoutePath.Results)} className="go-back-button">
-        <LeftOutlined className="icon" />
-        <span>{t(I18nKeys.GoBackToResults)}</span>
-      </button>
+      <BaseGoBackButton to={RoutePath.Results} titleOverride={t(CommonI18nKeys.GoBackToResults)} />
     </div>
   );
 }

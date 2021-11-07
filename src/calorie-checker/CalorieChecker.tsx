@@ -4,8 +4,7 @@ import { listFoodCalories } from 'services/calorie-checker-service';
 import CalorieCheckerFood from './CalorieCheckerFood';
 import { useTranslation } from 'react-i18next';
 import { I18nKeys as CommonI18nKeys, CalorieCheckerI18nKeys as I18nKeys } from 'shared/i18n-keys';
-import { Collapse } from 'antd';
-import { ArrowUpOutlined } from '@ant-design/icons';
+import BaseGoBackButton from 'shared/BaseGoBackButton';
 
 const { Panel } = Collapse;
 
@@ -20,7 +19,11 @@ export default function CalorieChecker() {
   return (
     <div>
       <div className="width-container">
-        <h1 id="calorie_checker_title">{t(I18nKeys.Title)}</h1>
+        <BaseGoBackButton
+          to={RoutePath.Results}
+          titleOverride={t(CommonI18nKeys.GoBackToResults)}
+        />
+        <h1>{t(I18nKeys.Title)}</h1>
         <p>{t(I18nKeys.Intro)}</p>
         <ul className="calorie-checker__nav-list">
           {allFoodTypes.map((foodType) => (
