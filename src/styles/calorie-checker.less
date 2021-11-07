@@ -23,84 +23,49 @@
   font-weight: var(--bold);
 }
 
-.food-expander-panel {
-  border-top: 1px solid @cc-grey-4 !important;
-  border-radius: 0 !important;
+.food-list-panel {
+  margin-bottom: 1rem;
+}
+
+.food-list-panel__label {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  color: white;
+  background-color: @cc-blue;
+}
+
+.food-list-panel__list {
+  margin-top: calc(-1px - (1.25rem * 1.25 + 1rem) / 2);
+  border-top: 2px solid @cc-blue;
+  border-bottom: 1px solid @cc-grey-4;
+  padding-top: calc((1.25rem * 1.25 + 1rem) / 2 - 1px);
   background-color: white;
-
-  &:last-child,
-  &:last-of-type {
-    border-bottom: 1px solid @cc-grey-4 !important;
-    border-radius: 0 !important;
-  }
 }
 
-.food-expander-header {
+.back-to-top {
   padding: 1rem 0;
-  font-size: 1rem;
 }
 
-.food-expander-header-inner {
-  display: flex;
+.back-to-top__link {
+  display: inline-flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-}
-
-.expander-icon-wrapper {
-  margin-left: 1rem;
-  display: block;
-}
-
-.expander-icon {
-  font-size: 24px;
-  color: @cc-blue;
-}
-
-.expander-icon__open {
-  display: unset;
-}
-
-.expander-icon__collapse {
-  display: none;
-}
-
-.food-expander-action {
-  padding: 1rem 0;
-}
-
-.back-to-top-button {
   font-size: 1rem;
   text-decoration: underline;
 }
 
-.food-expanders {
+.back-to-top__arrow {
+  margin-right: 0.25rem;
+}
+
+.calorie-checker__collapse-override {
   .@{collapse-prefix-cls} {
     .@{collapse-prefix-cls}-item {
       &.@{collapse-prefix-cls}-no-arrow {
         > .@{collapse-prefix-cls}-header {
           padding-left: 0;
           padding-right: 0;
-        }
-      }
-
-      &.@{collapse-prefix-cls}-item-active {
-        .food-expander-header {
-          border-top-color: @cc-blue;
-          background-color: @cc-blue;
-          color: white;
-        }
-
-        .expander-icon {
-          color: white;
-        }
-
-        .expander-icon__open {
-          display: none;
-        }
-
-        .expander-icon__collapse {
-          display: unset;
         }
       }
 

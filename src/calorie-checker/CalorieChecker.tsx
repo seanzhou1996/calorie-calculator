@@ -22,29 +22,13 @@ export default function CalorieChecker() {
       <div className="width-container">
         <h1>{t(I18nKeys.Title)}</h1>
       </div>
-      <div className="food-expanders">
-        <Collapse ghost collapsible="header" onChange={(key) => console.log(key)}>
+      <div className="calorie-checker__collapse-override">
+        <Collapse ghost collapsible="disabled" activeKey={allFoodTypes}>
           {allFoodTypes.map((foodType) => (
-            <Panel
-              header={
-                <div id={foodType} className="food-expander-header">
-                  <div className="width-container">
-                    <div className="food-expander-header-inner">
-                      <span>{t(foodTypeI18nKeys[foodType])}</span>
-                      <span className="expander-icon-wrapper">
-                        <PlusOutlined className="expander-icon expander-icon__open" />
-                        <MinusOutlined className="expander-icon expander-icon__collapse" />
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              }
-              key={foodType}
-              showArrow={false}
-              className="food-expander-panel"
-            >
-              <div className="food-expander-content">
-                <div className="food-list">
+            <Panel header={null} key={foodType} showArrow={false}>
+              <div className="food-list-panel">
+                <h2 className="food-list-panel__label">{t(foodTypeI18nKeys[foodType])}</h2>
+                <div className="food-list-panel__list">
                   {foodArray
                     .filter(({ type }) => type === foodType)
                     .map((food) => (
@@ -55,10 +39,11 @@ export default function CalorieChecker() {
                       </div>
                     ))}
                 </div>
-                <div className="food-expander-action">
+                <div className="back-to-top">
                   <div className="width-container">
-                    <a href={`#${foodType}`} className="back-to-top-button">
-                      {t(CommonI18nKeys.BackToTop)}
+                    <a href={`#${foodType}`} className="back-to-top__link">
+                      <ArrowUpOutlined className="back-to-top__arrow" />
+                      <span>{t(CommonI18nKeys.BackToTop)}</span>
                     </a>
                   </div>
                 </div>
