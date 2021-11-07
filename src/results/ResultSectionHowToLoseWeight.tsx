@@ -13,7 +13,7 @@ export default function ResultSectionHowToLoseWeight() {
       <p>{t(I18nKeys.SecondParagraph)}</p>
       <p>{t(I18nKeys.ThirdParagraph)}</p>
       <div className="action">
-        <BaseActionLink to={RoutePath.WeightGainGuide} title={t(I18nKeys.OpenWeightLossGuide)} />
+        <BaseActionLink to={RoutePath.WeightLossGuide} title={t(I18nKeys.OpenWeightLossGuide)} />
       </div>
     </section>
   );
