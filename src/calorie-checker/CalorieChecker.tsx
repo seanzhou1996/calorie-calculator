@@ -70,7 +70,7 @@ export default function CalorieChecker() {
                     </div>
                     <div className="back-to-top">
                       <div className="width-container">
-                        <BaseBackToTopButton href="#page_title" />
+                        <BaseBackToTopButton />
                       </div>
                     </div>
                   </div>
