@@ -2,9 +2,9 @@ import { Button } from 'antd';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router';
-import { I18nKeys } from 'result/i18n-keys';
+import { I18nKeys } from 'shared/i18n-keys';
 import { RoutePath } from 'shared/models';
-import ResultNotification from './ResultNotification';
+import HomeResultNotification from './HomeResultNotification';
 
 function Home() {
   const { t } = useTranslation();
@@ -12,10 +12,10 @@ function Home() {
 
   return (
     <div className="width-container">
-      <ResultNotification />
       <header>
         <h1 className="app-title">{t(I18nKeys.CalorieCalculator)}</h1>
       </header>
+      <HomeResultNotification />
       <div className="intro">
         <p className="intro__lead">{t(I18nKeys.HomeFirstParagraph)}</p>
         <p>{t(I18nKeys.HomeSecondParagraph)}</p>

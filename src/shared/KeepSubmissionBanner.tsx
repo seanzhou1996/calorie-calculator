@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Button } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { I18nKeys } from 'result/i18n-keys';
+import { I18nKeys } from 'shared/i18n-keys';
 import { SaveSubmissionFlagContext } from './saveSubmissionFlagContext';
 import { SubmissionContext } from './SubmissionContext';
 

@@ -1,0 +1,153 @@
+type, name, nameZh, portion, unit, weight, calorie
+grains, Rice (cooked), 白飯, 1, bowl, 200, 260
+grains, Plain congee, 白粥, 1, bowl, 200, 64
+grains, Spaghetti (cooked), 意粉（熟）, 1, bowl, 150, 237
+grains, Macaroni (cooked), 通心粉（熟）, 1, bowl, 150, 237
+grains, Egg noodles (cooked), 全蛋麵（熟）, 1, bowl, 170, 235
+grains, Soba noodles (cooked), 蕎麥麵（熟）, 1, bowl, 120, 119
+grains, Quinoa (cooked), 藜麥（熟）, 1, bowl, 200, 240
+grains, Oatmeal (cooked), 麥皮（熟）, 1, bowl, 250, 178
+grains, Sandwich bread (white), 白方包, 1, slice, 49, 137
+grains, Sandwich bread (wheat), 麥方包, 1, slice, 47, 122
+meat_fish_egg_alternatives, Ham, 火腿, 1, slice, 20, 26
+meat_fish_egg_alternatives, Meat sausage, 腸仔, 1, link, 35, 95
+meat_fish_egg_alternatives, Ground pork (cooked), 免治豬肉（熟）, n/a, n/a, 100, 297
+meat_fish_egg_alternatives, Braised pork blade shoulder (lean), 燜梅頭豬肉（全瘦）, n/a, n/a, 100, 233
+meat_fish_egg_alternatives, Braised spareribs (separable lean and fat), 燜排骨（半肥瘦）, n/a, n/a, 100, 397
+meat_fish_egg_alternatives, Pan-fried center rib pork chop (boneless & lean), 煎豬大排（去骨，全瘦）, 1, chop, 66, 148
+meat_fish_egg_alternatives, Pan-fried center rib pork chop (boneless & separable lean and fat), 煎豬大排（去骨，半肥瘦）, 1, chop, 75, 205
+meat_fish_egg_alternatives, Roasted beef rib (boneless & separable lean and fat), 烤牛肋骨（去骨，半肥瘦）, n/a, n/a, 100, 351
+meat_fish_egg_alternatives, Broiled beef tenderloin (lean), 烤牛柳（瘦）, n/a, n/a, 100, 200
+meat_fish_egg_alternatives, Roasted chicken thigh (boneless and with skin), 烤雞上髀（去骨，連皮）, 1, thigh, 62, 162
+meat_fish_egg_alternatives, Roasted chicken breast (without skin), 烤雞胸肉（不連皮）, n/a, n/a, 100, 165
+meat_fish_egg_alternatives, Fried chicken wing (boneless), 炸雞翼（去骨）, 1, wing, 32, 103
+meat_fish_egg_alternatives, Roasted duck (without skin), 燒鴨肉（不連皮）, 1/2, duck, 221, 444
+meat_fish_egg_alternatives, Roasted duck (with skin), 燒鴨肉（連皮）, 1/2, duck, 382, 1287
+meat_fish_egg_alternatives, Roasted goose (without skin), 燒鵝肉（不連皮）, 1/2, goose, 591, 1407
+meat_fish_egg_alternatives, Roasted goose (with skin), 燒鵝肉（連皮）, 1/2, goose, 774, 2361
+meat_fish_egg_alternatives, Cod (dry heat), 鱈魚（乾煮）, 1/2, fillet, 90, 95
+meat_fish_egg_alternatives, Salmon (dry heat), 三文魚（乾煮）, 1/4, fillet, 89, 184
+meat_fish_egg_alternatives, Canned sardine in tomato sauce, 罐頭茄汁沙甸魚, 1, piece-alt, 38, 70
+meat_fish_egg_alternatives, Shrimp (moist heat), 蝦（濕煮）, 4, large, 22, 26
+meat_fish_egg_alternatives, Hard-boiled egg, 烚蛋, 1, large, 46, 78
+meat_fish_egg_alternatives, Fried egg, 煎蛋, 1, large, 46, 90
+meat_fish_egg_alternatives, Firm tofu, 板豆腐, 1/4, block, 81, 63
+meat_fish_egg_alternatives, Soybean sheet, 腐竹, 1, piece, 15, 69
+meat_fish_egg_alternatives, Boiled soybeans, 烚黃豆, 4, tablespoon, 43, 74
+meat_fish_egg_alternatives, Boiled kidney beans, 烚紅腰豆, 4, tablespoon, 44, 56
+vegetables, Boiled Chinese flowering cabbage, 白灼菜心, 1/2, bowl, 65, 13
+vegetables, Boiled water spinach, 白灼通菜, 1/2, bowl, 49, 7
+vegetables, Boiled headed lettuce, 白灼生菜, 1/2, bowl, 75, 18
+vegetables, Boiled broccoli, 烚西蘭花, 1/2, stalk, 90, 32
+vegetables, Boiled cabbage, 烚椰菜, 1/2, bowl, 79, 18
+vegetables, Boiled corn, 烚粟米, 1, ear, 103, 99
+vegetables, Tomato, 番茄, 1, piece, 111, 18
+vegetables, Cooked shiitake mushroom, 熟冬菇, 4, mushroom, 72, 40
+fruits, Red apple (with skin), 蛇皮果（連皮）, 1, piece, 180, 97
+fruits, Fuji apple (with skin), 富士蘋果（連皮）, 1, piece, 180, 92
+fruits, Orange, 橙, 1, large, 184, 87
+fruits, Banana, 香蕉, 1, medium, 118, 105
+fruits, Cantaloupe, 哈密瓜, 1/2, bowl-alt, 85, 29
+fruits, Western pear (with skin), 啤梨（連皮）, 1, piece, 230, 117
+fruits, Dragon fruit, 火龍果, 1/2, medium, 175, 98
+fruits, Wax jumbo, 蓮霧, 1, medium, 120, 42
+fruits, Grape (with skin), 提子（連皮）, 1/2, bowl, 80, 55
+ready_to_eat_dishes, Flat noodles in soup with stewed beef brisket, 牛腩湯河粉, 1, bowl, 720, 619
+ready_to_eat_dishes, Noodles in soup with wonton, 餛飩麵, 1, bowl, 630, 447
+ready_to_eat_dishes, Rice vermicelli in soup with fish ball, 魚蛋湯米粉, 1, bowl, 700, 406
+ready_to_eat_dishes, Fried noodles with soy sauce, 豉油皇炒麵, 1, plate, 400, 640
+ready_to_eat_dishes, Instant noodles in soup with satay beef, 沙爹牛肉即食麵, 1, bowl, 500, 600
+ready_to_eat_dishes, Rice vermicelli in soup with preserved mustard green and shredded pork, 雪菜肉絲湯米粉, 1, bowl, 420, 332
+ready_to_eat_dishes, Baked spaghetti with meat sauce, 焗肉醬意粉, 1, plate, 588, 823
+ready_to_eat_dishes, Fried flat noodles with sliced beef, 乾炒牛肉河粉, 1, plate, 650, 910
+ready_to_eat_dishes, Fried rice (Yangzhou style), 揚州炒飯, 1, plate, 508, 965
+ready_to_eat_dishes, Steamed rice with chicken and winter mushroom, 冬菇蒸雞飯, 1, bowl, 430, 688
+ready_to_eat_dishes, Steamed rice with pork rib chicken feet and black bean sauce, 豉汁鳳爪排骨飯, 1, bowl, 490, 882
+ready_to_eat_dishes, Steamed rice with stewed eggplant and shredded salty fish, 魚香茄子飯, 1, plate, 720, 1080
+ready_to_eat_dishes, Steamed rice with curry beef brisket, 咖喱牛腩飯, 1, plate, 800, 1280
+ready_to_eat_dishes, Steamed rice with diced pork and sweet corn, 粟米肉粒飯, 1, plate, 760, 912
+ready_to_eat_dishes, Steamed rice with barbecued pork, 叉燒飯, 1, plate, 520, 1040
+bread_cakes_pastries, Cheese burger, 芝士漢堡包, 1, piece, 254, 610
+bread_cakes_pastries, Fish burger, 魚柳包, 1, piece, 143, 400
+bread_cakes_pastries, Plain piggy bun, 豬仔包, 1, piece, 74, 215
+bread_cakes_pastries, Raisin bun, 提子包, 1, piece, 68, 211
+bread_cakes_pastries, Pineapple bun, 菠蘿包, 1, piece, 97, 349
+bread_cakes_pastries, Cocktail bun, 雞尾包, 1, piece, 103, 402
+bread_cakes_pastries, Tuna fish bun, 吞拿魚包, 1, piece, 106, 286
+bread_cakes_pastries, Sausage bun, 腸仔包, 1, piece, 96, 278
+bread_cakes_pastries, Ham and egg bun, 腿蛋包, 1, piece, 106, 265
+bread_cakes_pastries, Pork floss bun, 肉鬆包, 1, piece, 89, 294
+bread_cakes_pastries, Croissant, 牛角包, 1, piece, 57, 231
+bread_cakes_pastries, Pizza bread (contains cheese meat and vegetables), 薄餅麵包（含芝士、肉類及蔬菜）, 1, slice, 115, 299
+bread_cakes_pastries, Paper wrapped cake, 紙包蛋糕, 1, piece, 72, 238
+bread_cakes_pastries, Cheese cake, 芝士蛋糕, 1, piece-alt-2, 126, 403
+bread_cakes_pastries, Assorted cakes, 雜款西餅, 1, piece-alt-2, 76, 251
+bread_cakes_pastries, Muffin, 鬆餅, 1, piece, 81, 316
+bread_cakes_pastries, Danish pastry, 丹麥條, 1, piece-alt-2, 112, 426
+bread_cakes_pastries, Egg tart, 蛋撻, 1, piece, 70, 217
+bread_cakes_pastries, Curry puff, 咖喱酥皮卷, 1, piece-alt-2, 70, 280
+chinese_dim_sum, Steamed barbecued pork bun, 叉燒包, 1, piece-alt-2, 55, 143
+chinese_dim_sum, Steamed egg custard bun, 奶黃包, 1, piece-alt-2, 47, 118
+chinese_dim_sum, Steamed lotus seed paste and egg york bun, 蛋黃蓮蓉包, 1, piece-alt-2, 55, 165
+chinese_dim_sum, Steamed vegetable and meat bun, 菜肉包, 1, piece-alt-2, 79, 182
+chinese_dim_sum, Deep-fried Chinese bun, 炸饅頭, 1, piece-alt-2, 66, 277
+chinese_dim_sum, Steamed bean curd with beef ball, 山竹牛肉, 1, piece-alt-2, 49, 88
+chinese_dim_sum, Steamed fresh prawn dumpling, 蝦餃, 1, piece-alt-2, 31, 50
+chinese_dim_sum, Steamed stuffed dumpling with shrimp, 燒賣, 1, piece-alt-2, 29, 58
+chinese_dim_sum, Steamed pork dumpling (Shanghai style), 小籠包, 1, piece-alt-2, 37, 85
+chinese_dim_sum, Steamed vegetarian dumpling, 上素蒸粉果, 1, piece-alt-2, 43, 47
+chinese_dim_sum, Steamed dumpling (Chiuchow style), 潮州粉果, 1, piece-alt-2, 61, 92
+chinese_dim_sum, Steamed rice-flour roll, 豬腸粉, 1, piece-alt, 57, 63
+chinese_dim_sum, Steamed rice-flour roll with beef, 牛肉腸粉, 1, piece-alt, 80, 80
+chinese_dim_sum, Sticky rice wrapped in lotus leaf, 糯米雞, 1/4, piece-alt-2, 85, 179
+chinese_dim_sum, Steamed bean curd sheet roll, 鮮竹卷, 1, piece-alt-2, 56, 146
+chinese_dim_sum, Steamed bean curd sheet roll with chicken, 雞扎, 1, piece-alt-2, 86, 146
+chinese_dim_sum, Pan-fried turnip cake, 煎蘿蔔糕, 1, piece-alt-2, 84, 109
+chinese_dim_sum, Deep-fried taro dumpling, 芋角, 1, piece-alt-2, 40, 144
+chinese_dim_sum, Spring roll, 春卷, 1, piece-alt-2, 35, 112
+chinese_dim_sum, Deep-fried meat dumpling, 鹹水角, 1, piece-alt-2, 45, 149
+chinese_dim_sum, Barbecued pork puff pastry, 叉燒酥, 1, piece-alt-2, 39, 168
+snacks, Dry-roasted plain macadamia nuts, 乾焗原味夏威夷果仁, 12, kernel, 28, 204
+snacks, Dry-roasted plain almond, 乾焗原味杏仁, 22, kernel, 28, 170
+snacks, Dry-roasted plain peanut, 乾焗原味花生, 28, kernel, 28, 166
+snacks, Nougat, 鳥結糖, 1, candy, 12, 52
+snacks, Hard candy, 硬糖, 1, candy, 6, 24
+snacks, Milk chocolate, 牛奶朱古力, 1, bar, 7, 37
+snacks, Ice cream, 雪糕, 1, scoop, 73, 131
+snacks, Curry fish ball, 咖喱魚蛋, 5, ball, 50, 65
+snacks, Popcorn (popped), 爆谷（熟）, 1/2, bag, 83, 415
+other_ready_to_eat_foods, Cream soup with puff pastry, 酥皮忌廉湯, 1, bowl, 315, 410
+other_ready_to_eat_foods, Deep-fried Chinese dough sticks, 油炸鬼, 1, piece-alt, 110, 506
+other_ready_to_eat_foods, Sweet Chinese doughnut, 牛脷酥, 1, piece-alt, 141, 522
+other_ready_to_eat_foods, Mango pudding, 芒果布甸, 1, portion, 183, 168
+other_ready_to_eat_foods, Coconut milk yellow bean pudding, 椰汁馬豆糕, 1, piece-alt, 85, 111
+other_ready_to_eat_foods, Red bean sweet soup, 紅豆沙, 1, bowl, 239, 225
+other_ready_to_eat_foods, Sesame sweet soup, 芝麻糊, 1, bowl, 289, 280
+drinks, Full-fat milk, 全脂奶, 1, cup, 240, 146
+drinks, Low-fat milk, 低脂奶, 1, cup, 240, 101
+drinks, Skimmed milk, 脫脂奶, 1, cup, 240, 82
+drinks, Milk shake, 奶昔, 1, cup, 300, 330
+drinks, Iced milk tea with pearl tapioca, 凍珍珠奶茶, 1, cup, 300, 195
+drinks, Iced lemon tea, 凍檸檬茶, 1, cup, 300, 138
+drinks, Red bean icy drink, 紅豆冰, 1, cup, 300, 243
+drinks, Hong Kong style milk tea (no sugar added), 港式奶茶（不加糖）, 1, cup, 240, 106
+drinks, Hong Kong style coffee (no sugar added), 港式咖啡（不加糖）, 1, cup, 240, 98
+drinks, Brewed coffee (without milk and no sugar added), 即磨咖啡（不加奶和糖）, 1, cup, 240, 2
+drinks, Tea, 清茶, 1, cup, 240, 2
+drinks, Sweetened soybean milk, 甜豆漿, 1, cup, 240, 98
+drinks, Hot lemon honey, 熱檸蜜, 1, cup, 240, 94
+drinks, Five flower tea, 五花茶, 1, cup, 240, 70
+drinks, Sour plum drink, 酸梅湯, 1, cup, 240, 118
+drinks, Fresh orange juice, 鮮榨橙汁, 1, cup, 240, 108
+drinks, Cola, 可樂, 1, can, 330, 122
+fat_and_oils, Olive oil, 橄欖油, 1, tablespoon, 14, 126
+fat_and_oils, Canola oil, 芥花籽油, 1, tablespoon, 14, 126
+fat_and_oils, Peanut oil, 花生油, 1, tablespoon, 14, 126
+fat_and_oils, Butter, 牛油, 1, tablespoon, 14, 104
+fat_and_oils, Sesame seed dressing, 芝麻沙律醬, 1, tablespoon, 15, 66
+fat_and_oils, Light mayonnaise, 輕怡蛋黃醬, 1, tablespoon, 15, 36
+others, Ginger puree, 薑蓉, 1, tablespoon, 18, 85
+others, Oyster sauce, 蠔油, 1, tablespoon, 18, 15
+others, Jam, 果醬, 1, tablespoon, 20, 56
+others, Peanut butter, 花生醬, 1, tablespoon, 16, 96
+others, Honey, 蜜糖, 1, tablespoon, 21, 64
