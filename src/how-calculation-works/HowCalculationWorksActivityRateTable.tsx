@@ -1,7 +1,7 @@
 import React from 'react';
 import { Table, TableProps } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { HowItWorksI18nKeys } from 'shared/i18n-keys';
+import { HowCalculationWorksI18nKeys } from 'shared/i18n-keys';
 import { activityLabelI18nKeys, activityRates, ActivityLevel, I18nNamespace } from 'shared/models';
 
 const { Column } = Table;
@@ -26,12 +26,12 @@ export function ActivityRateTable(props: MealTableProps) {
   return (
     <Table size="large" dataSource={tableData} {...props}>
       <Column
-        title={t(HowItWorksI18nKeys.WeeklyExerciseAmount)}
+        title={t(HowCalculationWorksI18nKeys.WeeklyExerciseAmount)}
         dataIndex="activityLevel"
         key="activityLevel"
       />
       <Column
-        title={t(HowItWorksI18nKeys.ActivityLevelFactor)}
+        title={t(HowCalculationWorksI18nKeys.ActivityLevelFactor)}
         dataIndex="rate"
         key="rate"
         className="align-right"

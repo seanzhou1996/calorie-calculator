@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { PlanningDietI18nKeys as I18nKeys } from 'shared/i18n-keys';
+import { ResultSectionPlanningDietI18nKeys as I18nKeys } from 'shared/i18n-keys';
 import { I18nNamespace, mealLabelI18nKeys, mealPortions, MealType } from 'shared/models';
 
 interface ResultSectionDietPlanProps {

@@ -1,6 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { I18nKeys as CommonI18nKeys, HowItWorksI18nKeys as I18nKeys } from 'shared/i18n-keys';
+import {
+  I18nKeys as CommonI18nKeys,
+  HowCalculationWorksI18nKeys as I18nKeys,
+} from 'shared/i18n-keys';
 import ActivityRateTable from 'how-calculation-works/HowCalculationWorksActivityRateTable';
 import { I18nNamespace, RoutePath } from 'shared/models';
 import BaseGoBackButton from 'shared/BaseGoBackButton';
