@@ -13,6 +13,7 @@ export enum RoutePath {
   WeightGainGuide = '/weight-gain-guide',
   EatWellGuide = '/eat-well-guide',
   AboutThisApp = '/about-this-app',
+  Disclaimer = '/disclaimer',
 }
 
 export enum Language {

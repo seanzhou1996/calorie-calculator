@@ -78,7 +78,7 @@ export default function PageTemplateAppSettings({ onClose }: PageTemplateAppSett
           <Link to={RoutePath.AboutThisApp} className="links__item">
             {t(I18nKeys.AboutThisApp)}
           </Link>
-          <Link to="/" className="links__item">
+          <Link to={RoutePath.Disclaimer} className="links__item">
             {t(I18nKeys.Disclaimer)}
           </Link>
         </div>
