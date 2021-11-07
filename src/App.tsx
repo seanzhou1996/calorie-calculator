@@ -20,6 +20,7 @@ import WeightGainGuide from 'WeightGainGuide';
 import WeightLossGuide from 'WeightLossGuide';
 import EatWellGuide from 'EatWellGuide';
 import CalorieChecker from 'calorie-checker/CalorieChecker';
+import AboutThisApp from 'AboutThisApp';
 
 import './App.less';
 
@@ -71,6 +72,10 @@ function App() {
 
                   <Route path={RoutePath.EatWellGuide}>
                     <EatWellGuide />
+                  </Route>
+
+                  <Route path={RoutePath.AboutThisApp}>
+                    <AboutThisApp />
                   </Route>
                 </Switch>
               </PageTemplate>

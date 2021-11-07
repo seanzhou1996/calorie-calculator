@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { RadioChangeEvent, Radio, Switch } from 'antd';
 import { I18nKeys } from 'shared/i18n-keys';
 import { ReactComponent as CloseIcon } from 'assets/icon-close.svg';
-import { allLanguages, Language } from 'shared/models';
+import { allLanguages, Language, RoutePath } from 'shared/models';
 import { SaveSubmissionFlagContext } from 'shared/saveSubmissionFlagContext';
 
 interface PageTemplateAppSettingsProps {
@@ -75,7 +75,7 @@ export default function PageTemplateAppSettings({ onClose }: PageTemplateAppSett
 
       <div className="width-container">
         <div className="links">
-          <Link to="/" className="links__item">
+          <Link to={RoutePath.AboutThisApp} className="links__item">
             {t(I18nKeys.AboutThisApp)}
           </Link>
           <Link to="/" className="links__item">
