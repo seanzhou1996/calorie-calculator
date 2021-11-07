@@ -18,7 +18,7 @@
   "GoBackToResults": "回到計數結果",
   "Grams_amount": "{{ amount }} 克",
   "Loading": "加載中",
-  "LoseFat": "減脂",
+  "LoseWeight": "減重",
   "Age": "年齡",
   "Sex": "性別",
   "Male": "男性",
@@ -81,7 +81,7 @@
   "Snacks": "零食",
   "HowWeCalculateTarget": "我們如何計算你的目標",
   "LearnHowCalculationWorks": "了解計數原理",
-  "YouHaveUnsubmittedData": "你有尚未提交的資料",
+  "YourInputHasChanged": "你有尚未提交的資料",
   "NotificationFirstPara": "以下內容可能已過時。請重新提交表單以查看最新結果。",
   "GoBack": "返回"
 }

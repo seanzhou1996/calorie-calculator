@@ -96,7 +96,7 @@ export enum GoalType {
 export const goalLabelI18nKeys: Record<GoalType, I18nKeys> = {
   [GoalType.Balance]: I18nKeys.MaintainWeight,
   [GoalType.Bulk]: I18nKeys.GainMuscle,
-  [GoalType.Cut]: I18nKeys.LoseFat,
+  [GoalType.Cut]: I18nKeys.LoseWeight,
 };
 
 export enum GoalFormField {

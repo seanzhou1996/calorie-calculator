@@ -23,7 +23,7 @@ export enum I18nKeys {
   GoBackToResults = 'GoBackToResults',
   Grams_amount = 'Grams_amount',
   Loading = 'Loading',
-  LoseFat = 'LoseFat',
+  LoseWeight = 'LoseWeight',
   Age = 'Age',
   Sex = 'Sex',
   Male = 'Male',
@@ -84,7 +84,7 @@ export enum I18nKeys {
   SeeResults = 'SeeResults',
 
   // Input change notification
-  YouHaveUnsubmittedData = 'YouHaveUnsubmittedData',
+  YourInputHasChanged = 'YourInputHasChanged',
   NotificationFirstPara = 'NotificationFirstPara',
   GoBack = 'GoBack',
 

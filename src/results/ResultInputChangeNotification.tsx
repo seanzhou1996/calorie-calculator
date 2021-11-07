@@ -18,7 +18,7 @@ function ResultInputChangeNotification() {
   }
   return (
     <div className="notification">
-      <h3 className="notification__header">{t(I18nKeys.YouHaveUnsubmittedData)}</h3>
+      <h3 className="notification__header">{t(I18nKeys.YourInputHasChanged)}</h3>
       <p>{t(I18nKeys.NotificationFirstPara)}</p>
 
       <Button type="primary" htmlType="button" onClick={() => history.push(RoutePath.FitnessGoal)}>

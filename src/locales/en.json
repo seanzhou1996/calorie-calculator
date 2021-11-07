@@ -18,7 +18,7 @@
   "GoBackToResults": "Go back to results",
   "Grams_amount": "{{ amount }}g",
   "Loading": "Loading",
-  "LoseFat": "Lose fat",
+  "LoseWeight": "Lose weight",
   "Age": "Age",
   "Sex": "Sex",
   "Male": "Male",
@@ -82,7 +82,7 @@
   "Snacks": "Snacks",
   "HowWeCalculateTarget": "How we calculate your target",
   "LearnHowCalculationWorks": "Learn how the calculation works",
-  "YouHaveUnsubmittedData": "You have unsubmitted data",
-  "NotificationFirstPara": "The following content may be outdated. Please submit the form to get the latest results.",
+  "YourInputHasChanged": "Your input has changed",
+  "NotificationFirstPara": "The content below may be outdated. Submit the form to get the latest results.",
   "GoBack": "Go back"
 }

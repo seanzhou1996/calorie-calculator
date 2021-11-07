@@ -18,7 +18,7 @@
   "GoBackToResults": "回到計數結果",
   "Grams_amount": "{{ amount }} 克",
   "Loading": "加載中",
-  "LoseFat": "減脂",
+  "LoseWeight": "減重",
   "Age": "年齡",
   "Sex": "性別",
   "Male": "男性",
@@ -36,7 +36,7 @@
   "ViewResults": "睇吓結果",
   "CalorieCalculator": "卡路里計數機",
   "HomeFirstParagraph": "我哋可以幫手搵出你嘅每日卡路里攝入目標。",
-  "HomeSecondParagraph": "每日攝取適量嘅卡路里對達成身材目標至關重要。如果你想要增肌或減脂，呢部計數機就啱你使用。",
+  "HomeSecondParagraph": "每日攝取適量嘅卡路里對達成身材目標至關重要。如果你想要增肌或減重，呢部計數機就啱你使用。",
   "HomeThirdParagraph": "為咗令我哋提供最準確嘅結果，你須年滿 18 歲先可以使用呢部計數機。",
   "StartNow": "開始使用",
   "PersonalDetailsPageTitle": "輸入你嘅個人資料",
@@ -81,7 +81,7 @@
   "Snacks": "零食",
   "HowWeCalculateTarget": "我哋點樣計出你嘅目標",
   "LearnHowCalculationWorks": "睇吓計數原理",
-  "YouHaveUnsubmittedData": "你有尚未提交嘅資料",
+  "YourInputHasChanged": "你有尚未提交嘅資料",
   "NotificationFirstPara": "以下內容可能已過時。請重新提交表單以查看最新結果。",
   "GoBack": "返回"
 }
