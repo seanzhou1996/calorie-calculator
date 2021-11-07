@@ -22,6 +22,7 @@ export enum I18nKeys {
   GainMuscle = 'GainMuscle',
   GoBackToResults = 'GoBackToResults',
   Grams_amount = 'Grams_amount',
+  Loading = 'Loading',
   LoseFat = 'LoseFat',
   Age = 'Age',
   Sex = 'Sex',
