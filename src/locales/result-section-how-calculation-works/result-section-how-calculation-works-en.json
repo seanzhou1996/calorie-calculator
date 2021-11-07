@@ -16,7 +16,7 @@
   "StepTwoFirstPara": "Total daily energy expenditure (TDEE) is the total number of calories your body burn per day. It consists of:",
   "TheBMR": "The BMR",
   "FoodThermicEffect": "The thermic effect of food: energy used to digest food and store the nutrients",
-  "ActivityThermicEffect": "The thermic effect of physical activity: energy burned during physical actvities",
+  "ActivityThermicEffect": "The thermic effect of physical activity: energy burned during physical activities",
   "StepTwoSecondPara": "These elements combined is the total energy your body burns in a day. Your daily calorie intake target should be based on your TDEE.",
   "StepTwoThirdPara": "We calculate TDEE by multiplying your BMR by an activity level factor.",
   "StepTwoFourthPara": "Depending on how much exercise you do, your activity level factor ranges from 1.2 to 1.9. The following table shows how your weekly exercise amount maps to activity level factors.",
@@ -28,6 +28,6 @@
   "WeightGainingExplanation": "For weight training, you need a calorie surplus so that you have extra energy that can translate to bigger muscle.",
   "WeightLossExplanation": "For fat loss, you need a calorie deficit which will eventually lead to weight loss.",
   "StepThreeThirdPara": "For weight training, increase TDEE result by 10%.",
-  "StepThreeFourthPara": "For fat loss, decrease TDEE result by 10%.",
+  "StepThreeFourthPara": "For fat loss, decrease TDEE result by 500kcal.",
   "StepThreeFifthPara": "If you want to maintain your current weight, take TDEE as your target."
 }

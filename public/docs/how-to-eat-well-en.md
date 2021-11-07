@@ -1,12 +1,12 @@
-## How to eat well
+# How to eat well
 
 Eating a healthy, balanced diet is an important part of maintaining good health.
 
 Eating a variety of foods in the right proportions and amounts can help maintain a healthy weight and achieve your fitness goal.
 
-### Food groups
+## Food groups
 
-Your should eat a variety of foods. Aim to include the following 5 foods groups in your diet:
+Your should eat a wide range of foods. Aim to:
 
 - base your meals on higher fibre starchy foods like rice, bread or potatoes
 - eat at least 5 portions of various fruit and vegetables
@@ -18,13 +18,13 @@ Cut down on foods that are high in fat, salt or sugar. Have these less often and
 
 You do not have to include all the 5 foods groups in every meal, but try to do so in a day or a week.
 
-### Get the right balance
+## Get the right balance
 
 It's easy to prefer certain foods over others. Indeed, most people eat too much saturated fat and sugar, and not enough fruit, vegetables or fibre.
 
 To get a proper balance of nutrition, you should consume foods from the 5 food groups in the right proportions and amounts.
 
-#### Fruit and vegetables
+### Fruit and vegetables
 
 Fruit and vegetables should make up for over a third of the food you eat each day. They are a good source of vitamins, minerals and fibre.
 
@@ -42,7 +42,7 @@ For vegetables, a portion is:
 - 3 heaped tablespoons of cooked carrots, peas or sweetcorn
 - a medium tomato
 
-#### Starchy foods
+### Starchy foods
 
 Starchy carbohydrates should account for about a third of the food you eat.
 
@@ -66,7 +66,7 @@ As for meat, choose lean cuts and eat less processed meat like bacon, ham and sa
 
 Regarding eggs, there is no recommended limit how many you should eat, but it's best to cook them without adding salt or fat.
 
-#### Dairy or alternatives
+### Dairy or alternatives
 
 Have some dairy or dairy alternatives such as soy milk and yogurt.
 
@@ -74,7 +74,7 @@ Milk, soy milk and yogurt are good sources of protein, calcium and vitamins.
 
 Aim for low-fat and low-sugar products where possible.
 
-#### Water and drinks
+### Water and drinks
 
 Drink plenty of water. Aim for 6 to 8 glasses per day.
 

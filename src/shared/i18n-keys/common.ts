@@ -68,7 +68,7 @@ export enum I18nKeys {
   Swimming = 'Swimming',
   Tennis = 'Tennis',
   Dancing = 'Dancing',
-  SendentaryHours = 'SendentaryHours',
+  SedentaryHours = 'SedentaryHours',
   LightHours = 'LightHours',
   ModerateHours = 'ModerateHours',
   ActiveHours = 'ActiveHours',
@@ -91,10 +91,6 @@ export enum I18nKeys {
   // Results
   ResultsTitle = 'ResultsTitle',
   CaloriesPerDay = 'CaloriesPerDay',
-  DietTitle = 'DietTitle',
-  DietFirstParagraph = 'DietFirstParagraph',
-  DietSecondParagraph = 'DietSecondParagraph',
-  DietThirdParagraph = 'DietThirdParagraph',
   Servings = 'Servings',
   AnswersTitle = 'AnswersTitle',
   StartAgain = 'StartAgain',
@@ -105,7 +101,6 @@ export enum I18nKeys {
 
   // Meal table
   Meal = 'Meal',
-  TargetPercentage = 'TargetPercentage',
   Breakfast = 'Breakfast',
   Lunch = 'Lunch',
   Dinner = 'Dinner',

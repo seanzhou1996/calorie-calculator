@@ -4,7 +4,7 @@
   "Lunch": "午餐",
   "Dinner": "晚餐",
   "Snacks": "零食",
-  "mealCaloriesAndPercent_meal_calorie_percent": "{{ meal }}: {{ calorie }} 卡路里（{{ percent }}%）",
+  "mealCaloriesAndPercent_meal_calorie_percent": "{{ meal }}: {{ calorie }} 千卡（{{ percent }}%）",
   "FirstParagraph": "你每天攝入的卡路里總量應符合這一目標。",
   "SecondParagraph": "以下是你每日卡路里攝取目標的分配建議：",
   "ThirdParagraph": "吃早餐對健康非常重要，因此早餐在每日卡路里攝取量中佔有顯著比例。",

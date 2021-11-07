@@ -56,7 +56,7 @@ export interface PersonalInfoFormModel {
 }
 
 export enum ActivityLevel {
-  Sendentary = 'sendentary',
+  Sedentary = 'sedentary',
   Light = 'light',
   Moderate = 'moderate',
   Active = 'active',
@@ -64,7 +64,7 @@ export enum ActivityLevel {
 }
 
 export const activityRates: Record<ActivityLevel, number> = {
-  [ActivityLevel.Sendentary]: 1.2,
+  [ActivityLevel.Sedentary]: 1.2,
   [ActivityLevel.Light]: 1.375,
   [ActivityLevel.Moderate]: 1.55,
   [ActivityLevel.Active]: 1.725,
@@ -72,7 +72,7 @@ export const activityRates: Record<ActivityLevel, number> = {
 };
 
 export const activityLabelI18nKeys: Record<ActivityLevel, I18nKeys> = {
-  [ActivityLevel.Sendentary]: I18nKeys.SendentaryHours,
+  [ActivityLevel.Sedentary]: I18nKeys.SedentaryHours,
   [ActivityLevel.Light]: I18nKeys.LightHours,
   [ActivityLevel.Moderate]: I18nKeys.ModerateHours,
   [ActivityLevel.Active]: I18nKeys.ActiveHours,
