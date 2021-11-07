@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import marked from 'marked';
 import dompurify from 'dompurify';
 import axios from 'axios';
+import { Skeleton } from 'antd';
 
 interface BaseMarkdownConverterProps {
   url: string;
@@ -18,6 +19,10 @@ export default function BaseMarkdownConverter({ url }: BaseMarkdownConverterProp
   useEffect(() => {
     init();
   }, [url]);
+
+  if (!markdown) {
+    return <Skeleton active paragraph={{ rows: 8 }} />;
+  }
 
   return (
     <div
