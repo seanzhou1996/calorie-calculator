@@ -20,7 +20,7 @@
 
 你可以透過以下途徑提出建議：
 
-- [在本網站的 GitHub 專案上發表問題](https://github.com/calorie-calculator/source-code/issues)（需要 GitHub 賬戶）
+- [在本網站的 GitHub 專案上發表問題](https://github.com/seanzhou1996/calorie-calculator/issues)（需要 GitHub 賬戶）
 
 其他途徑將陸續開放。
 

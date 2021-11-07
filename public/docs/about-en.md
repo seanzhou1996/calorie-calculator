@@ -20,7 +20,7 @@ Therefore, we would like you to offer opinions on these aspects:
 
 You can share your thoughts by:
 
-- [Raise an issue on the GitHub repository](https://github.com/calorie-calculator/source-code/issues) (requires GitHub account)
+- [Raise an issue on the GitHub repository](https://github.com/seanzhou1996/calorie-calculator/issues) (requires GitHub account)
 
 We'll add more channels soon.
 
