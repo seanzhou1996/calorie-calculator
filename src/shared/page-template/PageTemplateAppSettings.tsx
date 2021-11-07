@@ -10,10 +10,10 @@ interface PageTemplateAppSettingsProps {
   onClose: () => void;
 }
 
-const languageLabels: Record<Language, string> = {
+const languageLabels: Partial<Record<Language, string>> = {
   [Language.En]: 'English',
   [Language.ZhHk]: '繁體中文',
-  [Language.ZhYue]: '粵語（香港）',
+  // [Language.ZhYue]: '粵語（香港）',
 };
 
 export default function PageTemplateAppSettings({ onClose }: PageTemplateAppSettingsProps) {

@@ -17,7 +17,7 @@ export enum RoutePath {
 export enum Language {
   En = 'en',
   ZhHk = 'zh',
-  ZhYue = 'zh-yue-HK',
+  // ZhYue = 'zh-yue-HK',
 }
 
 export enum I18nNamespace {

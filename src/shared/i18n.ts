@@ -3,13 +3,16 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import en from 'locales/en.json';
 import zh from 'locales/zh-hk.json';
-import zhYue from 'locales/zh-yue.json';
+
+// import zhYue from 'locales/zh-yue.json';
 import personalDetailsEn from 'locales/personal-details/en.json';
 import personalDetailsZh from 'locales/personal-details/zh-hk.json';
-import personalDetailsZhYue from 'locales/personal-details/zh-yue.json';
+
+// import personalDetailsZhYue from 'locales/personal-details/zh-yue.json';
 import resultSectionHowCalculationWorksEn from 'locales/result-section-how-calculation-works/result-section-how-calculation-works-en.json';
 import resultSectionHowCalculationWorksZh from 'locales/result-section-how-calculation-works/result-section-how-calculation-works-zh-hk.json';
-import resultSectionHowCalculationWorksZhYue from 'locales/result-section-how-calculation-works/result-section-how-calculation-works-zh-yue.json';
+
+// import resultSectionHowCalculationWorksZhYue from 'locales/result-section-how-calculation-works/result-section-how-calculation-works-zh-yue.json';
 import resultSectionPlanningDietEn from 'locales/result-section-planning-your-diet/result-section-planning-your-diet-en.json';
 import resultSectionPlanningDietZh from 'locales/result-section-planning-your-diet/result-section-planning-your-diet-zh.json';
 import resultSectionChoosingFoodsEn from 'locales/result-section-choosing-foods/result-section-choosing-foods-en.json';
@@ -30,7 +33,7 @@ enum Format {
 
 const allI18nNamespaces = Object.values(I18nNamespace);
 
-const resources: Record<Language, ResourceLanguage> = {
+const resources: Partial<Record<Language, ResourceLanguage>> = {
   [Language.En]: {
     [I18nNamespace.General]: en,
     [I18nNamespace.PersonalDetails]: personalDetailsEn,
@@ -53,11 +56,11 @@ const resources: Record<Language, ResourceLanguage> = {
     [I18nNamespace.ResultSectionHowToEatWell]: resultSectionHowToEatWellZh,
     [I18nNamespace.CalorieChecker]: calorieCheckerZh,
   },
-  [Language.ZhYue]: {
-    [I18nNamespace.General]: zhYue,
-    [I18nNamespace.PersonalDetails]: personalDetailsZhYue,
-    [I18nNamespace.HowCalculationWorks]: resultSectionHowCalculationWorksZhYue,
-  },
+  // [Language.ZhYue]: {
+  //   [I18nNamespace.General]: zhYue,
+  //   [I18nNamespace.PersonalDetails]: personalDetailsZhYue,
+  //   [I18nNamespace.HowCalculationWorks]: resultSectionHowCalculationWorksZhYue,
+  // },
 };
 
 i18n
