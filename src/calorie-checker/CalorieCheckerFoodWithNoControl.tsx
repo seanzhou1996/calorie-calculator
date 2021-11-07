@@ -3,13 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { I18nKeys as CommonI18nKeys } from 'shared/i18n-keys';
 import { Food, FoodType, I18nNamespace } from 'shared/models';
 
-interface CalorieCheckerListItemWithNoControlProps {
+interface CalorieCheckerFoodWithNoControlProps {
   food: Food;
 }
 
-export default function CalorieCheckerListItemWithNoControl({
+export default function CalorieCheckerFoodWithNoControl({
   food: { type, name, nameZh, weight, calorie },
-}: CalorieCheckerListItemWithNoControlProps) {
+}: CalorieCheckerFoodWithNoControlProps) {
   const { t, i18n } = useTranslation(I18nNamespace.CalorieChecker);
   const weightWithUnit =
     type === FoodType.Drinks

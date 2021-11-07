@@ -5,18 +5,18 @@ import { I18nKeys as CommonI18nKeys, CalorieCheckerI18nKeys as I18nKeys } from '
 import { FoodType, foodUnitI18nKeys, FoodWithPortionAndUnit, I18nNamespace } from 'shared/models';
 import { isFraction } from 'shared/utils';
 
-interface CalorieCheckerListItemWithSwitchProps {
+interface CalorieCheckerFoodWithSwitchProps {
   food: FoodWithPortionAndUnit;
 }
 
-type CalorieCheckerListItemSelectedAmount = 'original' | '100-grams-or-milliliters';
+type CalorieCheckerFoodSelectedAmount = 'original' | '100-grams-or-milliliters';
 
-export default function CalorieCheckerListItemWithSwitch({
+export default function CalorieCheckerFoodWithSwitch({
   food: { type, name, nameZh, portion, unit, weight, calorie },
-}: CalorieCheckerListItemWithSwitchProps) {
+}: CalorieCheckerFoodWithSwitchProps) {
   const { t, i18n } = useTranslation(I18nNamespace.CalorieChecker);
   const [selectedAmount, setSelectedAmount] =
-    useState<CalorieCheckerListItemSelectedAmount>('original');
+    useState<CalorieCheckerFoodSelectedAmount>('original');
   const portionWithUnit =
     portion === '1/2'
       ? t(I18nKeys.HalfPortionWithUnit_unit, {
@@ -38,7 +38,7 @@ export default function CalorieCheckerListItemWithSwitch({
     weight: weightWithUnit,
   });
 
-  const options: { value: CalorieCheckerListItemSelectedAmount; label: string }[] = [
+  const options: { value: CalorieCheckerFoodSelectedAmount; label: string }[] = [
     {
       value: 'original',
       label: portionAndWeight,

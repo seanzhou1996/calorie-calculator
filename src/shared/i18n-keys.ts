@@ -220,6 +220,7 @@ export enum ResultSectionHowToEatWellI18nKeys {
 
 export enum CalorieCheckerI18nKeys {
   Title = 'Title',
+  Intro = 'Intro',
 
   // Food types
   Grains = 'Grains',
