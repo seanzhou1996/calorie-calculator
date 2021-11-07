@@ -4,6 +4,8 @@ export enum I18nKeys {
   SaveSubmissions = 'SaveSubmissions',
   SaveResultsParagraph = 'SaveResultsParagraph',
   DoNotSaveResultsParagraph = 'DoNotSaveResultsParagraph',
+  AboutThisApp = 'AboutThisApp',
+  Disclaimer = 'Disclaimer',
   Acknowledgements = 'Acknowledgements',
   ReportProblem = 'ReportProblem',
 

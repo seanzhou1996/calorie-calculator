@@ -4,8 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { RadioChangeEvent, Radio, Switch } from 'antd';
 import { I18nKeys } from 'shared/i18n-keys';
 import { ReactComponent as CloseIcon } from 'assets/icon-close.svg';
-import { allLanguages, Language } from '../models';
-import { SaveSubmissionFlagContext } from '../saveSubmissionFlagContext';
+import { allLanguages, Language } from 'shared/models';
+import { SaveSubmissionFlagContext } from 'shared/saveSubmissionFlagContext';
 
 interface PageTemplateAppSettingsProps {
   onClose: () => void;
@@ -34,7 +34,9 @@ export default function PageTemplateAppSettings({ onClose }: PageTemplateAppSett
             <CloseIcon />
           </button>
         </header>
-        <div className="setting">
+      </div>
+      <div className="setting">
+        <div className="width-container">
           <div className="setting__name">語言/Language</div>
           <div className="setting__content">
             <Radio.Group
@@ -50,7 +52,9 @@ export default function PageTemplateAppSettings({ onClose }: PageTemplateAppSett
             </Radio.Group>
           </div>
         </div>
-        <div className="setting">
+      </div>
+      <div className="setting">
+        <div className="width-container">
           <div className="setting__name">{t(I18nKeys.SaveSubmissions)}</div>
           <div className="setting__content">
             <Switch
@@ -67,18 +71,19 @@ export default function PageTemplateAppSettings({ onClose }: PageTemplateAppSett
             </span>
           </div>
         </div>
+      </div>
 
+      <div className="width-container">
         <div className="links">
-          {/** TODO update links **/}
           <Link to="/" className="links__item">
-            {t(I18nKeys.Acknowledgements)}
+            {t(I18nKeys.AboutThisApp)}
           </Link>
           <Link to="/" className="links__item">
-            {t(I18nKeys.ReportProblem)}
+            {t(I18nKeys.Disclaimer)}
           </Link>
         </div>
 
-        <footer>2021 Sean Zhou</footer>
+        <footer>2021 · Sean Zhou</footer>
       </div>
     </div>
   );

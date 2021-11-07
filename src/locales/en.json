@@ -1,8 +1,10 @@
 {
   "Settings": "Settings",
-  "SaveSubmissionResults": "Keep the last submission",
+  "SaveSubmissions": "Keep the most recent submission",
   "SaveResultsParagraph": "We will keep your most recent submission.",
   "DoNotSaveResultsParagraph": "Your submissions will not be kept.",
+  "AboutThisApp": "About this app",
+  "Disclaimer": "Disclaimer",
   "Acknowledgements": "Acknowledgements",
   "ReportProblem": "Report a problem",
   "DoYouWantToKeepSubmission": "Do you want to keep the most recent submission?",
