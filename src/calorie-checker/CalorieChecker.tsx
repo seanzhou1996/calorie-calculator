@@ -25,7 +25,7 @@ export default function CalorieChecker() {
         />
         <h1>{t(I18nKeys.Title)}</h1>
         <p>{t(I18nKeys.Intro)}</p>
-        <ul className="calorie-checker__nav-list">
+        <ul id="calorie-checker_nav_list" className="calorie-checker__nav-list">
           {allFoodTypes.map((foodType) => (
             <li key={foodType} className="calorie-checker__nav-item">
               <a href={`#${foodType}`} className="calorie-checker__nav-link">
@@ -56,7 +56,7 @@ export default function CalorieChecker() {
                 </div>
                 <div className="back-to-top">
                   <div className="width-container">
-                    <a href="#calorie_checker_title" className="back-to-top__link">
+                    <a href="#calorie-checker_nav_list" className="back-to-top__link">
                       <ArrowUpOutlined className="back-to-top__arrow" />
                       <span>{t(CommonI18nKeys.BackToTop)}</span>
                     </a>
