@@ -6,8 +6,6 @@ export enum I18nKeys {
   DoNotSaveResultsParagraph = 'DoNotSaveResultsParagraph',
   AboutThisApp = 'AboutThisApp',
   Disclaimer = 'Disclaimer',
-  Acknowledgements = 'Acknowledgements',
-  ReportProblem = 'ReportProblem',
 
   // Last submission banner
   DoYouWantToKeepSubmission = 'DoYouWantToKeepSubmission',
@@ -25,6 +23,7 @@ export enum I18nKeys {
   Milliliter_amount = 'Milliliter_amount',
   GainMuscle = 'GainMuscle',
   GoBackToResults = 'GoBackToResults',
+  GoBackHome = 'GoBackHome',
   Grams_amount = 'Grams_amount',
   Loading = 'Loading',
   LoseWeight = 'LoseWeight',

@@ -20,6 +20,7 @@
   "Milliliter_amount": "{{ amount }}ml",
   "GainMuscle": "Gain muscle",
   "GoBackToResults": "Go back to results",
+  "GoBackHome": "Go back home",
   "Grams_amount": "{{ amount }}g",
   "Loading": "Loading",
   "LoseWeight": "Lose weight",

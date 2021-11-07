@@ -20,6 +20,7 @@
   "Milliliter_amount": "{{ amount }} 毫升",
   "GainMuscle": "增肌",
   "GoBackToResults": "回到計數結果",
+  "GoBackHome": "回到主頁",
   "Grams_amount": "{{ amount }} 克",
   "Loading": "加載中",
   "LoseWeight": "減重",
