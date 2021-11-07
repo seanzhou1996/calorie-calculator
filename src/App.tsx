@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route, HashRouter } from 'react-router-dom';
 import { ConfigProvider } from 'antd';
 import 'shared/i18n';
 import { SubmissionContextProvider } from 'shared/SubmissionContext';
@@ -32,7 +32,7 @@ function App() {
         <SubmissionContextProvider>
           <FormStateContextProvider>
             <KeepSubmissionBanner />
-            <Router>
+            <HashRouter>
               <PageTemplate>
                 <Switch>
                   <Route path={RoutePath.Home} exact>
@@ -85,7 +85,7 @@ function App() {
                 </Switch>
               </PageTemplate>
               <ScrollToTop />
-            </Router>
+            </HashRouter>
             <UpdateDocumentLang />
           </FormStateContextProvider>
         </SubmissionContextProvider>
