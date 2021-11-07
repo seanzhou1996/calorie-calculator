@@ -12,10 +12,10 @@ function Home() {
 
   return (
     <div className="width-container">
-      <HomeResultNotification />
       <header>
         <h1 className="app-title">{t(I18nKeys.CalorieCalculator)}</h1>
       </header>
+      <HomeResultNotification />
       <div className="intro">
         <p className="intro__lead">{t(I18nKeys.HomeFirstParagraph)}</p>
         <p>{t(I18nKeys.HomeSecondParagraph)}</p>
