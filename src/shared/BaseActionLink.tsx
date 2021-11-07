@@ -9,8 +9,8 @@ interface BaseActionLinkProps {
 
 export default function BaseActionLink({ to, title }: BaseActionLinkProps) {
   return (
-    <Link to={to} className="action__link">
-      <ArrowRightCircle className="action__icon" />
+    <Link to={to} className="action-link">
+      <ArrowRightCircle className="action-link__icon" />
       <span>{title}</span>
     </Link>
   );
