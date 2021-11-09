@@ -14,7 +14,7 @@ import ActivityLevel from './activity-level/ActivityLevel';
 import FitnessGoal from './fitness-goal/FitnessGoal';
 import Result from './results/Result';
 import HowCalculationWorks from 'how-calculation-works/HowCalculationWorks';
-import KeepSubmissionBanner from 'shared/KeepSubmissionBanner';
+import SubmissionBanner from 'shared/SubmissionBanner';
 import UpdateDocumentLang from 'shared/UpdateDocumentLang';
 import WeightGainGuide from 'WeightGainGuide';
 import WeightLossGuide from 'WeightLossGuide';
@@ -31,7 +31,7 @@ function App() {
       <SaveSubmissionFlagContextProvider>
         <SubmissionContextProvider>
           <FormStateContextProvider>
-            <KeepSubmissionBanner />
+            <SubmissionBanner />
             <HashRouter>
               <PageTemplate>
                 <Switch>
