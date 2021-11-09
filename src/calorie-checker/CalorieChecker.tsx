@@ -16,6 +16,7 @@ export default function CalorieChecker() {
   const [foodArray, setFoodArray] = useState<Food[]>([]);
 
   const init = () => listFoodCalories().then((arr) => setFoodArray(arr));
+  const scrollToElementWithId = (id: string) => document.getElementById(id)?.scrollIntoView();
 
   useEffect(() => {
     init();
@@ -42,9 +43,12 @@ export default function CalorieChecker() {
             <ul id="calorie-checker_nav_list" className="calorie-checker__nav-list">
               {allFoodTypes.map((foodType) => (
                 <li key={foodType} className="calorie-checker__nav-item">
-                  <a href={`#${foodType}`} className="calorie-checker__nav-link">
+                  <button
+                    onClick={() => scrollToElementWithId(foodType)}
+                    className="calorie-checker__nav-link"
+                  >
                     {t(foodTypeI18nKeys[foodType])}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
