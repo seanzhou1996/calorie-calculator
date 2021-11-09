@@ -6,14 +6,16 @@ import { Skeleton } from 'antd';
 
 interface BaseMarkdownConverterProps {
   url: string;
+  onLoad?: () => void;
 }
 
-export default function BaseMarkdownConverter({ url }: BaseMarkdownConverterProps) {
+export default function BaseMarkdownConverter({ url, onLoad }: BaseMarkdownConverterProps) {
   const [markdown, setMarkdown] = useState('');
 
   const init = async () => {
     const markdown = await axios.get<string>(url).then(({ data }) => data);
     setMarkdown(markdown);
+    !onLoad ? null : onLoad();
   };
 
   useEffect(() => {
