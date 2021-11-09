@@ -19,10 +19,12 @@ import UpdateDocumentLang from 'shared/UpdateDocumentLang';
 import WeightGainGuide from 'WeightGainGuide';
 import WeightLossGuide from 'WeightLossGuide';
 import EatWellGuide from 'EatWellGuide';
+import Image from 'og-image/Image';
 
 import './App.less';
 
 function App() {
+  return <Image />;
   return (
     <ConfigProvider autoInsertSpaceInButton={false}>
       <SaveSubmissionFlagContextProvider>
