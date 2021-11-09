@@ -10,10 +10,9 @@ const activityRates: Record<ActivityLevel, number> = {
   [ActivityLevel.ExtraActive]: 1.9,
 };
 
-const goalRates: Record<GoalType, number> = {
+const goalRates: Partial<Record<GoalType, number>> = {
   [GoalType.Balance]: 1,
   [GoalType.Bulk]: 1.1,
-  [GoalType.Cut]: 0.9,
 };
 
 export const computeBMR: (age: number, sex: Sex, height: number, weight: number) => number = (
@@ -37,8 +36,13 @@ export const computeTarget: (
   bmr: number,
   activityLevel: ActivityLevel,
   goalType: GoalType
-) => number = (bmr, activityLevel, goalType) =>
-  bmr * activityRates[activityLevel] * goalRates[goalType];
+) => number = (bmr, activityLevel, goalType) => {
+  const activityRate = activityRates[activityLevel];
+  if (goalType === GoalType.Cut) {
+    return bmr * activityRate - 500;
+  }
+  return bmr * activityRate * goalRates[goalType];
+};
 
 export function isFormValid(values: FullFormModel, schema: Yup.AnySchema): boolean {
   return schema.isValidSync(values);
