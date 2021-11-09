@@ -31,13 +31,13 @@ export default function ResultSectionYourAnswers({
             {t(I18nKeys.Age)}: {age}
           </li>
           <li>
-            {t(I18nKeys.Sex)}: {t(sexI18nKeys[sex])}
+            {t(I18nKeys.Sex)}: {t(sexI18nKeys[sex]).toLowerCase()}
           </li>
           <li>
-            {t(I18nKeys.Height)}: {height} cm
+            {t(I18nKeys.Height)}: {height}cm
           </li>
           <li>
-            {t(I18nKeys.Weight)}: {weight} kg
+            {t(I18nKeys.Weight)}: {weight}kg
           </li>
         </ul>
       ),
